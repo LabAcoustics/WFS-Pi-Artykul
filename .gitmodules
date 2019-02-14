@@ -1,0 +1,3 @@
+[submodule "OSKA_artykul"]
+	path = OSKA_artykul
+	url = git@github.com:WillowSprig/OSKA_artykul.git
