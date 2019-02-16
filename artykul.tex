@@ -119,6 +119,10 @@ backend=biber
 \setcounter{secnumdepth}{4}
 \brokenpenalty=10000\relax
 
+% ------------------------
+% --- < do tego artykułu > ---
+\sisetup{binary-units=true}
+\DeclareSIUnit{\inch}{"}
 
 %---------------------------------------------------------------------------
 
@@ -187,8 +191,45 @@ było zaprojektowanie modułowego systemu syntezy pola akustycznego, opartego na
 łatwo dostępnych komponentach i umożliwiającego stosunkowo prostą adaptację do
 wybranego zastosowania.
 
-\section{Druga część}
+\section{Teoria syntezy pola akustycznego}
 
+[tutaj trzeba dać sporo o fizyce, wzorach, itp.]
+
+\section{Projekt modułowego systemu WFS}
+
+Zdecydowano się na zastosowanie rozwiązania opartego na komputerach Raspberry
+Pi Zero. Są one niewielkie i dysponują odpowiednią mocą obliczeniową potrzebną
+do przetwarzania sygnałów wysyłanych na odpowiednie kanały. Przetwarzanie
+sygnału na z cyfrowego na analogowy oraz jego wzmocnienie jest realizowane
+przez moduł Amp Zero pHAT firmy JustBoom. Jest to połączenie wysokiej jakości
+przetwornika analogowo-cyfrowego oraz wzmacniacza klasy D o mocy wyjściowej
+$2\times40\si{\watt}$. Sygnał może być próbkowany z częstotliwością
+\SI{192}{\kilo\hertz} i rozdzielczością \SI{32}{\bit}, z kolei zastosowanie
+wzmacniacza klasy D umożliwia osiąganie odpowiedniej mocy głośników bez
+zużywania nadmiernej ilości energii oraz zachowując niewielkie rozmiary
+pojedynczych modułów. 
+Wybrano głośniki firmy Faital Pro model 3FE25. Podstawowe parametry
+przedstawiono w tabeli \ref{tab:paramglosnik}.
+
+\begin{table}[!tbh]
+  \centering
+  \caption{Parametry głośnika Faital Pro 3FE25}
+  \begin{tabular}{|c|c|} \hline
+    \textbf{Parametr} & \textbf{Wartość} \\ \hline
+    Średnica & \SI{3}{\inch} \\ \hline
+    Impedancja nominalna & \SI{8}{\ohm} \\ \hline
+    Moc nominalna & \SI{20}{\watt} \\ \hline
+    Skuteczność (\SI{1}{\watt} / \SI{1}{\metre}) & \SI{91}{\decibel} \\ \hline
+    Zakres częstotliwości & od \SI{100}{\hertz} do \SI{20}{\kilo\hertz} \\ \hline
+  \end{tabular}
+  \label{tab:paramglosnik}
+\end{table}
+
+Ponieważ moduły wzmacniaczy oraz przetworników A/C były dwukanałowe, na każdy
+moduł oraz komputer Raspberry Pi przypadły dwa głośniki. W celu zwiększenia
+możliwości adaptacji systemu do wymaganych warunków postanowiono każdy głośnik
+umieścić w oddzielnej obudowie tak, aby istniała możliwość zmiany zarówno
+odległości jak i kąta pomiędzy poszczególnymi żródłami macierzy głośnikowej.
 
 
 \section{Wnioski}
