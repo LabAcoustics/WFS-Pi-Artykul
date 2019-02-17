@@ -123,6 +123,7 @@ backend=biber
 % --- < do tego artykułu > ---
 \sisetup{binary-units=true}
 \DeclareSIUnit{\inch}{"}
+\usepackage{import}
 
 %---------------------------------------------------------------------------
 
@@ -232,8 +233,14 @@ umieścić w oddzielnej obudowie tak, aby istniała możliwość zmiany zarówno
 odległości jak i kąta pomiędzy poszczególnymi żródłami macierzy głośnikowej.
 
 
-\section{Wnioski}
+\begin{figure}[!tbh]
+  \centering
+  \import{./vecgraphics/}{scheme.pdf_tex}
+  \caption{Schemat projektowanego systemu WFS}
+  \label{fig:schemat}
+\end{figure}
 
+\section{Wnioski}
 
 
 \printbibliography
