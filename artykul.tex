@@ -15,6 +15,7 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{bm}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{textcomp}
 
@@ -270,6 +271,29 @@ Wzięwszy pod uwagę możliwe rozwiązania, głośniki o wymiarze 3''
 $\Delta x=\SI{150}{\milli\meter}$.
 
 \section{Przetwarzanie sygnałów}\label{s:algorithm}
+
+Uzyskanie sygnałów podawanych na głośniki, na podstawie geometrii i całki
+Helmholtza-Huygensa, może być opisane przez
+wzór~\eqref{eq:glosnik_f}~\cite{delay}:
+
+\begin{equation}
+  Q_n(\bm{r}_n,\omega) = \sqrt{\frac{j\omega}{2\pi c}} A_n \frac {e^{-jk|\bm{r}_n-\bm{r}_m|}}{|\bm{r}_n-\bm{r}_m|^{1/2}} S(\omega) \quad,
+  \label{eq:glosnik_f}
+\end{equation}
+
+gdzie $A_n$ to współczynnik wagowy amplitudy a wyrażenie
+$|\bm{r}_n-\bm{r}_m|$ opisuje dystans pomiędzy źródłem wirtualnych
+a $n$-tym głośnikiem, natomiast $S(\omega)$ to spektrum sygnału źródłowego.
+
+Toteż sygnał źródła wirtualnego $s(t)$ dla każdego głośnika musi być pomnożony
+przez współczynnik wagowy amplitudy $a_n$, przefiltrowany przez odwrotną
+transformatę Fouriera $\sqrt{\frac{j\omega}{2\pi c}}$, spleciony z $h(t)$, i
+opóźniony o $\tau_n$, co może być zapisane w postaci~\eqref{eq:glosnik_t}~\cite{enhancement}:
+
+\begin{equation}
+  q_n(t) = a_n\left[h(t)*s(t)*\delta(t-\tau_n)\right] \quad. \label{eq:glosnik_t}
+\end{equation}
+
 \section{Symulacja}
 
 \section{Realizacja}
@@ -307,7 +331,6 @@ moduł oraz komputer Raspberry Pi przypadły dwa głośniki. W celu zwiększenia
 możliwości adaptacji systemu do wymaganych warunków postanowiono każdy głośnik
 umieścić w oddzielnej obudowie tak, aby istniała możliwość zmiany zarówno
 odległości jak i kąta pomiędzy poszczególnymi żródłami macierzy głośnikowej.
-
 
 \begin{figure}[!tbh]
   \centering
