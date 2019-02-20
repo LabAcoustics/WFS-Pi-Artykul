@@ -28,6 +28,17 @@
 
 % --- < bibliografia > ---
 
+\usepackage{placeins}	% poprawia float
+
+\let\Oldsection\section
+\renewcommand{\section}{\FloatBarrier\Oldsection}
+
+\let\Oldsubsection\subsection
+\renewcommand{\subsection}{\FloatBarrier\Oldsubsection}
+
+\let\Oldsubsubsection\subsubsection
+\renewcommand{\subsubsection}{\FloatBarrier\Oldsubsubsection}
+
 \usepackage[
 style=numeric,
 sorting=none,
@@ -214,7 +225,7 @@ jest punktem do którego dotarła fala akustyczna wyemitowana przez wirtualne
 źródło dźwięku, przekazując falę dalej, a więc ją tworząc, co pokazuje rysunek
 \ref{r:Huygens}.
 
-\begin{figure}[H]
+\begin{figure}[!tbh]
   \centering
   \includegraphics[scale=.4]{vecgraphics/WFS_idea.pdf}
   \caption{Zastosowanie zasady Huygensa w WFS: każdy głośnik jest punktem do
@@ -309,7 +320,7 @@ porównać pole akustyczne wytworzone przez źródło rzeczywiste i głośniki
 symulujące je. Wyniki przedstawia rysunek~\ref{r:fem}, pokazując dużą zbieżność
 pomiędzy modelami.
 
-\begin{figure}[H]
+\begin{figure}[!tbh]
   \centering
   \adjincludegraphics[width=0.7\columnwidth,trim={{.15\width} {.03\height} {.15\width} 0},clip]{vecgraphics/real_500Hz.png}
   \adjincludegraphics[width=0.7\columnwidth,trim={{.15\width} 0 {.15\width} {.02\height}},clip]{vecgraphics/virtual_500Hz.png}
@@ -355,6 +366,7 @@ moduł oraz komputer Raspberry Pi przypadły dwa głośniki. W celu zwiększenia
 możliwości adaptacji systemu do wymaganych warunków postanowiono każdy głośnik
 umieścić w oddzielnej obudowie tak, aby istniała możliwość zmiany zarówno
 odległości jak i kąta pomiędzy poszczególnymi żródłami macierzy głośnikowej.
+Strukturę systemu przedstawia rysunek \ref{fig:schemat}.
 
 \begin{figure}[!tbh]
   \centering
@@ -363,14 +375,21 @@ odległości jak i kąta pomiędzy poszczególnymi żródłami macierzy głośni
   \label{fig:schemat}
 \end{figure}
 
-\begin{figure}[!tbh]
-  \centering
-  \includegraphics[width=\textwidth]{./bitgraphics/testy.jpg}
-  \caption{Testy oprogramowania}
-  \label{fig:testy}
-\end{figure}
+Ważnym aspektem system jest koherencja głośników. Wobec tego system posiada
+połączenie synchronizujące, które synchronizuje przetwarzanie próbek dźwięku.
+Rozwiązuje to problem nieprzewidywalnego czasu przetwarzania w systemie nie
+wspierającym przetwarzania w czasie rzeczywistym.
+
+Połączenie synchronizujące wykorzystuje piny GPIO. Dane audio oraz informacje
+na temat lokalizacji przesyłane są bezprzewodowo przez sieć lokalną (LAN), co
+oznacza że system nie może odtwarzać dźwięku w czasie rzeczywistym, lecz to
+rozwiązanie pozwala na duże pole manewru i zmniejsza ilość kabli. Główna
+jednostka systemu z aplikacją serwera kontroluje połączenie synchronizujące
+oraz zarządza procesorami audio. To pozwala na rozszerzanie i zwiększanie
+funkcjonalności systemu w przyszłości.
 
 \section{Wnioski}
+Zaprojektowany system, dzieki swojej modułowości pozawala na 
 
 
 \printbibliography
