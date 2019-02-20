@@ -16,6 +16,7 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{bm}
+\usepackage{adjustbox}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{textcomp}
 
@@ -295,6 +296,29 @@ opóźniony o $\tau_n$, co może być zapisane w postaci~\eqref{eq:glosnik_t}~\c
 \end{equation}
 
 \section{Symulacja}
+
+By przeprowadzić ewaluację dokładności algorytmu, symulacja dystrybucji pola
+akustycznego została przeprowadzona. Dwa modele zostały stworzone: jeden z
+źródłem rzeczywistym na pozycji $S$ i przegrodą z otworami imitującą macierz
+głośnikową, pokazujący estymowaną przestrzeń syntezy i drugi ze źródłami
+punktowymi emulującymi głośniki, emitującymi sygnał ze źródła wirtualnego $S$,
+wyznaczony przez algorytm wyznaczony w sekcji~\ref{s:algorithm}.
+
+Dla każdego modelu, analiza wykorzystująca MES została przeprowadzona, by
+porównać pole akustyczne wytworzone przez źródło rzeczywiste i głośniki
+symulujące je. Wyniki przedstawia rysunek~\ref{r:fem}, pokazując dużą zbieżność
+pomiędzy modelami.
+
+\begin{figure}[H]
+  \centering
+  \adjincludegraphics[width=0.7\columnwidth,trim={{.15\width} {.03\height} {.15\width} 0},clip]{vecgraphics/real_500Hz.png}
+  \adjincludegraphics[width=0.7\columnwidth,trim={{.15\width} 0 {.15\width} {.02\height}},clip]{vecgraphics/virtual_500Hz.png}
+  \caption{Results of the wave field simulation with FEM: acoustic
+    pressure distribution for real source (top) and loudspeaker array
+  emulating virtual source in the same position (bottom)}
+  \label{r:fem}
+\end{figure}
+
 
 \section{Realizacja}
 
