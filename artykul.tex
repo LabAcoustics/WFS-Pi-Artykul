@@ -231,6 +231,33 @@ charakterystyki. Między innymi:
 \end{itemize}
 
 \section{Geometria}
+
+Rozmiar macierzy głośnikowej determinuje zakres częstotliwości w którym system
+jest w stanie odtwarzać dźwięk z dużą dokładnością. Wynika to z średnicy
+membrany głośników użytych $\phi_l$ i faktu, że przyjęte źródło liniowe jest
+tak naprawdę szeregiem dyskretnych źródeł, co oznacza że są oddalone o siebie o
+odległość $\Delta x$. Im większa macierz tym niższa jest częstotliwość która
+może być odtworzona, gdyż źródło jest wystarczająco duże w stosunku do długości
+fali akustycznej; warunek \eqref{eq:fmin} musi być spełniony:
+\begin{equation}
+  f_{min}>\frac{c}{L} \quad,	\label{eq:fmin}
+\end{equation}
+gdzie $L$~[m] to długość macierzy. Dla wyższej częstotliwości, zjawisko
+aliasingu przestrzennego musi być wzięte pod uwagę. Od pewnej częstotliwości,
+odległości pomiędzy głośnikami powodują różnice fazowe które powodują
+interferencje konstruktywną i destruktywną. To dzieje się dla częstotliwości
+powyżej granicy~\eqref{eq:fmax}:
+\begin{equation}
+  f_{max}=\frac{c}{2\Delta x \sin{\alpha_{max}}} \quad, \label{eq:fmax}
+\end{equation}
+gdzie $\alpha_{max}$ to maksymalny kąt pomiędzy padającą fala wirtualną a
+macierzą głośnikową. Natomiast ten efekt nie zniekształca dźwięku znacząca,
+wobec czego może być zaakceptowany~\cite{hq_rendering}.
+
+Wzięwszy pod uwagę możliwe rozwiązania, głośniki o wymiarze 3''
+(\SI{81}{\milli\meter}) średnicy zostały wybrane, rozmieszczone o
+$\Delta x=\SI{150}{\milli\meter}$.
+
 \section{Przetwarzanie sygnałów}\label{s:algorithm}
 \section{Symulacja}
 
