@@ -192,11 +192,38 @@ było zaprojektowanie modułowego systemu syntezy pola akustycznego, opartego na
 łatwo dostępnych komponentach i umożliwiającego stosunkowo prostą adaptację do
 wybranego zastosowania.
 
-\section{Teoria syntezy pola akustycznego}
+\section{Synteza pola akustycznego}
 
-[tutaj trzeba dać sporo o fizyce, wzorach, itp.]
+WFS (synteza pola akustycznego) oparta jest na zasadzie Huygensa: każdy punkt
+do którego dociera flaka akustyczna staje się źródłem nowej fali. Ta zasada
+jest zaimplementowana poprzez konstrukcję szeregu głośników, gdzie każdy z nich
+jest punktem do którego dotarła fala akustyczna wyemitowana przez wirtualne
+źródło dźwięku, przekazując falę dalej, a więc ją tworząc, co pokazuje rysunek
+\ref{r:Huygens}.
 
-\section{Projekt modułowego systemu WFS}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=.4]{vecgraphics/WFS_idea.pdf}
+  \caption{Zastosowanie zasady Huygensa w WFS: każdy głośnik jest punktem do
+    którego dociera fala wyemitowana przez wirtualne źródło -- nowym źródłem
+  dźwięku}
+  \label{r:Huygens}
+\end{figure}
+
+Początkowym równaniem w WFS jest całka Helmholtza-Huygensa (lub całka
+Kirchoffa-Helmholtza), analityczna metoda liczenia dystrybucji pola
+akustycznego, która pozwala znaleźć ciśnienie akustyczne z danego zestawu
+źródeł w każdym punkcie zdefiniowanej przestrzeni~\cite{snaka}. Jest używana do
+zdefiniowania funkcji opisującej ciśnienie akustyczne w pozycji głośnika, który
+jest używany jako wzbudnik. To podejście pozwala wziąć pod uwagę geometrię
+przestrzeni oraz stratę energii przez transmisję.
+
+\section{Projekt}
+\section{Geometria}
+\section{Przetwarzanie sygnałów}\label{s:algorithm}
+\section{Symulacja}
+
+\section{Realizacja}
 
 Zdecydowano się na zastosowanie rozwiązania opartego na komputerach Raspberry
 Pi Zero. Są one niewielkie i dysponują odpowiednią mocą obliczeniową potrzebną
