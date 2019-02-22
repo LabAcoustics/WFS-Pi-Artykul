@@ -376,11 +376,15 @@ przedstawiono w tabeli \ref{tab:paramglosnik}.
   \label{tab:paramglosnik}
 \end{table}
 
-Ponieważ moduły wzmacniaczy oraz przetworników A/C były dwukanałowe, na każdy
-moduł oraz komputer Raspberry Pi przypadły dwa głośniki. W celu zwiększenia
-możliwości adaptacji systemu do wymaganych warunków postanowiono każdy głośnik
-umieścić w oddzielnej obudowie tak, aby istniała możliwość zmiany zarówno
-odległości jak i kąta pomiędzy poszczególnymi źródłami macierzy głośnikowej.
+Każdy moduł składa się z komputera Raspberry Pi, modułu wzmacniacza Amp Zero oraz dwóch głośników.
+%Ponieważ moduły wzmacniaczy oraz przetworników A/C były dwukanałowe, na każdy
+%moduł oraz komputer Raspberry Pi przypadły dwa głośniki. 
+W celu zwiększenia
+możliwości adaptacji systemu do wymaganych warunków postanowiono umieścić każdy głośnik
+w oddzielnej obudowie. Takie rozwiązanie pozwala na otrzymanie macierzy głośników o dowolnych 
+kształtach i rozmiarach, co jest pożądane ze względu na dydaktyczne i naukowe zastosowania systemu.  
+%aby istniała możliwość zmiany zarówno
+%odległości jak i kąta pomiędzy poszczególnymi źródłami macierzy głośnikowej.
 Strukturę systemu przedstawia rysunek \ref{fig:schemat}.
 
 \begin{figure}[!tbh]
@@ -390,32 +394,36 @@ Strukturę systemu przedstawia rysunek \ref{fig:schemat}.
   \label{fig:schemat}
 \end{figure}
 
-Ważnym aspektem system jest koherencja głośników. Wobec tego system posiada
-połączenie synchronizujące, które synchronizuje przetwarzanie próbek dźwięku.
-Rozwiązuje to problem nieprzewidywalnego czasu przetwarzania w systemie nie
-wspierającym przetwarzania w czasie rzeczywistym.
+Ważnym aspektem systemu jest dokładność przetwarzania sygnałów pod względem wzajemnych 
+zależności czasowych sygnałów akustycznych dostarczanych do każdego z głośników. 
+Ściślej rzecz ujmując, w przetwarzaniu sygnałów przez poszczególne moduły nie mogą 
+występować dewiacje czasu przetwarzania. W związku z tym system posiada
+połączenie synchronizujące przetwarzanie próbek dźwięku.
+Rozwiązuje to problem nieprzewidywalnego czasu przetwarzania wobec faktu,
+że zastosowane komputery nie przetwarzają sygnału w czasie rzeczywistym.
 
 Połączenie synchronizujące wykorzystuje piny GPIO. Dane audio oraz informacje
-na temat lokalizacji przesyłane są bezprzewodowo przez sieć lokalną (LAN), co
-oznacza że system nie może odtwarzać dźwięku w czasie rzeczywistym, lecz to
-rozwiązanie pozwala na duże pole manewru i zmniejsza ilość kabli. Główna
+na temat lokalizacji głośników i wirtualnego źródła przesyłane są bezprzewodowo 
+przez sieć lokalną (LAN), co oznacza, że system nie może odtwarzać dźwięku w czasie 
+rzeczywistym, lecz pozwala na wygodne modyfikacje układu przestrzennego i zmniejsza ilość kabli. Główna
 jednostka systemu z aplikacją serwera kontroluje połączenie synchronizujące
 oraz zarządza procesorami audio. To pozwala na rozszerzanie i zwiększanie
 funkcjonalności systemu w przyszłości.
 
 \section{Wnioski}
-Zaprojektowany system, dzięki swojej modułowości pozwala na różnorodność
+
+Zaprojektowany system dzięki swojej modułowości pozwala na różnorodność
 zastosowań, w zależności od pożądanego rozmiaru macierzy głośnikowej,
 pozwalając użytkownikowi na wybór najodpowiedniejszej konfiguracji. Jest
 ponadto bardziej ekonomiczny niż system korzystający z dedykowanych procesorów
 przetwarzania sygnałów.
 
-Obecnie system jest w procesie testowania i dalszego rozwoju, wiec jego końcowe
+Obecnie system jest w fazie testowania i dalszego rozwoju, wiec jego końcowe
 działanie nie może być jeszcze zbadane.
 
-Jako że zastosowania WFS sięgają od tworzenia wrażenia przestrzenności do
-zwiększenia jakości akustyki pomieszczeń~\cite{enhancement} i badań
-psychoakustycznych, jak również edukacji, zaprojektowany system może być użyty
+Jako że zastosowania WFS sięgają od tworzenia wrażeń przestrzennych, poprzez
+poprawę jakości akustyki pomieszczeń~\cite{enhancement}, do badań
+psychoakustycznych, oraz dydaktyki, zaprojektowany system może być użyty
 do dalszego badania możliwości i ograniczeń syntezy pola akustycznego.
 
 \printbibliography
