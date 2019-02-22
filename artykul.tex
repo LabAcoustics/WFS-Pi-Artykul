@@ -272,14 +272,20 @@ charakterystyki. Między innymi:
 Rozmiar macierzy głośnikowej determinuje zakres częstotliwości w którym system
 jest w stanie odtwarzać dźwięk z dużą dokładnością. Wynika to ze średnicy
 membrany użytych głośników $\phi_l$ i faktu, że przyjęte w modelu teoretycznym źródło liniowe jest
-tak naprawdę szeregiem dyskretnych źródeł, co oznacza że są oddalone o siebie o
+tak naprawdę szeregiem dyskretnych źródeł, co oznacza że są oddalone od siebie o
 odległość $\Delta x$. Im większa macierz, tym niższa jest częstotliwość która
 może być odtworzona, gdyż źródło jest wystarczająco duże w stosunku do długości
 fali akustycznej; musi być spełniony warunek \eqref{eq:fmin}:
 \begin{equation}
   f_{min}>\frac{c}{L} \quad,	\label{eq:fmin}
 \end{equation}
-gdzie $L$~[m] to długość macierzy. 
+gdzie:\\
+	\indent \begin{tabular}{l c l}
+			$f_{min}$ [\si{\hertz}] & -- & najniższa częstotliwość możliwa do prawidłowej syntezy, \\
+			$c$ [\si[per-mode=symbol]{\metre\per\second}] & -- & prędkość propagacji fali dźwiękowej, \\
+			$L$ [\si{\metre}] & -- & długość macierzy głośników. \\
+		\end{tabular}
+
 
 Dla wyższych częstotliwości należy
 uwzględnić zjawisko aliasingu przestrzennego. Od pewnej częstotliwości
@@ -289,8 +295,14 @@ powyżej granicy~\eqref{eq:fmax}:
 \begin{equation}
   f_{max}=\frac{c}{2\Delta x \sin{\alpha_{max}}} \quad, \label{eq:fmax}
 \end{equation}
-gdzie $\alpha_{max}$ to maksymalny kąt pomiędzy padającą fala od źródła wirtualnego a
-macierzą głośnikową. Efekt ten nie zniekształca jednak dźwięku w sposób znaczący dla odbioru przez słuchacza,
+gdzie:\\
+	\indent \begin{tabular}{l c p{.7\textwidth}}
+			$f_{max}$ [\si{\hertz}] & -- & najwyższa częstotliwość wolna od aliasingu przestrzennego, \\
+			$\Delta x$ [\si{\metre}] & -- & odległość między środkami dwóch sąsiednich głośników, \\
+				$\alpha_{max}$ [\si{\radian}] & -- & maksymalny kąt pomiędzy falą padającą od źródła wirtualnego a~macierzą głośników.\\
+			\end{tabular}
+		
+Efekt ten nie zniekształca jednak dźwięku w sposób znaczący dla odbioru przez słuchacza,
 wobec czego może być zaakceptowany~\cite{hq_rendering}.
 
 Wziąwszy pod uwagę możliwe rozwiązania, wybrano głośniki o 3''
@@ -300,17 +312,22 @@ $\Delta x=\SI{150}{\milli\meter}$.
 \section{Przetwarzanie sygnałów}\label{s:algorithm}
 
 Na podstawie geometrii i całki Helmholtza-Huygensa 
-sygnały podawane na głośniki można opisać za pomocą
+widmo sygnału podawanego na $n$-ty głośnik $Q_n$ można opisać za pomocą
 wzoru~\eqref{eq:glosnik_f}~\cite{delay}:
 
 \begin{equation}
   Q_n(\bm{r}_n,\omega) = \sqrt{\frac{j\omega}{2\pi c}} A_n \frac {e^{-jk|\bm{r}_n-\bm{r}_m|}}{|\bm{r}_n-\bm{r}_m|^{1/2}} S(\omega) \quad,
   \label{eq:glosnik_f}
 \end{equation}
-
-gdzie $A_n$ to współczynnik wagowy amplitudy, wyrażenie
-$|\bm{r}_n-\bm{r}_m|$ opisuje odległość pomiędzy źródłem wirtualnym
-a $n$-tym głośnikiem, natomiast $S(\omega)$ to widmo sygnału źródłowego.
+gdzie:\\
+	\indent \begin{tabular}{l c p{.7\textwidth}}
+				$\bm{r}_n$ & -- & wektor opisujący położenie głośnika, \\
+				$\bm{r}_m$ & -- & wektor opisujący położenie źródła wirtualnego,\\
+				$\omega$ & -- & częstość kołowa, \\
+				$A_n$ & -- & współczynnik wagowy amplitudy,\\
+				$k$ & -- & liczba falowa,\\
+				$S(\omega)$ & -- & widmo sygnału źródłowego.
+			\end{tabular}\\
 
 W dziedzinie czasu sygnał źródła wirtualnego $s(t)$ dla każdego głośnika musi zostać pomnożony
 przez współczynnik wagowy amplitudy $a_n$, spleciony z filtrem o transmitancji 
@@ -340,7 +357,7 @@ pomiędzy modelami.
   \adjincludegraphics[width=0.7\columnwidth,trim={{.15\width} {.03\height} {.15\width} 0},clip]{vecgraphics/real_500Hz.png}
   \adjincludegraphics[width=0.7\columnwidth,trim={{.15\width} 0 {.15\width} {.02\height}},clip]{vecgraphics/virtual_500Hz.png}
   \caption{Wyniki symulacji pola akustycznego przy pomocy MES:
-    rozkład ciśnienia dla źródła rzeczywistego (góra) i macierzy głośnikowej
+    rozkład ciśnienia dla źródła punktowego (góra) i macierzy głośnikowej
   symulującej źródło wirtualne w tej samej pozycji (dół)}
   \label{r:fem}
 \end{figure}
@@ -400,12 +417,12 @@ zależności czasowych sygnałów akustycznych dostarczanych do każdego z gło�
 występować dewiacje czasu przetwarzania. W związku z tym system posiada
 połączenie synchronizujące przetwarzanie próbek dźwięku.
 Rozwiązuje to problem nieprzewidywalnego czasu przetwarzania wobec faktu,
-że zastosowane komputery nie przetwarzają sygnału w czasie rzeczywistym.
+że zastosowane komputery nie pracują w~oparciu o~systemy czasu rzeczywistego.
 
 Połączenie synchronizujące wykorzystuje piny GPIO. Dane audio oraz informacje
 na temat lokalizacji głośników i wirtualnego źródła przesyłane są bezprzewodowo 
 przez sieć lokalną (LAN), co oznacza, że system nie może odtwarzać dźwięku w czasie 
-rzeczywistym, lecz pozwala na wygodne modyfikacje układu przestrzennego i zmniejsza ilość kabli. Główna
+rzeczywistym, lecz pozwala na wygodne modyfikacje układu przestrzennego i zmniejsza ilość przewodów. Główna
 jednostka systemu z aplikacją serwera kontroluje połączenie synchronizujące
 oraz zarządza procesorami audio. To pozwala na rozszerzanie i zwiększanie
 funkcjonalności systemu w przyszłości.
@@ -419,7 +436,7 @@ ponadto bardziej ekonomiczny niż system korzystający z dedykowanych procesoró
 przetwarzania sygnałów.
 
 Obecnie system jest w fazie testowania i dalszego rozwoju, wiec jego końcowe
-działanie nie może być jeszcze zbadane.
+działanie zostanie zweryfikowane w~kolejnych etapach badań.
 
 Jako że zastosowania WFS sięgają od tworzenia wrażeń przestrzennych, poprzez
 poprawę jakości akustyki pomieszczeń~\cite{enhancement}, do badań
