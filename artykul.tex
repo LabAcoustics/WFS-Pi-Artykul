@@ -220,9 +220,9 @@ sytuacjach, gdy mamy do czynienia z odbiornikiem wykonującym ruch w strefie
 odsłuchu. Z pomocą przychodzą jednak systemy syntezy pola akustycznego (ang. \textit{Wave
 Field Synthesis} -- WFS), które bazując na dużej liczbie głośników są w stanie
 imitować fale akustyczne generowane przez źródła usytuowane nawet w dużej
-odległości oraz będące w ruchu, ale co najważniejsze nie ograniczają strefy
-odsłuchu do punktu. Obecnie istnieją różne warianty systemów WFS, projektowane
-często z myślą o konkretnym zastosowaniu. 
+odległości oraz będące w ruchu. Dzięki syntezie pola akustycznego w~przestrzeni odsłuchowej nie występuje ograniczenie strefy
+odsłuchu do punktu zachowując naturalną zależność zmiany kierunku docierania dźwięku źródła do słuchacza podczas przemieszczania się w~strefie odsłuchu. Dzięki takiemu rozwiązaniu nie zostają zaburzone psychoakustyczne systemu lokalizacji źródła dźwięku wykorzystujące niewielkie zmiany położenia głowy. Obecnie istnieją różne warianty systemów WFS, projektowane
+często z myślą o konkretnym zastosowaniu. Ze względu na wymaganą dużą liczbę kanałów przetwarzania dźwięku oraz dużą liczbę głośników systemy te są drogie i mało popularne. 
 
 Celem niniejszej pracy
 było zaprojektowanie modułowego systemu syntezy pola akustycznego, opartego na
@@ -235,7 +235,7 @@ Metoda WFS oparta jest na zasadzie Huygensa: każdy punkt
 do którego dociera fala akustyczna staje się źródłem nowej fali. Ta zasada
 jest zaimplementowana poprzez konstrukcję macierzy głośników, gdzie każdy z nich
 jest punktem do którego dotarła fala akustyczna wyemitowana przez wirtualne
-źródło dźwięku, przekazując falę dalej, a w praktyce tworząc ją, co pokazuje rysunek
+źródło dźwięku, przekazując falę dalej, a w praktyce tworząc pożądany kształt fali , co pokazuje rysunek
 \ref{r:Huygens}.
 
 \begin{figure}[!tbh]
