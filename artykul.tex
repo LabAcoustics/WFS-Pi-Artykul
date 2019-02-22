@@ -313,8 +313,8 @@ $|\bm{r}_n-\bm{r}_m|$ opisuje odległość pomiędzy źródłem wirtualnym
 a $n$-tym głośnikiem, natomiast $S(\omega)$ to widmo sygnału źródłowego.
 
 W dziedzinie czasu sygnał źródła wirtualnego $s(t)$ dla każdego głośnika musi zostać pomnożony
-przez współczynnik wagowy amplitudy $a_n$, przefiltrowany przez odwrotną
-transformatę Fouriera $\sqrt{\frac{j\omega}{2\pi c}}$, spleciony z $h(t)$, i
+przez współczynnik wagowy amplitudy $a_n$, spleciony z filtrem o transmitancji 
+$\sqrt{\frac{j\omega}{2\pi c}}$, którego współczynniki są oznaczane jako $h(t)$, i
 opóźniony o $\tau_n$, co można zapisać w postaci~\eqref{eq:glosnik_t}~\cite{enhancement}:
 
 \begin{equation}
@@ -323,16 +323,16 @@ opóźniony o $\tau_n$, co można zapisać w postaci~\eqref{eq:glosnik_t}~\cite{
 
 \section{Symulacja}
 
-By przeprowadzić ewaluację dokładności algorytmu, symulacja dystrybucji pola
-akustycznego została przeprowadzona. Dwa modele zostały stworzone: jeden z
-źródłem rzeczywistym na pozycji $S$ i przegrodą z otworami imitującą macierz
-głośnikową, pokazujący estymowaną przestrzeń syntezy i drugi ze źródłami
-punktowymi emulującymi głośniki, emitującymi sygnał ze źródła wirtualnego $S$,
-wyznaczony przez algorytm wyznaczony w sekcji~\ref{s:algorithm}.
+Aby ocenić dokładność algorytmu przeprowadzono symulacje rozkładu pola akustycznego.
+Stworzono dwa modele: jeden ze
+źródłem rzeczywistym w pozycji $S$ i przegrodą z otworami, imitującą macierz
+głośnikową, ilustrujący szacowaną przestrzeń syntezy, i drugi ze źródłami
+punktowymi emulującymi głośniki emitujące sygnał ze źródła wirtualnego $S$,
+wyznaczony przez algorytm opisany w części~\ref{s:algorithm}.
 
-Dla każdego modelu, analiza wykorzystująca MES została przeprowadzona, by
-porównać pole akustyczne wytworzone przez źródło rzeczywiste i głośniki
-symulujące je. Wyniki przedstawia rysunek~\ref{r:fem}, pokazując dużą zbieżność
+Dla każdego modelu przeprowadzono analizę MES, w celu porównania pola akustycznego
+wytworzonego przez źródło rzeczywiste i głośniki
+symulujące je. Wyniki przedstawia rysunek~\ref{r:fem}, co pokazuje dużą zbieżność
 pomiędzy modelami.
 
 \begin{figure}[!tbh]
@@ -349,9 +349,9 @@ pomiędzy modelami.
 \section{Realizacja}
 
 Zdecydowano się na zastosowanie rozwiązania opartego na komputerach Raspberry
-Pi Zero. Są one niewielkie i dysponują odpowiednią mocą obliczeniową potrzebną
-do przetwarzania sygnałów wysyłanych na odpowiednie kanały. Przetwarzanie
-sygnału na z cyfrowego na analogowy oraz jego wzmocnienie jest realizowane
+Pi Zero. Mają one niewielkie wymiary i dysponują odpowiednią mocą obliczeniową potrzebną
+do przetwarzania sygnałów wysyłanych na poszczególne kanały. Przetwarzanie
+sygnału z cyfrowego na analogowy oraz jego wzmocnienie jest realizowane
 przez moduł Amp Zero pHAT firmy JustBoom. Jest to połączenie wysokiej jakości
 przetwornika analogowo-cyfrowego oraz wzmacniacza klasy D o mocy wyjściowej
 $2\times40\si{\watt}$. Sygnał może być próbkowany z częstotliwością
@@ -359,7 +359,7 @@ $2\times40\si{\watt}$. Sygnał może być próbkowany z częstotliwością
 wzmacniacza klasy D umożliwia osiąganie odpowiedniej mocy głośników bez
 zużywania nadmiernej ilości energii oraz zachowując niewielkie rozmiary
 pojedynczych modułów. 
-Wybrano głośniki firmy Faital Pro model 3FE25. Podstawowe parametry
+Wybrano głośniki firmy Faital Pro model 3FE25, których podstawowe parametry
 przedstawiono w tabeli \ref{tab:paramglosnik}.
 
 \begin{table}[!tbh]
