@@ -216,7 +216,7 @@ najistotniejszych trudności napotykanych podczas projektowania systemu
 reprodukcji dźwięku jest ograniczenie przestrzeni dokładnego odwzorowania do
 punktu, a właściwie niewielkiego obszaru wokół niego (tzw. \textit{sweet spot}).
 Istnienie takiego ograniczenia wyklucza zastosowanie takich systemów w
-sytuacjach, gdy mamy do czynienia z odbiornikiem wykonującym ruch w strefie
+sytuacjach, gdy mamy do czynienia z~odbiorcą wykonującym ruch w strefie
 odsłuchu. Z pomocą przychodzą jednak systemy syntezy pola akustycznego (ang. \textit{Wave
 Field Synthesis} -- WFS), które bazując na dużej liczbie głośników są w stanie
 imitować fale akustyczne generowane przez źródła usytuowane nawet w dużej
@@ -242,13 +242,12 @@ jest punktem do którego dotarła fala akustyczna wyemitowana przez wirtualne
   \centering
   \includegraphics[scale=.4]{vecgraphics/WFS_idea.pdf}
   \caption{Zastosowanie zasady Huygensa w WFS: każdy głośnik jest punktem do
-    którego dociera fala wyemitowana przez wirtualne źródło -- nowym źródłem
-  dźwięku}
+    którego dociera fala wyemitowana przez wirtualne źródło}
   \label{r:Huygens}
 \end{figure}
 
 Podstawowym równaniem w WFS jest całka Helmholtza-Huygensa (lub całka
-Kirchoffa-Helmholtza), analityczna metoda liczenia rozkładu pola
+Kirchoffa-Helmholtza), analityczna metoda opisu rozkładu pola
 akustycznego, która pozwala wyznaczyć ciśnienie akustyczne pochodzące od danego zestawu
 źródeł w każdym punkcie zdefiniowanej przestrzeni~\cite{snaka}. Jest używana do
 zdefiniowania funkcji opisującej ciśnienie akustyczne w pozycji głośnika, który
