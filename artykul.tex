@@ -211,18 +211,21 @@ Reprodukcja dźwięku jest bardzo szerokim zagadnieniem akustyki. W obecnych
 czasach istnieje wiele technik pozwalających na odtworzenie panujących w
 wybranym miejscu warunków akustycznych w zgoła innym otoczeniu. Złożoność
 zjawisk związanych z propagacją fali akustycznej w rzeczywistym środowisku
-sprawia, że omawiane zagadnienie staję się złożonym problemem. Jedną z
-najistotniejszych trudności napotykanych podczas projektowania systemu
-reprodukcji dźwięku jest ograniczenie przestrzeni dokładnego odwzorowania do
+sprawia, że omawiane zagadnienie staje się złożonym problemem. 
+W większości stosowanych systemów reprodukcji dźwięku, takich jak systemy 
+ambisoniczne czy wielokanałowe (5.1, 7.1) występuje problem
+ograniczenia przestrzeni dokładnego odwzorowania do
 punktu, a właściwie niewielkiego obszaru wokół niego (tzw. \textit{sweet spot}).
+%Jedną z najistotniejszych trudności napotykanych podczas projektowania systemu
+%reprodukcji dźwięku jest ograniczenie przestrzeni dokładnego odwzorowania do
+%punktu, a właściwie niewielkiego obszaru wokół niego (tzw. \textit{sweet spot}).
 Istnienie takiego ograniczenia wyklucza zastosowanie takich systemów w
 sytuacjach, gdy mamy do czynienia z~odbiorcą wykonującym ruch w strefie
 odsłuchu. Z pomocą przychodzą jednak systemy syntezy pola akustycznego (ang. \textit{Wave
 Field Synthesis} -- WFS), które bazując na dużej liczbie głośników są w stanie
 imitować fale akustyczne generowane przez źródła usytuowane nawet w dużej
 odległości oraz będące w ruchu. Dzięki syntezie pola akustycznego w~przestrzeni odsłuchowej nie występuje ograniczenie strefy
-odsłuchu do punktu zachowując naturalną zależność zmiany kierunku docierania dźwięku źródła do słuchacza podczas przemieszczania się w~strefie odsłuchu. Dzięki takiemu rozwiązaniu nie zostają zaburzone psychoakustyczne systemu lokalizacji źródła dźwięku wykorzystujące niewielkie zmiany położenia głowy. Obecnie istnieją różne warianty systemów WFS, projektowane
-często z myślą o konkretnym zastosowaniu. Ze względu na wymaganą dużą liczbę kanałów przetwarzania dźwięku oraz dużą liczbę głośników systemy te są drogie i mało popularne. 
+odsłuchu do punktu, a~jednocześnie zachowana jest naturalna zależność zmiany kierunku docierania dźwięku emitowanego przez źródło do słuchacza podczas przemieszczania się w~strefie odsłuchu. Dzięki takiemu rozwiązaniu nie zostają zaburzone psychoakustyczne systemy lokalizacji źródła dźwięku, wykorzystujące niewielkie zmiany położenia głowy. Obecnie istnieją różne warianty systemów WFS, projektowane często z myślą o konkretnym zastosowaniu. Ze względu na wymaganą dużą liczbę kanałów przetwarzania dźwięku, a co za tym idzie dużą liczbę głośników, systemy te są drogie i mało popularne. 
 
 Celem niniejszej pracy
 było zaprojektowanie modułowego systemu syntezy pola akustycznego, opartego na
@@ -235,7 +238,7 @@ Metoda WFS oparta jest na zasadzie Huygensa: każdy punkt
 do którego dociera fala akustyczna staje się źródłem nowej fali. Ta zasada
 jest zaimplementowana poprzez konstrukcję macierzy głośników, gdzie każdy z nich
 jest punktem do którego dotarła fala akustyczna wyemitowana przez wirtualne
-źródło dźwięku, przekazując falę dalej, a w praktyce tworząc pożądany kształt fali , co pokazuje rysunek
+źródło dźwięku, przekazując falę dalej, a w praktyce tworząc pożądany kształt fali~\cite{hq_rendering}, co pokazuje rysunek
 \ref{r:Huygens}.
 
 \begin{figure}[!tbh]
@@ -252,18 +255,18 @@ akustycznego, która pozwala wyznaczyć ciśnienie akustyczne pochodzące od dan
 źródeł w każdym punkcie zdefiniowanej przestrzeni~\cite{snaka}. Jest używana do
 zdefiniowania funkcji opisującej ciśnienie akustyczne w pozycji głośnika, który
 jest używany jako wzbudnik. To podejście pozwala uwzględnić geometrię
-przestrzeni oraz stratę energii przez transmisję.
+przestrzeni oraz straty energii podczas propagacji fali dźwiękowej.
 
 \section{Projekt}
 
-Przed konstrukcją systemu podjęto kroki w celu wyznaczenia jego pożądanej
+Przed przystąpieniem do konstrukcji systemu podjęto kroki w celu wyznaczenia jego pożądanej
 charakterystyki. Między innymi:
 \begin{itemize}
   \item wybrano rozmiar macierzy głośnikowej i dobrano odpowiednie przetworniki
-  na podstawie wybranego zakresu częstotliwości oraz pozostałe elementy systemu;
+  na podstawie wybranego zakresu częstotliwości oraz dobrano pozostałe elementy systemu;
   \item zaprojektowano algorytm przetwarzania sygnałów;
   \item przeprowadzono symulacje w oprogramowaniu wykorzystującym metodę
-    elementów skończonych (MES), by zweryfikować dokładność algorytmu.
+    elementów skończonych (MES), by zweryfikować działanie algorytmu.
 \end{itemize}
 
 \section{Geometria}
@@ -287,9 +290,9 @@ gdzie:\\
 
 
 Dla wyższych częstotliwości należy
-uwzględnić zjawisko aliasingu przestrzennego. Od pewnej częstotliwości
-odległości pomiędzy głośnikami powodują różnice fazowe które powodują
-interferencję konstruktywną i destruktywną. Ma to miejsce dla częstotliwości
+uwzględnić zjawisko aliasingu przestrzennego. Powyżej pewnej częstotliwości
+odległości pomiędzy głośnikami powodują różnice fazowe, w wyniku których występuje
+konstruktywna i destruktywna interferencja. Dzieje się tak dla częstotliwości
 powyżej granicy~\eqref{eq:fmax}:
 \begin{equation}
   f_{max}=\frac{c}{2\Delta x \sin{\alpha_{max}}} \quad, \label{eq:fmax}
@@ -302,10 +305,10 @@ gdzie:\\
 			\end{tabular}
 		
 Efekt ten nie zniekształca jednak dźwięku w sposób znaczący dla odbioru przez słuchacza,
-wobec czego może być zaakceptowany~\cite{hq_rendering}.
+wobec czego ba tym etapie może być zaakceptowany~\cite{hq_rendering}.
 
 Wziąwszy pod uwagę możliwe rozwiązania, wybrano głośniki o 3''
-(\SI{81}{\milli\meter}) średnicy i rozmieszczono co
+(\SI{81}{\milli\meter}) średnicy, które rozmieszczono co
 $\Delta x=\SI{150}{\milli\meter}$.
 
 \section{Przetwarzanie sygnałów}\label{s:algorithm}
