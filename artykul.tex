@@ -260,7 +260,8 @@ przestrzeni oraz straty energii podczas propagacji fali dźwiękowej.
 \section{Projekt}
 
 Przed przystąpieniem do konstrukcji systemu podjęto kroki w celu wyznaczenia jego pożądanej
-charakterystyki. Między innymi:
+charakterystyki oraz wyboru sposobu realizacji pozwalającego na jak najlepszą 
+realizację przyjętych założeń. W ramach etapu projektowania między innymi:
 \begin{itemize}
   \item wybrano rozmiar macierzy głośnikowej i dobrano odpowiednie przetworniki
   na podstawie wybranego zakresu częstotliwości oraz dobrano pozostałe elementy systemu;
@@ -272,10 +273,10 @@ charakterystyki. Między innymi:
 \section{Geometria}
 
 Rozmiar macierzy głośnikowej determinuje zakres częstotliwości w którym system
-jest w stanie odtwarzać dźwięk z dużą dokładnością. Wynika to ze średnicy
-membrany użytych głośników $\phi_l$ i faktu, że przyjęte w modelu teoretycznym źródło liniowe jest
-tak naprawdę szeregiem dyskretnych źródeł, co oznacza że są oddalone od siebie o
-odległość $\Delta x$. Im większa macierz, tym niższa jest częstotliwość która
+jest w~stanie odtwarzać dźwięk z dużą dokładnością. Wynika to z faktu, że przyjęte 
+w modelu teoretycznym źródło liniowe jest tak naprawdę szeregiem dyskretnych źródeł, 
+oddalonych od siebie o odległość $\Delta x$, a każdy głośnik ma określone wymiary, z których
+najistotniejsza w tym aspekcie jest średnica $\phi_l$. Im większa macierz, tym niższa jest częstotliwość która
 może być odtworzona, gdyż źródło jest wystarczająco duże w stosunku do długości
 fali akustycznej; musi być spełniony warunek \eqref{eq:fmin}:
 \begin{equation}
@@ -286,7 +287,7 @@ gdzie:\\
 			$f_{min}$ [\si{\hertz}] & -- & najniższa częstotliwość możliwa do prawidłowej syntezy, \\
 			$c$ [\si[per-mode=symbol]{\metre\per\second}] & -- & prędkość propagacji fali dźwiękowej, \\
 			$L$ [\si{\metre}] & -- & długość macierzy głośników. \\
-		\end{tabular}
+		\end{tabular}\\
 
 
 Dla wyższych częstotliwości należy
@@ -302,18 +303,18 @@ gdzie:\\
 			$f_{max}$ [\si{\hertz}] & -- & najwyższa częstotliwość wolna od aliasingu przestrzennego, \\
 			$\Delta x$ [\si{\metre}] & -- & odległość między środkami dwóch sąsiednich głośników, \\
 				$\alpha_{max}$ [\si{\radian}] & -- & maksymalny kąt pomiędzy falą padającą od źródła wirtualnego a~macierzą głośników.\\
-			\end{tabular}
+			\end{tabular}\\
 		
 Efekt ten nie zniekształca jednak dźwięku w sposób znaczący dla odbioru przez słuchacza,
-wobec czego ba tym etapie może być zaakceptowany~\cite{hq_rendering}.
+wobec czego na tym etapie może być zaakceptowany~\cite{hq_rendering}.
 
-Wziąwszy pod uwagę możliwe rozwiązania, wybrano głośniki o 3''
-(\SI{81}{\milli\meter}) średnicy, które rozmieszczono co
+Wziąwszy pod uwagę możliwe rozwiązania, wybrano głośniki o średnicy \SI{3}{\inch}
+(\SI{81}{\milli\meter}), które rozmieszczono co
 $\Delta x=\SI{150}{\milli\meter}$.
 
 \section{Przetwarzanie sygnałów}\label{s:algorithm}
 
-Na podstawie geometrii i całki Helmholtza-Huygensa 
+Dla określonej geometrii układu źródło wirtualne -- macierz głośników, korzystając z~całki Helmholtza-Huygensa,
 widmo sygnału podawanego na $n$-ty głośnik $Q_n$ można opisać za pomocą
 wzoru~\eqref{eq:glosnik_f}~\cite{delay}:
 
@@ -334,7 +335,7 @@ gdzie:\\
 W dziedzinie czasu sygnał źródła wirtualnego $s(t)$ dla każdego głośnika musi zostać pomnożony
 przez współczynnik wagowy amplitudy $a_n$, spleciony z filtrem o transmitancji 
 $\sqrt{\frac{j\omega}{2\pi c}}$, którego współczynniki są oznaczane jako $h(t)$, i
-opóźniony o $\tau_n$, co można zapisać w postaci~\eqref{eq:glosnik_t}~\cite{enhancement}:
+opóźniony o $\tau_n$, co można zapisać w~postaci~\eqref{eq:glosnik_t}~\cite{enhancement}:
 
 \begin{equation}
   q_n(t) = a_n\left[h(t)*s(t)*\delta(t-\tau_n)\right] \quad. \label{eq:glosnik_t}
