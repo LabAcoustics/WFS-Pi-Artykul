@@ -238,7 +238,7 @@ Metoda WFS oparta jest na zasadzie Huygensa: każdy punkt
 do którego dociera fala akustyczna staje się źródłem nowej fali. Ta zasada
 jest zaimplementowana poprzez konstrukcję macierzy głośników, gdzie każdy z~nich
 jest punktem do którego dotarła fala akustyczna wyemitowana przez wirtualne
-źródło dźwięku. Dzięki odpowiedniemu przetworzeniu sygnałów za pomocą każdego z~głośników fala przekazywana jest dalej już za pośrednictwem powietrza -- w~praktyce tworząc pożądany kształt fali~\cite{hq_rendering}, co pokazuje rysunek
+źródło dźwięku. Dzięki odpowiedniemu przetworzeniu sygnałów, za pomocą każdego z~głośników fala „przekazywana” jest dalej drogą powietrzną -- w~praktyce fale emitowane przez głośniki nakładają się, formując pożądany kształt czoła fali~\cite{hq_rendering}, co pokazuje rysunek
 \ref{r:Huygens}.
 
 \begin{figure}[!tbh]
@@ -249,15 +249,16 @@ jest punktem do którego dotarła fala akustyczna wyemitowana przez wirtualne
   \label{r:Huygens}
 \end{figure}
 
-Podstawowym równaniem w WFS jest całka Helmholtza-Huygensa (lub całka
+Podstawowym równaniem w WFS jest całka Helmholtza-Huygensa (inaczej zwana całką
 Kirchoffa-Helmholtza), analityczna metoda opisu rozkładu pola
 akustycznego, która pozwala wyznaczyć ciśnienie akustyczne pochodzące od danego zestawu
 źródeł w każdym punkcie zdefiniowanej przestrzeni~\cite{snaka}. Jest używana do
 zdefiniowania funkcji opisującej ciśnienie akustyczne w pozycji głośnika, który
-jest używany jako wzbudnik. To podejście pozwala uwzględnić geometrię
-przestrzeni oraz straty energii podczas propagacji fali dźwiękowej, pozwalając na wyznaczenie amplitudy i~fazy sygnału dla każdego z~głośników. 
+z~jednej strony traktowany jest jako odbiornik (względem źródła wirtualnego), a~z~drugiej --
+jako źródło dźwięku. To podejście pozwala uwzględnić geometrię
+przestrzeni oraz straty energii podczas propagacji fali dźwiękowej i~wyznaczyć amplitudy i~fazy sygnału dla każdego z~głośników. 
 
-\section{Projekt}
+\section{Projekt systemu}
 
 Przed przystąpieniem do konstrukcji systemu podjęto kroki w celu wyznaczenia jego pożądanej
 charakterystyki oraz wyboru sposobu realizacji pozwalającego na jak najlepszą 
@@ -270,7 +271,7 @@ realizację przyjętych założeń. W ramach etapu projektowania między innymi:
     elementów skończonych (MES), by zweryfikować działanie algorytmu.
 \end{itemize}
 
-\section{Geometria}
+\subsection{Geometria}
 
 Rozmiar macierzy głośnikowej determinuje zakres częstotliwości w którym system
 jest w~stanie odtwarzać dźwięk z dużą dokładnością. Wynika to z faktu, że przyjęte 
@@ -313,7 +314,7 @@ Wziąwszy pod uwagę możliwe rozwiązania, wybrano głośniki o średnicy \SI{3
 (\SI{81}{\milli\meter}), które rozmieszczono co
 $\Delta x=\SI{150}{\milli\meter}$.
 
-\section{Przetwarzanie sygnałów}\label{s:algorithm}
+\subsection{Przetwarzanie sygnałów}\label{s:algorithm}
 
 Dla określonej geometrii układu źródło wirtualne -- macierz głośników, korzystając z~całki Helmholtza-Huygensa,
 widmo sygnału podawanego na $n$-ty głośnik $Q_n$ można opisać za pomocą
@@ -342,7 +343,7 @@ opóźniony o $\tau_n$, co można zapisać w~postaci~\eqref{eq:glosnik_t}~\cite{
   q_n(t) = a_n\left[h(t)*s(t)*\delta(t-\tau_n)\right] \quad. \label{eq:glosnik_t}
 \end{equation}
 
-\section{Symulacja}
+\subsection{Symulacja}
 
 Aby ocenić dokładność algorytmu przeprowadzono symulacje rozkładu pola akustycznego.
 Stworzono dwa modele: jeden ze
@@ -356,10 +357,10 @@ wytworzonego przez źródło rzeczywiste i głośniki
 symulujące je. Wyniki przedstawia rysunek~\ref{r:fem}, co pokazuje dużą zbieżność
 pomiędzy modelami.
 
-\begin{figure}[!tbh]
+\begin{figure}[!ht]
   \centering
-  \adjincludegraphics[width=0.7\columnwidth,trim={{.15\width} {.03\height} {.15\width} 0},clip]{vecgraphics/real_500Hz.png}
-  \adjincludegraphics[width=0.7\columnwidth,trim={{.15\width} 0 {.15\width} {.02\height}},clip]{vecgraphics/virtual_500Hz.png}
+  \adjincludegraphics[height=.47\textheight,trim={{.15\width} {.03\height} {.15\width} 0},clip]{vecgraphics/real_500Hz.png}
+  \adjincludegraphics[height=.47\textheight,trim={{.15\width} 0 {.15\width} {.02\height}},clip]{vecgraphics/virtual_500Hz.png}
   \caption{Wyniki symulacji pola akustycznego przy pomocy MES:
     rozkład ciśnienia dla źródła punktowego (góra) i macierzy głośnikowej
   symulującej źródło wirtualne w tej samej pozycji (dół)}
@@ -383,7 +384,7 @@ pojedynczych modułów.
 Wybrano głośniki firmy Faital Pro model 3FE25, których podstawowe parametry
 przedstawiono w tabeli \ref{tab:paramglosnik}.
 
-\begin{table}[!tbh]
+\begin{table}[!ht]
   \centering
   \caption{Parametry głośnika Faital Pro 3FE25}
   \begin{tabular}{|c|c|} \hline
@@ -408,7 +409,7 @@ kształtach i rozmiarach, co jest pożądane ze względu na dydaktyczne i naukow
 %odległości jak i kąta pomiędzy poszczególnymi źródłami macierzy głośnikowej.
 Strukturę systemu przedstawia rysunek \ref{fig:schemat}.
 
-\begin{figure}[!tbh]
+\begin{figure}[!ht]
   \centering
   \import{./vecgraphics/}{scheme.pdf_tex}
   \caption{Schemat projektowanego systemu WFS}
@@ -428,8 +429,8 @@ na temat lokalizacji głośników i wirtualnego źródła przesyłane są bezprz
 przez sieć lokalną (LAN), co oznacza, że system nie może odtwarzać dźwięku w czasie 
 rzeczywistym, lecz pozwala na wygodne modyfikacje układu przestrzennego i zmniejsza ilość przewodów. Główna
 jednostka systemu z aplikacją serwera kontroluje połączenie synchronizujące
-oraz zarządza procesorami audio. To pozwala na rozszerzanie i zwiększanie
-funkcjonalności systemu w przyszłości.
+oraz zarządza procesorami audio. To pozwala na rozszerzanie systemu w~przyszłości 
+i~zwiększanie jego funkcjonalności.
 
 \section{Wnioski}
 
@@ -439,12 +440,13 @@ pozwalając użytkownikowi na wybór najodpowiedniejszej konfiguracji. Jest
 ponadto bardziej ekonomiczny niż system korzystający z dedykowanych procesorów
 przetwarzania sygnałów.
 
-Obecnie system jest w fazie testowania i dalszego rozwoju, wiec jego końcowe
+Obecnie system jest w fazie testowania i dalszego rozwoju, więc jego końcowe
 działanie zostanie zweryfikowane w~kolejnych etapach badań.
 
-Jako że zastosowania WFS sięgają od tworzenia wrażeń przestrzennych, poprzez
+Zastosowania WFS sięgają od tworzenia wrażeń przestrzennych, poprzez
 poprawę jakości akustyki pomieszczeń~\cite{enhancement}, do badań
-psychoakustycznych, oraz dydaktyki, zaprojektowany system może być użyty
+psychoakustycznych, oraz dydaktyki -- zaprojektowany system można dostosować
+do każdego z~nich. Ponadto może być on użyty
 do dalszego badania możliwości i ograniczeń syntezy pola akustycznego.
 
 \printbibliography
