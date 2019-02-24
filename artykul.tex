@@ -371,18 +371,17 @@ pomiędzy modelami.
 \section{Realizacja}
 
 Zdecydowano się na zastosowanie rozwiązania opartego na komputerach Raspberry
-Pi Zero. Mają one niewielkie wymiary i dysponują odpowiednią mocą obliczeniową potrzebną
-do przetwarzania sygnałów wysyłanych na poszczególne kanały. Przetwarzanie
-sygnału z cyfrowego na analogowy oraz jego wzmocnienie jest realizowane
-przez moduł Amp Zero pHAT firmy JustBoom. Jest to połączenie wysokiej jakości
-przetwornika analogowo-cyfrowego oraz wzmacniacza klasy D o mocy wyjściowej
-$2\times40\si{\watt}$. Sygnał może być próbkowany z częstotliwością
-\SI{192}{\kilo\hertz} i rozdzielczością \SI{32}{\bit}, z kolei zastosowanie
-wzmacniacza klasy D umożliwia osiąganie odpowiedniej mocy głośników bez
-zużywania nadmiernej ilości energii oraz zachowując niewielkie rozmiary
-pojedynczych modułów. 
-Wybrano głośniki firmy Faital Pro model 3FE25, których podstawowe parametry
-przedstawiono w tabeli \ref{tab:paramglosnik}.
+Pi Zero. Mają one niewielkie wymiary i dysponują odpowiednią mocą obliczeniową
+potrzebną do przetwarzania sygnałów wysyłanych na poszczególne kanały.
+Przetwarzanie sygnału z cyfrowego na analogowy oraz jego wzmocnienie jest
+realizowane przez moduł Amp Zero pHAT firmy JustBoom. Jest to połączenie
+wysokiej jakości przetwornika analogowo-cyfrowego oraz wzmacniacza klasy D o
+mocy wyjściowej $2\times40\si{\watt}$. Sygnał może być próbkowany z
+częstotliwością \SI{192}{\kilo\hertz} i rozdzielczością \SI{32}{\bit}, z kolei
+zastosowanie wzmacniacza klasy D umożliwia osiąganie odpowiedniej mocy
+głośników bez zużywania nadmiernej ilości energii oraz zachowując niewielkie
+rozmiary pojedynczych modułów.  Wybrano głośniki firmy Faital Pro model 3FE25,
+których podstawowe parametry przedstawiono w tabeli \ref{tab:paramglosnik}.
 
 \begin{table}[!ht]
   \centering
@@ -398,39 +397,44 @@ przedstawiono w tabeli \ref{tab:paramglosnik}.
   \label{tab:paramglosnik}
 \end{table}
 
-Każdy moduł składa się z komputera Raspberry Pi, modułu wzmacniacza Amp Zero oraz dwóch głośników.
+Każdy moduł składa się z komputera Raspberry Pi, modułu wzmacniacza Amp Zero
+oraz dwóch głośników.
 %Ponieważ moduły wzmacniaczy oraz przetworników A/C były dwukanałowe, na każdy
 %moduł oraz komputer Raspberry Pi przypadły dwa głośniki. 
-W celu zwiększenia
-możliwości adaptacji systemu do wymaganych warunków postanowiono umieścić każdy głośnik
-w oddzielnej obudowie. Takie rozwiązanie pozwala na otrzymanie macierzy głośników o dowolnych 
-kształtach i rozmiarach, co jest pożądane ze względu na dydaktyczne i naukowe zastosowania systemu.  
+W celu zwiększenia możliwości adaptacji systemu do wymaganych warunków
+postanowiono umieścić każdy głośnik w oddzielnej obudowie. Takie rozwiązanie
+pozwala na otrzymanie macierzy głośników o dowolnych kształtach i rozmiarach,
+co jest pożądane ze względu na dydaktyczne i naukowe zastosowania systemu.  
 %aby istniała możliwość zmiany zarówno
 %odległości jak i kąta pomiędzy poszczególnymi źródłami macierzy głośnikowej.
 Strukturę systemu przedstawia rysunek \ref{fig:schemat}.
 
-\begin{figure}[!ht]
+Ważnym aspektem systemu jest dokładność przetwarzania sygnałów pod względem
+wzajemnych zależności czasowych sygnałów akustycznych dostarczanych do każdego
+z głośników.  Ściślej rzecz ujmując, w przetwarzaniu sygnałów przez
+poszczególne moduły nie mogą występować dewiacje czasu przetwarzania. W związku
+z tym system posiada połączenie synchronizujące przetwarzanie próbek dźwięku.
+Rozwiązuje to problem nieprzewidywalnego czasu przetwarzania wobec faktu, że
+zastosowane komputery nie pracują w~oparciu o~systemy czasu rzeczywistego.
+
+\begin{figure}[H]
   \centering
   \import{./vecgraphics/}{scheme.pdf_tex}
   \caption{Schemat projektowanego systemu WFS}
   \label{fig:schemat}
 \end{figure}
 
-Ważnym aspektem systemu jest dokładność przetwarzania sygnałów pod względem wzajemnych 
-zależności czasowych sygnałów akustycznych dostarczanych do każdego z głośników. 
-Ściślej rzecz ujmując, w przetwarzaniu sygnałów przez poszczególne moduły nie mogą 
-występować dewiacje czasu przetwarzania. W związku z tym system posiada
-połączenie synchronizujące przetwarzanie próbek dźwięku.
-Rozwiązuje to problem nieprzewidywalnego czasu przetwarzania wobec faktu,
-że zastosowane komputery nie pracują w~oparciu o~systemy czasu rzeczywistego.
-
-Połączenie synchronizujące wykorzystuje piny GPIO. Dane audio oraz informacje
-na temat lokalizacji głośników i wirtualnego źródła przesyłane są bezprzewodowo 
-przez sieć lokalną (LAN), co oznacza, że system nie może odtwarzać dźwięku w czasie 
-rzeczywistym, lecz pozwala na wygodne modyfikacje układu przestrzennego i zmniejsza ilość przewodów. Główna
-jednostka systemu z aplikacją serwera kontroluje połączenie synchronizujące
-oraz zarządza procesorami audio. To pozwala na rozszerzanie systemu w~przyszłości 
-i~zwiększanie jego funkcjonalności.
+Połączenie synchronizujące wykorzystuje piny GPIO. Oprogramowanie służące do
+synchronizacji oraz kontroli systemu napisano w~oparciu o~język Rust, którego
+zaletą jest wysoka wydajnośc (na poziomie języka C). Skorzystano z gotowej
+biblioteki \emph{RPPAL}~\cite{RPPAL} obsługującej piny GPIO w~mikrokomputerach
+Raspberry Pi. Dane audio oraz informacje na temat lokalizacji głośników i
+wirtualnego źródła przesyłane są bezprzewodowo przez sieć lokalną (LAN), co
+oznacza, że system nie może odtwarzać dźwięku w czasie rzeczywistym, lecz
+pozwala na wygodne modyfikacje układu przestrzennego i zmniejsza ilość
+przewodów. Główna jednostka systemu z aplikacją serwera kontroluje połączenie
+synchronizujące oraz zarządza procesorami audio. To pozwala na rozszerzanie
+systemu w~przyszłości i~zwiększanie jego funkcjonalności.
 
 \section{Wnioski}
 
@@ -443,11 +447,11 @@ przetwarzania sygnałów.
 Obecnie system jest w fazie testowania i dalszego rozwoju, więc jego końcowe
 działanie zostanie zweryfikowane w~kolejnych etapach badań.
 
-Zastosowania WFS sięgają od tworzenia wrażeń przestrzennych, poprzez
-poprawę jakości akustyki pomieszczeń~\cite{enhancement}, do badań
-psychoakustycznych, oraz dydaktyki -- zaprojektowany system można dostosować
-do każdego z~nich. Ponadto może być on użyty
-do dalszego badania możliwości i ograniczeń syntezy pola akustycznego.
+Zastosowania WFS sięgają od tworzenia wrażeń przestrzennych, poprzez poprawę
+jakości akustyki pomieszczeń~\cite{enhancement}, do badań psychoakustycznych,
+oraz dydaktyki -- zaprojektowany system można dostosować do każdego z~nich.
+Ponadto może być on użyty do dalszego badania możliwości i ograniczeń syntezy
+pola akustycznego.
 
 \printbibliography
 
