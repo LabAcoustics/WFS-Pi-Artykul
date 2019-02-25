@@ -54,21 +54,21 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{scheme.pdf}}%
-    \put(0.03340869,0.12235921){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}RPi 3\end{tabular}}}}%
-    \put(0.03173825,0.09646772){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}MASTER\end{tabular}}}}%
-    \put(0.07418739,0.39628566){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}RPi Zero\end{tabular}}}}%
-    \put(0.07251695,0.37039416){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}SLAVE\end{tabular}}}}%
+    \put(0.01687223,0.12235921){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}RPi 3\end{tabular}}}}%
+    \put(0.0152018,0.09646772){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}MASTER\end{tabular}}}}%
+    \put(0.09072383,0.39628566){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}RPi Zero\end{tabular}}}}%
+    \put(0.0890534,0.37039416){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}SLAVE\end{tabular}}}}%
     \put(0.18080357,-0.30050971){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.47991072\unitlength}\raggedright \end{minipage}}}%
     \put(0.33500948,0.38742688){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}RPi Zero\end{tabular}}}}%
     \put(0.33333905,0.36153539){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}SLAVE\end{tabular}}}}%
-    \put(0.80807028,0.38211158){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}RPi Zero\end{tabular}}}}%
-    \put(0.80639992,0.35622008){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}SLAVE\end{tabular}}}}%
-    \put(0.06865438,0.60121968){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}JustBoom\end{tabular}}}}%
-    \put(0.06698395,0.57532819){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}DAC + AMP\end{tabular}}}}%
-    \put(0.33535938,0.58974698){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}JustBoom\end{tabular}}}}%
-    \put(0.33368895,0.56385549){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}DAC + AMP\end{tabular}}}}%
-    \put(0.77711906,0.6009682){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}JustBoom\end{tabular}}}}%
-    \put(0.77544861,0.57507671){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}DAC + AMP\end{tabular}}}}%
+    \put(0.81468477,0.38211158){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}RPi Zero\end{tabular}}}}%
+    \put(0.81301441,0.35622008){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}SLAVE\end{tabular}}}}%
+    \put(0.08849811,0.60783418){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}JustBoom\end{tabular}}}}%
+    \put(0.08682768,0.58194268){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}DAC + \\AMP\end{tabular}}}}%
+    \put(0.32874479,0.60628322){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}JustBoom\end{tabular}}}}%
+    \put(0.32707436,0.58039172){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}DAC + \\AMP\end{tabular}}}}%
+    \put(0.81019173,0.61088994){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}JustBoom\end{tabular}}}}%
+    \put(0.80852137,0.58499845){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}DAC + \\AMP\end{tabular}}}}%
     \put(0.05846819,0.25779155){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}CLK\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{scheme.pdf}}%
     \put(0.58548727,0.19377034){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}WiFi\end{tabular}}}}%
@@ -76,5 +76,7 @@
     \put(0.68715649,0.10662282){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Audio\end{tabular}}}}%
     \put(2.44330654,-1.27299182){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.37880726\unitlength}\raggedright \end{minipage}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{scheme.pdf}}%
+    \put(0.33617494,0.61513753){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.19585844\unitlength}\raggedright \end{minipage}}}%
+    \put(0.81501117,0.62897601){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.13229172\unitlength}\raggedright \end{minipage}}}%
   \end{picture}%
 \endgroup%
