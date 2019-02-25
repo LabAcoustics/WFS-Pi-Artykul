@@ -440,17 +440,17 @@ zastosowane komputery nie pracują w~oparciu o~systemy czasu rzeczywistego.
 
 Połączenie synchronizujące wykorzystuje piny GPIO. Oprogramowanie służące do
 synchronizacji oraz kontroli systemu napisano w~oparciu o~język Rust, którego
-zaletą jest wysoka wydajnośc (na poziomie języka C). Skorzystano z gotowej
+zaletą jest wysoka wydajność (na poziomie języka C). Skorzystano z gotowej
 biblioteki \emph{RPPAL}~\cite{RPPAL} obsługującej piny GPIO w~mikrokomputerach
 Raspberry Pi. Dane audio oraz informacje na temat lokalizacji głośników i
 wirtualnego źródła przesyłane są bezprzewodowo przez sieć lokalną (LAN), co
 oznacza, że system nie może odtwarzać dźwięku w czasie rzeczywistym, lecz
 pozwala na wygodne modyfikacje układu przestrzennego i zmniejsza ilość
 przewodów. Główna jednostka systemu z aplikacją serwera kontroluje połączenie
-synchronizujące oraz zarządza procesorami audio. To pozwala na rozszerzanie
+synchronizujące oraz zarządza procesorami przetwarzania audio. To pozwala na rozszerzanie
 systemu w~przyszłości i~zwiększanie jego funkcjonalności.
 
-\section{Wnioski}
+\section{Podsumowanie}
 
 Zaprojektowany system dzięki swojej modułowości pozwala na różnorodność
 zastosowań, w zależności od pożądanego rozmiaru macierzy głośnikowej,
