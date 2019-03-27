@@ -74,8 +74,10 @@ minbibnames=6,
 backend=biber
 ]{biblatex}
 
+\renewcommand\UrlFont{\rmfamily\itshape}
+
 \AtBeginBibliography{
-  \renewcommand\labelnamepunct{:\space}
+  \renewcommand\labelnamepunct{,\space}
   \renewcommand\newunitpunct{\addcomma\space}
   \renewcommand{\finentrypunct}{}
 
@@ -230,7 +232,7 @@ falę, które nakładając się, formują czoło o~pożądanym kształcie, tworz
   \centering
   \adjustbox{max width=\textwidth}{\import{./vecgraphics/}{symulacja200Hz.pdf_tex}}
   \caption{Symulacja rozkładu pola zaprojektowanego systemu dla fali sinusoidalnej o~częstotliwości \SI{200}{\hertz}}
-  \label{r:Huygens}
+  \label{r:symulacja}
   \end{subfigure}
   \caption{Ilustracja zasady działania systemu WFS}
 \end{figure}
@@ -351,15 +353,41 @@ synchronizujące moment rozpoczęcia odtwarzania próbek dźwięku.
 
 Połączenie synchronizujące wykorzystuje piny GPIO. Oprogramowanie służące do
 synchronizacji oraz kontroli systemu napisano w~języku Rust, korzystając z~biblioteki 
-\emph{RPPAL}~\cite{RPPAL} obsługującej piny GPIO w~mikrokomputerach
-Raspberry Pi. Dane audio oraz informacje na temat wzajemnego położenia głośników 
-i~wirtualnego źródła przesyłane są bezprzewodowo przez sieć lokalną, co
+\linebreak\emph{RPPAL}~\cite{RPPAL}. Dane audio oraz informacje na temat wzajemnego położenia 
+głośników i~wirtualnego źródła przesyłane są bezprzewodowo przez sieć lokalną, co
 oznacza, że system nie odtwarza dźwięku w~czasie rzeczywistym, lecz
 pozwala na wygodne modyfikacje układu przestrzennego i~zmniejsza ilość
 przewodów. Główna jednostka systemu z aplikacją serwera kontroluje połączenie
 synchronizujące oraz zarządza procesami przetwarzania audio.
 
-\section{}
+\section{Pomiary}
+
+W~celu weryfikacji działania systemu synchronizacji oraz ewentualnego wykrycia innych 
+problemów zmierzono sygnał na wyjściu wszystkich wzmacniaczy. [\textit{opis pomiarów + wyniki}]
+
+Wykonano także wstępne pomiary rozkładu pola akustycznego generowanego przez system 
+w~komorze bezechowej: zarejestrowano przebieg ciśnienia akustycznego w~32 punktach 
+rozmieszczonych co~\SI{400}{\milli\metre}. Na rysunku~\ref{r:pomiar_kb} można zauważyć,
+że kształt czoła fali jest zbliżony do oczekiwanego, uzyskanego podczas symulacji~
+(rys.~\ref{r:symulacja}).
+
+\begin{figure}[!tbh]
+\centering
+\begin{subfigure}[b]{.49\textwidth}
+\centering
+% \includegraphics[scale=.35]{vecgraphics/WFS_idea.pdf}
+\caption{Wyniki pomiaru sygnału na wyjściu wzmacniaczy}
+\label{r:pomiar_el}
+\end{subfigure}
+~
+\begin{subfigure}[b]{.49\textwidth}
+\centering
+% \adjustbox{max width=\textwidth}{\import{./vecgraphics/}{symulacja200Hz.pdf_tex}}
+\caption{Interpolowany rozkład pola dla fali sinusoidalnej o~częstotliwości \SI{200}{\hertz}}
+\label{r:pomiar_kb}
+\end{subfigure}
+\caption{Wyniki pomiarów prototypu}
+\end{figure}
 
 \section{Podsumowanie}
 
@@ -370,7 +398,7 @@ systemu WFS.
 
 Zastosowania syntezy pola akustycznego obejmują przemysł rozrywkowy, poprawę
 jakości akustyki pomieszczeń~\cite{enhancement}, badania psychoakustyczne,
-oraz dydaktykę --- zaprojektowany system można dostosować do każdego z~nich.
+oraz dydaktykę -- zaprojektowany system można dostosować do każdego z~nich.
 Ponadto może być on użyty do dalszych badań nad możliwościami i ograniczeniami
 tej metody reprodukcji dźwięku.
 
