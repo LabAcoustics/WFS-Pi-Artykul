@@ -194,37 +194,33 @@ Skonstruowano działający prototyp systemu, którego działanie zostało poddan
 
 \section{Wstęp}
 
-Reprodukcja dźwięku jest bardzo szerokim zagadnieniem akustyki. W obecnych
-czasach istnieje wiele technik pozwalających na odtworzenie panujących w
-wybranym miejscu warunków akustycznych w zgoła innym otoczeniu. Złożoność
-zjawisk związanych z propagacją fali akustycznej w rzeczywistym środowisku
-sprawia, że omawiane zagadnienie staje się złożonym problemem.  W większości
-stosowanych systemów reprodukcji dźwięku, takich jak systemy ambisoniczne czy
-wielokanałowe (5.1, 7.1) występuje problem ograniczenia przestrzeni dokładnego
-odwzorowania do punktu, a właściwie niewielkiego obszaru wokół niego (tzw.
-\textit{sweet spot}).
-%Jedną z najistotniejszych trudności napotykanych podczas projektowania systemu
-%reprodukcji dźwięku jest ograniczenie przestrzeni dokładnego odwzorowania do
-%punktu, a właściwie niewielkiego obszaru wokół niego (tzw. \textit{sweet
-%spot}).
-Istnienie takiego ograniczenia wyklucza zastosowanie takich systemów w
-sytuacjach, gdy mamy do czynienia z~odbiorcą wykonującym ruch w strefie
-odsłuchu. Z pomocą przychodzą jednak systemy syntezy pola akustycznego (ang.
+W obecnych czasach istnieje wiele technik reprodukcji dźwięku, jednak w~
+większości stosowanych systemów, takich jak systemy ambisoniczne czy
+wielokanałowe (5.1, 7.1), występuje problem ograniczenia przestrzeni dokładnego
+odwzorowania do niewielkiego obszaru w~którym znajduje się słuchacz (tzw.
+\textit{sweet spot}). Istnienie takiego ograniczenia wyklucza zastosowanie 
+takich systemów w sytuacjach, gdy odbiorca się porusza. Ograniczenie to częściowo
+eliminuje wykorzystanie słuchawek, jednak wówczas komunikacja między odbiorcami
+jest utrudniona, a~odbiór dźwięku mniej naturalny.
+
+Rozwiązaniem są systemy syntezy pola akustycznego (ang.
 \textit{Wave Field Synthesis} --- WFS), które bazując na dużej liczbie
-głośników są w stanie imitować fale akustyczne generowane przez źródła
-usytuowane nawet w dużej odległości oraz będące w ruchu. Dzięki syntezie pola
-akustycznego w~przestrzeni odsłuchowej nie występuje ograniczenie strefy
-odsłuchu do punktu, a~jednocześnie zachowana jest naturalna zależność zmiany
+głośników są w~stanie imitować fale akustyczne generowane przez źródła
+usytuowane nawet w~dużej odległości od słuchacza oraz będące w~ruchu. Dzięki syntezie pola
+akustycznego strefa odsłuchu nie jest tak ograniczona (zależy od wielkości użytej
+macierzy głośników), a~jednocześnie zachowana jest naturalna zależność zmiany
 kierunku docierania dźwięku emitowanego przez źródło do słuchacza podczas
 przemieszczania się w~strefie odsłuchu. Dzięki takiemu rozwiązaniu nie zostają
 zaburzone psychoakustyczne systemy lokalizacji źródła dźwięku, wykorzystujące
-niewielkie zmiany położenia głowy. Obecnie istnieją różne warianty systemów
-WFS, projektowane często z myślą o konkretnym zastosowaniu. Ze względu na
-wymaganą dużą liczbę kanałów przetwarzania dźwięku, a co za tym idzie dużą
-liczbę głośników, systemy te są drogie i mało popularne. 
+niewielkie zmiany położenia głowy. 
+
+Obecnie istnieją różne warianty systemów WFS, projektowane często z~myślą 
+o~konkretnym zastosowaniu. Ze względu na wymaganą dużą liczbę kanałów 
+przetwarzania dźwięku, a~co za tym idzie dużą liczbę głośników, systemy te 
+są drogie i~niezbyt popularne. 
 
 Celem niniejszej pracy było zaprojektowanie modułowego systemu syntezy pola
-akustycznego, opartego na łatwo dostępnych komponentach i umożliwiającego
+akustycznego, opartego na łatwo dostępnych komponentach i~umożliwiającego
 stosunkowo prostą adaptację do wybranego zastosowania.
 
 \section{Synteza pola akustycznego}
