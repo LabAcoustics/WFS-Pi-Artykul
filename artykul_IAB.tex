@@ -375,28 +375,21 @@ rozmieszczonych co~\SI{400}{\milli\metre}. Na rysunku~\ref{r:pomiar_kb} można z
 (rys.~\ref{r:symulacja}).
 
 \begin{figure}[!tbh]
-\centering
-\begin{subfigure}[b]{.49\textwidth}
-\centering
-% \includegraphics[scale=.35]{vecgraphics/WFS_idea.pdf}
-\caption{Wyniki pomiaru sygnału na wyjściu wzmacniaczy}
-\label{r:pomiar_el}
-\end{subfigure}
-~
-\begin{subfigure}[b]{.49\textwidth}
-\centering
-% \adjustbox{max width=\textwidth}{\import{./vecgraphics/}{symulacja200Hz.pdf_tex}}
-\caption{Interpolowany rozkład pola dla fali sinusoidalnej o~częstotliwości \SI{200}{\hertz}}
-\label{r:pomiar_kb}
-\end{subfigure}
-\caption{Wyniki pomiarów prototypu}
-\end{figure}
-
-\begin{figure}[!tbh]
   \centering
-  \import{./plots/}{sin200_s5_IAB.pgf}
-  \caption{Wykres sin 200}
-  \label{fig:sin200}
+  \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    % \includegraphics[scale=.35]{vecgraphics/WFS_idea.pdf}
+    \caption{Wyniki pomiaru sygnału na wyjściu wzmacniaczy}
+    \label{r:pomiar_el}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \import{./plots/}{sin200_s5_IAB.pgf}
+    \caption{Interpolowany rozkład pola dla fali sinusoidalnej o~częstotliwości \SI{200}{\hertz}}
+    \label{r:pomiar_kb}
+  \end{subfigure}
+  \caption{Wyniki pomiarów prototypu}
 \end{figure}
 
 \section{Podsumowanie}

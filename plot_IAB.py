@@ -65,12 +65,17 @@ for s in range(5, 6):
         x = np.arange(0, 8)
         y = np.arange(0, 4)
 
-        ppl.imshow(matrix, interpolation = "spline16", cmap = 'jet', vmin = 0.0, vmax = 0.15,
-                   extent=(-mic_dist*3.5, mic_dist*3.5, mic_dist*3, 0))
-        ppl.colorbar().set_label("ciśnienie ak. [Pa]")
+        ppl.figure()
+        ppl.imshow(matrix, interpolation="spline16", cmap='jet', vmin=0.0,
+                   vmax=0.15, extent=(-mic_dist*3.5, mic_dist*3.5,
+                                      mic_dist*3, 0))
+        ppl.tick_params(direction="in", width=0.2)
+        cbar = ppl.colorbar()#.set_label("ciśnienie ak. [Pa]")
+        cbar.ax.tick_params(direction="in", width=0.2, length=1)
         ppl.xlabel(r"x [\si{\meter}]")
         ppl.ylabel(r"y [\si{\meter}]")
-        ppl.xticks(np.arange(-1, 1, step=0.5), ('-1,0', '-0,5', '0,0', '0,5', '1,0'))
-        ppl.yticks(np.arange(1.2, 0, step=-0.2), ('1,2', '1,0', '0,8', '0,6', '0,4', '0,2', '0,0'))
+        ppl.xticks(np.arange(-1, 1.5, step=0.5), ('-1,0', '-0,5', '0,0', '0,5', '1,0'))
+        ppl.yticks(np.arange(1.2, -0.2, step=-0.2), ('1,2', '1,0', '0,8', '0,6', '0,4', '0,2', '0,0'))
+        ppl.grid(False)
         ppl.savefig(f"plots/{sig}_IAB.pgf")
         ppl.close()
