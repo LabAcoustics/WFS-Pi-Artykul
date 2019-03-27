@@ -179,9 +179,9 @@ backend=biber
 \end{center}
 \vspace{22pt}
 
-\noindent\MakeUppercase{M. Piszak} (uczestnik Konkursu Prac Studenckich), \MakeUppercase{S.~Mikulicz, M.~Kmiecik,} \linebreak \MakeUppercase{T.~Makuch, P.~Pawlik} (opiekun naukowy)$^1$\\
+\noindent\MakeUppercase{M. Piszak} (uczestnik Konkursu Prac Studenckich), \MakeUppercase{S.~Mikulicz, M.~Kmiecik,} \linebreak \MakeUppercase{T.~Makuch, P.~Pawlik} (opiekun naukowy)\\
 
-\noindent$^1$ AGH Akademia Górniczo-Hutnicza im. S. Staszica w Krakowie\\
+\noindent AGH Akademia Górniczo-Hutnicza im. S. Staszica w Krakowie\\
 
 \noindent piszak@student.agh.edu.pl
 
@@ -195,13 +195,18 @@ Obok właściwego przetwarzania sygnałów w~zależności od lokalizacji źród�
 
 Skonstruowano działający prototyp systemu, którego działanie zostało poddane weryfikacji pomiarowej. Wykonano pomiary sygnału na wyjściu każdego wzmacniacza oraz wstępne pomiary w~komorze bezechowej, pozwalające określić jakość pola akustycznego generowanego przez skonstruowany system.
 
-\section{Cel pracy}
+\section{Wprowadzenie}
+
+Wspólną cechą większości systemów reprodukcji dźwięku przestrzennego jest 
+ograniczenie odsłuchu do niewielkiego obszaru (tzw. \textit{sweet spot}).
+Metodą pozwalającą na oddanie wrażeń przestrzennych także gdy słuchacz jest 
+w~ruchu lub dla kilku słuchaczy jednocześnie, bez konieczności używania przez
+nich słuchawek, jest synteza pola akustycznego, ang. \textit{Wave Field Synthesis}
+(WFS).
 
 Celem niniejszej pracy było zaprojektowanie modułowego systemu
 syntezy pola akustycznego, opartego na łatwo dostępnych komponentach
 i~umożliwiającego stosunkowo prostą adaptację do wybranego zastosowania.
-
-\section{Synteza pola akustycznego}
 
 Metoda WFS oparta jest na zasadzie Huygensa: każdy punkt do którego dociera
 fala akustyczna staje się źródłem nowej fali. Zgodnie z tą zasadą każdy głośnik
@@ -223,7 +228,7 @@ falę, które nakładając się, formują czoło o~pożądanym kształcie, tworz
   ~
   \begin{subfigure}[b]{.49\textwidth}
   \centering
-  \includegraphics[width=\textwidth, trim={4.2cm 0.5cm 4.5cm .5cm}, clip]{vecgraphics/symulacja200Hz.pdf}
+  \adjustbox{max width=\textwidth}{\import{./vecgraphics/}{symulacja200Hz.pdf_tex}}
   \caption{Symulacja rozkładu pola zaprojektowanego systemu dla fali sinusoidalnej o~częstotliwości \SI{200}{\hertz}}
   \label{r:Huygens}
   \end{subfigure}
@@ -241,9 +246,9 @@ z~głośników.
 
 \section{Projekt systemu}
 
-W ramach projektowania systemu między innymi: wybrano rozmiar macierzy
+W ramach projektowania systemu między innymi: (1) wybrano rozmiar macierzy
 głośnikowej i~dobrano odpowiednie przetworniki oraz dobrano pozostałe elementy
-systemu; zaprojektowano algorytm przetwarzania sygnałów; przeprowadzono
+systemu; (2) zaprojektowano algorytm przetwarzania sygnałów; (3) przeprowadzono
 symulacje rozkładu pola akustycznego, by zweryfikować działanie algorytmu.
 
 \subsection{Geometria}
@@ -272,34 +277,40 @@ występuje konstruktywna i~destruktywna interferencja dla częstotliwości powy�
   f_{max}=\frac{c}{2\Delta x \sin{\alpha_{max}}} \quad, \label{eq:fmax}
 \end{equation}
 gdzie:\\
-\indent \begin{tabular}{l c p{.7\textwidth}}
+\indent \begin{tabular}{l c p{.69\textwidth}}
   $f_{max}$ [\si{\hertz}] & --- & najwyższa częstotliwość wolna od aliasingu przestrzennego, \\
   $\Delta x$ [\si{\metre}] & --- & odległość między środkami dwóch sąsiednich głośników, \\
   $\alpha_{max}$ [\si{\radian}] & --- & maksymalny kąt pomiędzy falą padającą od źródła 
-wirtualnego a~macierzą głośników.\\
+wirtualnego a~płaszczyzną przebiegającą przez membrany wszystkich głośników w~macierzy.\\
 \end{tabular}\\
 
 \noindent Efekt ten nie zniekształca jednak dźwięku w sposób znaczący dla odbioru przez słuchacza
 ~\cite{hq_rendering}.
 
-Uwzględniając te ograniczenia, wybrano głośniki o średnicy \SI{3}{\inch}
-(\SI{81}{\milli\meter}), które rozmieszczono co
-$\Delta x=\SI{150}{\milli\meter}$.
+Uwzględniając te ograniczenia, zdecydowano się wykorzystać głośniki o średnicy \SI{3}{\inch}
+(\SI{81}{\milli\meter}), które rozmieszczono co $\Delta x=\SI{150}{\milli\meter}$.
 
 \subsection{Przetwarzanie sygnałów}\label{s:algorithm}
 
-Dla określonej geometrii układu źródło wirtualne --- macierz głośników,
-korzystając z~całki Helmholtza-Huygensa, sygnał dla każdego głośnika można zapisać
+Dla określonej geometrii układu źródło wirtualne -- macierz głośników,
+korzystając z~całki Helmholtza-Huygensa, widmo sygnału podawanego na każdy głośnik można zapisać
 w~postaci~\eqref{eq:glosnik_t}~\cite{enhancement}:
 
 \begin{equation}
-  q_n(t) = a_n\left[h(t)*s(t)*\delta(t-\tau_n)\right] \quad. \label{eq:glosnik_t}
+Q_n(\bm{r}_n,\omega) = \sqrt{\frac{j\omega}{2\pi c}} A_n \frac {e^{-jk|\bm{r}_n-\bm{r}_m|}}{|\bm{r}_n-\bm{r}_m|^{1/2}} S(\omega) \quad,
+\label{eq:glosnik_f}
 \end{equation}
-
-Sygnał źródła wirtualnego $s(t)$ musi zostać pomnożony przez współczynnik wagowy 
-amplitudy $a_n$, spleciony z~filtrem o~transmitancji $\sqrt{\frac{j\omega}{2\pi c}}$, 
-którego współczynniki są oznaczane jako $h(t)$, i~opóźniony o~$\tau_n$, stosownie do
-pozycji źródła i~każdego głośnika.
+gdzie:\\
+    \indent \begin{tabular}{l c p{.7\textwidth}}
+        $\bm{r}_n$ & --- & wektor opisujący położenie głośnika, \\
+        $\bm{r}_m$ & --- & wektor opisujący położenie źródła wirtualnego,\\
+        $\omega$ & --- & częstość kołowa, \\
+        $A_n$ & --- & współczynnik wagowy amplitudy,\\
+        $k$ & --- & liczba falowa,\\
+        $S(\omega)$ & --- & widmo sygnału źródłowego.
+    \end{tabular}\\
+        
+Zastosowano przetwarzanie w~dziedzinie częstotliwości, ponieważ na tym etapie jest ono bardziej efektywne.
 
 \section{Realizacja}
 
