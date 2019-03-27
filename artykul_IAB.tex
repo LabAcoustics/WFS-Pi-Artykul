@@ -26,6 +26,7 @@
 \usepackage{graphicx}
 \usepackage{rotating}
 \usepackage[font=small, labelfont=bf, labelsep=quad]{caption}
+\usepackage{subcaption}
 \usepackage{float}
 \captionsetup{justification=centering}
 
@@ -235,10 +236,20 @@ falę, które nakładając się, formują czoło o~pożądanym kształcie, tworz
 
 \begin{figure}[!tbh]
   \centering
-  \includegraphics[scale=.3]{vecgraphics/WFS_idea.pdf}
+  \begin{subfigure}[b]{.49\textwidth}
+  \centering
+  \includegraphics[scale=.35]{vecgraphics/WFS_idea.pdf}
   \caption{Zastosowanie zasady Huygensa w WFS: każdy głośnik jest punktem do
   którego dociera fala wyemitowana przez wirtualne źródło}
   \label{r:Huygens}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{.49\textwidth}
+  \centering
+  \includegraphics[width=\textwidth, trim={4.2cm 0.5cm 4.5cm .5cm}, clip]{vecgraphics/symulacja200Hz.pdf}
+  \caption{Symulacja rozkładu pola zaprojektowanego systemu dla fali sinusoidalnej o~częstotliwości \SI{200}{\hertz}}
+  \label{r:Huygens}
+  \end{subfigure}
 \end{figure}
 
 Równaniem, na którym opiera się przetwarzanie sygnałów w~WFS jest całka Helmholtza-Huygensa
@@ -251,28 +262,22 @@ amplitudy oraz fazy sygnału dla każdego z~głośników.
 
 \section{Projekt systemu}
 
-Przed przystąpieniem do konstrukcji systemu podjęto kroki w celu wyznaczenia
-jego pożądanej charakterystyki oraz wyboru sposobu realizacji pozwalającego na
-jak najlepszą realizację przyjętych założeń. W ramach etapu projektowania
-między innymi:
+W ramach projektowania systemu między innymi:
 \begin{itemize}
-  \item wybrano rozmiar macierzy głośnikowej i dobrano odpowiednie przetworniki
-    na podstawie wybranego zakresu częstotliwości oraz dobrano pozostałe elementy systemu;
+  \item wybrano rozmiar macierzy głośnikowej i~dobrano odpowiednie przetworniki
+    oraz dobrano pozostałe elementy systemu;
   \item zaprojektowano algorytm przetwarzania sygnałów;
-  \item przeprowadzono symulacje w oprogramowaniu wykorzystującym metodę
-    elementów skończonych (MES), by zweryfikować działanie algorytmu.
+  \item przeprowadzono symulacje rozkładu pola akustycznego, by zweryfikować działanie algorytmu.
 \end{itemize}
 
 \subsection{Geometria}
 
-Rozmiar macierzy głośnikowej determinuje zakres częstotliwości w którym system
-jest w~stanie odtwarzać dźwięk z dużą dokładnością. Wynika to z faktu, że
-przyjęte w modelu teoretycznym źródło liniowe jest tak naprawdę szeregiem
-dyskretnych źródeł, oddalonych od siebie o odległość $\Delta x$, a każdy
-głośnik ma określone wymiary, z których najistotniejsza w tym aspekcie jest
-średnica $\phi_l$. Im większa macierz, tym niższa jest częstotliwość która może
-być odtworzona, gdyż źródło jest wystarczająco duże w stosunku do długości fali
-akustycznej; musi być spełniony warunek \eqref{eq:fmin}:
+Rozmiar macierzy głośnikowej determinuje zakres częstotliwości, w~którym system
+jest w~stanie odtwarzać dźwięk z dużą dokładnością. Przyjęte w modelu teoretycznym 
+źródło liniowe jest w~rzeczywistości szeregiem dyskretnych źródeł, oddalonych od siebie 
+o~odległość $\Delta x$, a~każdy głośnik ma określone wymiary. Im większa macierz, tym niższa 
+jest częstotliwość która może być odtworzona, gdyż źródło jest wystarczająco duże w stosunku 
+do długości fali akustycznej; musi być spełniony warunek \eqref{eq:fmin}:
 \begin{equation}
   f_{min}>\frac{c}{L} \quad,	\label{eq:fmin}
 \end{equation}
@@ -284,10 +289,9 @@ gdzie:\\
 \end{tabular}\\
 
 Dla górnej granicy częstotliwości należy uwzględnić zjawisko aliasingu
-przestrzennego. Powyżej pewnej częstotliwości odległości pomiędzy głośnikami
-powodują różnice fazowe, w wyniku których występuje konstruktywna i
-destruktywna interferencja. Dzieje się tak dla częstotliwości powyżej
-granicy~\eqref{eq:fmax}:
+przestrzennego. Odległości pomiędzy głośnikami powodują różnice fazowe, w~wyniku których 
+występuje konstruktywna i~destruktywna interferencja dla częstotliwości powyżej~\eqref{eq:fmax}:
+
 \begin{equation}
   f_{max}=\frac{c}{2\Delta x \sin{\alpha_{max}}} \quad, \label{eq:fmax}
 \end{equation}
@@ -295,71 +299,31 @@ gdzie:\\
 \indent \begin{tabular}{l c p{.7\textwidth}}
   $f_{max}$ [\si{\hertz}] & --- & najwyższa częstotliwość wolna od aliasingu przestrzennego, \\
   $\Delta x$ [\si{\metre}] & --- & odległość między środkami dwóch sąsiednich głośników, \\
-  $\alpha_{max}$ [\si{\radian}] & --- & maksymalny kąt pomiędzy falą padającą od źródła wirtualnego a~macierzą głośników.\\
+  $\alpha_{max}$ [\si{\radian}] & --- & maksymalny kąt pomiędzy falą padającą od źródła 
+wirtualnego a~macierzą głośników.\\
 \end{tabular}\\
 
 \noindent Efekt ten nie zniekształca jednak dźwięku w sposób znaczący dla odbioru przez słuchacza
-%,wobec czego na tym etapie może być zaakceptowany
 ~\cite{hq_rendering}.
 
-Wziąwszy pod uwagę możliwe rozwiązania, wybrano głośniki o średnicy \SI{3}{\inch}
+Uwzględniając te ograniczenia, wybrano głośniki o średnicy \SI{3}{\inch}
 (\SI{81}{\milli\meter}), które rozmieszczono co
 $\Delta x=\SI{150}{\milli\meter}$.
 
 \subsection{Przetwarzanie sygnałów}\label{s:algorithm}
 
 Dla określonej geometrii układu źródło wirtualne --- macierz głośników,
-korzystając z~całki Helmholtza-Huygensa, widmo sygnału podawanego na $n$-ty
-głośnik $Q_n$ można opisać za pomocą wzoru~\eqref{eq:glosnik_f}~\cite{delay}:
-
-\begin{equation}
-  Q_n(\bm{r}_n,\omega) = \sqrt{\frac{j\omega}{2\pi c}} A_n \frac {e^{-jk|\bm{r}_n-\bm{r}_m|}}{|\bm{r}_n-\bm{r}_m|^{1/2}} S(\omega) \quad,
-  \label{eq:glosnik_f}
-\end{equation}
-gdzie:\\
-\indent \begin{tabular}{l c p{.7\textwidth}}
-  $\bm{r}_n$ & --- & wektor opisujący położenie głośnika, \\
-  $\bm{r}_m$ & --- & wektor opisujący położenie źródła wirtualnego,\\
-  $\omega$ & --- & częstość kołowa, \\
-  $A_n$ & --- & współczynnik wagowy amplitudy,\\
-  $k$ & --- & liczba falowa,\\
-  $S(\omega)$ & --- & widmo sygnału źródłowego.
-\end{tabular}\\
-
-W dziedzinie czasu sygnał źródła wirtualnego $s(t)$ dla każdego głośnika musi
-zostać pomnożony przez współczynnik wagowy amplitudy $a_n$, spleciony z filtrem
-o transmitancji $\sqrt{\frac{j\omega}{2\pi c}}$, którego współczynniki są
-oznaczane jako $h(t)$, i opóźniony o $\tau_n$, co można zapisać
+korzystając z~całki Helmholtza-Huygensa, sygnał dla każdego głośnika można zapisać
 w~postaci~\eqref{eq:glosnik_t}~\cite{enhancement}:
 
 \begin{equation}
   q_n(t) = a_n\left[h(t)*s(t)*\delta(t-\tau_n)\right] \quad. \label{eq:glosnik_t}
 \end{equation}
 
-\subsection{Symulacja}
-
-Aby ocenić dokładność algorytmu przeprowadzono symulacje rozkładu pola
-akustycznego.  Stworzono dwa modele: jeden ze źródłem rzeczywistym w pozycji
-$S$ i przegrodą z otworami, imitującą macierz głośnikową, ilustrujący szacowaną
-przestrzeń syntezy, i drugi ze źródłami punktowymi emulującymi głośniki
-emitujące sygnał ze źródła wirtualnego $S$, wyznaczony przez algorytm opisany w
-części~\ref{s:algorithm}.
-
-Dla każdego modelu przeprowadzono analizę MES, w celu porównania pola
-akustycznego wytworzonego przez źródło rzeczywiste i głośniki symulujące je.
-Wyniki przedstawia rysunek~\ref{r:fem}, co pokazuje dużą zbieżność pomiędzy
-modelami.
-
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[height=.41\textheight]{bitgraphics/real_500Hz.png}
-  \includegraphics[height=.41\textheight]{bitgraphics/virtual_500Hz.png}
-  \caption{Wyniki symulacji pola akustycznego przy pomocy MES:
-    rozkład ciśnienia dla źródła punktowego (góra) i macierzy głośnikowej
-  symulującej źródło wirtualne w tej samej pozycji (dół)}
-  \label{r:fem}
-\end{figure}
-
+Sygnał źródła wirtualnego $s(t)$ musi zostać pomnożony przez współczynnik wagowy 
+amplitudy $a_n$, spleciony z~filtrem o~transmitancji $\sqrt{\frac{j\omega}{2\pi c}}$, 
+którego współczynniki są oznaczane jako $h(t)$, i~opóźniony o~$\tau_n$, stosownie do
+pozycji źródła i~każdego głośnika.
 
 \section{Realizacja}
 
