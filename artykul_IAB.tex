@@ -230,23 +230,21 @@ falę, które nakładając się, formują czoło o~pożądanym kształcie, tworz
   \caption{Ilustracja zasady działania systemu WFS}
 \end{figure}
 
-Równaniem, na którym opiera się przetwarzanie sygnałów w~WFS jest całka Helmholtza-Huygensa
-(lub Kirchoffa-Helmholtza), analityczna metoda opisu rozkładu pola akustycznego,
-pozwalająca wyznaczyć rozkład ciśnienia akustycznego pochodzące od danego zestawu
-źródeł~\cite{snaka}. Na tej podstawie definiowana jest funkcja opisująca ciśnienie akustyczne 
-w~punkcie umieszczenia każdego głośnika. To podejście pozwala uwzględnić geometrię
-przestrzeni oraz straty energii podczas propagacji fali dźwiękowej i~wyznaczyć
-amplitudy oraz fazy sygnału dla każdego z~głośników. 
+Równaniem, na którym opiera się przetwarzanie sygnałów w~WFS jest całka
+Helmholtza-Huygensa, analityczna metoda opisu rozkładu pola akustycznego,
+pozwalająca wyznaczyć rozkład ciśnienia akustycznego pochodzące od danego
+zestawu źródeł~\cite{snaka}. Na tej podstawie definiowana jest funkcja
+opisująca ciśnienie akustyczne w~punkcie umieszczenia każdego głośnika. To
+podejście pozwala uwzględnić geometrię przestrzeni oraz straty energii podczas
+propagacji fali dźwiękowej i~wyznaczyć amplitudy oraz fazy sygnału dla każdego
+z~głośników. 
 
 \section{Projekt systemu}
 
-W ramach projektowania systemu między innymi:
-\begin{itemize}
-  \item wybrano rozmiar macierzy głośnikowej i~dobrano odpowiednie przetworniki
-    oraz dobrano pozostałe elementy systemu;
-  \item zaprojektowano algorytm przetwarzania sygnałów;
-  \item przeprowadzono symulacje rozkładu pola akustycznego, by zweryfikować działanie algorytmu.
-\end{itemize}
+W ramach projektowania systemu między innymi: wybrano rozmiar macierzy
+głośnikowej i~dobrano odpowiednie przetworniki oraz dobrano pozostałe elementy
+systemu; zaprojektowano algorytm przetwarzania sygnałów; przeprowadzono
+symulacje rozkładu pola akustycznego, by zweryfikować działanie algorytmu.
 
 \subsection{Geometria}
 
@@ -311,49 +309,27 @@ potrzebną do przetwarzania sygnałów wysyłanych na poszczególne kanały.
 
 Przetwarzanie sygnału z~cyfrowego na analogowy oraz jego wzmocnienie jest
 realizowane przez moduł Amp Zero pHAT firmy JustBoom. Jest to połączenie
-wysokiej jakości przetwornika analogowo-cyfrowego oraz wzmacniacza klasy 
-D~o~mocy wyjściowej $2\times40\si{\watt}$. Sygnał może być próbkowany 
-z~częstotliwością \SI{192}{\kilo\hertz} i~rozdzielczością \SI{32}{\bit}, 
-a~zastosowanie wzmacniacza klasy D~umożliwia osiąganie odpowiedniej mocy
-głośników bez zużywania nadmiernej ilości energii oraz przy zachowaniu niewielkich
-rozmiarów pojedynczego modułu.
+przetwornika analogowo-cyfrowego oraz wzmacniacza klasy D~o~mocy wyjściowej
+$2\times40\si{\watt}$. Sygnał może być próbkowany z~częstotliwością
+\SI{192}{\kilo\hertz} i~rozdzielczością \SI{32}{\bit}, a~zastosowanie
+wzmacniacza klasy D~umożliwia osiąganie odpowiedniej mocy głośników przy
+zachowaniu niewielkich rozmiarów pojedynczego modułu.
 
 Wybrano głośniki firmy Faital Pro model 3FE25
 o~średnicy \SI{3}{\inch}, impedancji \SI{8}{\ohm} i~nominalnym zakresie 
 częstotliwości \SI{100}{\hertz}~--~\SI{20}{\kilo\hertz}.
-%których podstawowe parametry przedstawiono w tabeli \ref{tab:paramglosnik}.
-
-% \begin{table}[!ht]
-%   \centering
-%   \caption{Parametry głośnika Faital Pro 3FE25}
-%   \begin{tabular}{|c|c|} \hline
-%     \textbf{Parametr} & \textbf{Wartość} \\ \hline
-%     Średnica & \SI{3}{\inch} \\ \hline
-%     Impedancja nominalna & \SI{8}{\ohm} \\ \hline
-%     Moc nominalna & \SI{20}{\watt} \\ \hline
-%     Skuteczność (\SI{1}{\watt} / \SI{1}{\metre}) & \SI{91}{\decibel} \\ \hline
-%     Zakres częstotliwości & od \SI{100}{\hertz} do \SI{20}{\kilo\hertz} \\ \hline
-%   \end{tabular}
-%   \label{tab:paramglosnik}
-% \end{table}
 
 Każdy moduł składa się z~komputera Raspberry Pi, modułu wzmacniacza Amp Zero
 oraz dwóch głośników.
-%Ponieważ moduły wzmacniaczy oraz przetworników A/C były dwukanałowe, na każdy
-%moduł oraz komputer Raspberry Pi przypadły dwa głośniki. 
 Aby zwiększyć możliwości adaptacji systemu do wymaganych warunków
 każdy głośnik zostanie umieszczony w~oddzielnej obudowie. Takie rozwiązanie
 pozwala na manipulowanie kształtem i~rozmiarem macierzy głośników,
 co jest pożądane ze względu na dydaktyczne i~naukowe zastosowania systemu.  
-%aby istniała możliwość zmiany zarówno odległości jak i kąta pomiędzy
-%poszczególnymi źródłami macierzy głośnikowej.
 Strukturę systemu przedstawia rysunek \ref{fig:schemat}.
 
 Aby generowane pole akustyczne było spójne, w~czasie przetwarzaniu sygnałów przez
 poszczególne moduły nie mogą występować dewiacje. Dlatego system posiada połączenie
-synchronizujące moment rozpoczęcia przetwarzania próbek dźwięku.
-Rozwiązuje to problem nieprzewidywalnego czasu przetwarzania wobec faktu, że
-zastosowane komputery nie pracują w~oparciu o~systemy czasu rzeczywistego.
+synchronizujące moment rozpoczęcia odtwarzania próbek dźwięku.
 
 \begin{figure}[H]
   \centering
@@ -363,16 +339,14 @@ zastosowane komputery nie pracują w~oparciu o~systemy czasu rzeczywistego.
 \end{figure}
 
 Połączenie synchronizujące wykorzystuje piny GPIO. Oprogramowanie służące do
-synchronizacji oraz kontroli systemu napisano w~oparciu o~język Rust, którego
-zaletą jest wysoka wydajność (na poziomie języka C). Skorzystano z gotowej
+synchronizacji oraz kontroli systemu napisano w~języku Rust, korzystając z
 biblioteki \emph{RPPAL}~\cite{RPPAL} obsługującej piny GPIO w~mikrokomputerach
 Raspberry Pi. Dane audio oraz informacje na temat lokalizacji głośników i
-wirtualnego źródła przesyłane są bezprzewodowo przez sieć lokalną (LAN), co
-oznacza, że system nie może odtwarzać dźwięku w czasie rzeczywistym, lecz
-pozwala na wygodne modyfikacje układu przestrzennego i zmniejsza ilość
+wirtualnego źródła przesyłane są bezprzewodowo przez sieć lokalną, co
+oznacza, że system nie odtwarza dźwięku w czasie rzeczywistym, lecz
+pozwala na modyfikacje układu przestrzennego i zmniejsza ilość
 przewodów. Główna jednostka systemu z aplikacją serwera kontroluje połączenie
-synchronizujące oraz zarządza procesorami przetwarzania audio. To pozwala na rozszerzanie
-systemu w~przyszłości i~zwiększanie jego funkcjonalności.
+synchronizujące oraz zarządza procesami przetwarzania audio.
 
 \section{Podsumowanie}
 
@@ -381,9 +355,6 @@ zastosowań, w zależności od pożądanego rozmiaru macierzy głośnikowej,
 pozwalając użytkownikowi na wybór najodpowiedniejszej konfiguracji. Jest
 ponadto bardziej ekonomiczny niż system korzystający z dedykowanych procesorów
 przetwarzania sygnałów.
-
-Obecnie system jest w fazie testowania i dalszego rozwoju, więc jego końcowe
-działanie zostanie zweryfikowane w~kolejnych etapach badań.
 
 Zastosowania WFS sięgają od tworzenia wrażeń przestrzennych, poprzez poprawę
 jakości akustyki pomieszczeń~\cite{enhancement}, do badań psychoakustycznych,
