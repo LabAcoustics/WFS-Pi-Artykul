@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.5334626"
-     inkscape:cx="282.37082"
-     inkscape:cy="207.98961"
+     inkscape:cx="218.3994"
+     inkscape:cy="262.68002"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -570,117 +570,117 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
-       x="6.6701221"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
+       x="6.3822775"
        y="266.07932"
        id="text1725"><tspan
          sodipodi:role="line"
          id="tspan1723"
-         x="6.6701221"
+         x="6.3822775"
          y="266.07932"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">RPi 3</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">RPi 3</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
-       x="3.434571"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
+       x="3.022207"
        y="272.04004"
        id="text1729"><tspan
          sodipodi:role="line"
          id="tspan1727"
-         x="3.434571"
+         x="3.022207"
          y="272.04004"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">MASTER</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">MASTER</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
-       x="20.435053"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
+       x="20.208944"
        y="225.48026"
        id="text1725-2"><tspan
          sodipodi:role="line"
          id="tspan1723-9"
-         x="20.435053"
+         x="20.208944"
          y="225.48026"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">RPi</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">RPi</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
-       x="17.589653"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+       x="17.427925"
        y="230.83717"
        id="text1729-7"><tspan
          sodipodi:role="line"
          id="tspan1727-3"
-         x="17.589653"
+         x="17.427925"
          y="230.83717"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none">SLAVE</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none">SLAVE</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
-       x="59.095707"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
+       x="58.869598"
        y="225.48026"
        id="text1725-2-4"><tspan
          sodipodi:role="line"
          id="tspan1723-9-1"
-         x="59.095707"
+         x="58.869598"
          y="225.48026"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">RPi</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">RPi</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
-       x="56.250305"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
+       x="56.088577"
        y="230.83717"
        id="text1729-7-6"><tspan
          sodipodi:role="line"
          id="tspan1727-3-3"
-         x="56.250305"
+         x="56.088577"
          y="230.83717"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">SLAVE</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">SLAVE</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
-       x="136.03941"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
+       x="135.81329"
        y="225.48026"
        id="text1725-2-8"><tspan
          sodipodi:role="line"
          id="tspan1723-9-5"
-         x="136.03941"
+         x="135.81329"
          y="225.48026"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">RPi</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">RPi</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
-       x="133.194"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
+       x="133.03227"
        y="230.83717"
        id="text1729-7-5"><tspan
          sodipodi:role="line"
          id="tspan1727-3-0"
-         x="133.194"
+         x="133.03227"
          y="230.83717"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">SLAVE</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">SLAVE</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
-       x="16.437426"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
+       x="15.974461"
        y="200.80487"
        id="text1725-2-1"><tspan
          sodipodi:role="line"
          id="tspan1723-9-2"
-         x="16.437426"
+         x="15.974461"
          y="200.80487"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">JustBoom</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">JustBoom</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
-       x="14.274677"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
+       x="13.982974"
        y="206.98027"
        id="text1729-7-64"><tspan
          sodipodi:role="line"
-         x="14.274677"
+         x="13.982974"
          y="206.98027"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
          id="tspan161">DAC + AMP</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none;"
        x="9.3549109"
        y="245.69934"
        id="text1885"><tspan
@@ -688,7 +688,7 @@
          id="tspan1883"
          x="9.3549109"
          y="245.69934"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">CLK</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none;">CLK</tspan></text>
     <g
        id="g1915"
        transform="matrix(1.4938684,0,0,1.4938684,-20.25852,-139.45964)"
@@ -855,37 +855,37 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none;"
-       x="93.677963"
-       y="256.47162"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none;"
+       x="93.148796"
+       y="255.94246"
        id="text2015"><tspan
          sodipodi:role="line"
          id="tspan2013"
-         x="93.677963"
-         y="256.47162"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none;">WiFi</tspan></text>
+         x="93.148796"
+         y="255.94246"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none;">WiFi</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
-       x="112.69547"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
+       x="112.34027"
        y="271.12079"
        id="text1725-2-8-1"><tspan
          sodipodi:role="line"
          id="tspan1723-9-5-7"
-         x="112.69547"
+         x="112.34027"
          y="271.12079"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">Server</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">Server</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
-       x="112.99418"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
+       x="112.80125"
        y="265.66803"
        id="text1729-7-5-0"><tspan
          sodipodi:role="line"
          id="tspan1727-3-0-6"
-         x="112.99418"
+         x="112.80125"
          y="265.66803"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">Audio</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">Audio</tspan></text>
     <g
        id="g1915-02"
        transform="matrix(0,-1.4938684,1.4938684,0,-355.37901,311.84412)"
@@ -936,25 +936,25 @@
        y="194.26355" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
-       x="54.864697"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
+       x="54.40173"
        y="200.76845"
        id="text1725-2-1-6"><tspan
          sodipodi:role="line"
          id="tspan1723-9-2-7"
-         x="54.864697"
+         x="54.40173"
          y="200.76845"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">JustBoom</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">JustBoom</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
-       x="52.701946"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
+       x="52.410244"
        y="206.94385"
        id="text1729-7-64-5"><tspan
          sodipodi:role="line"
-         x="52.701946"
+         x="52.410244"
          y="206.94385"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
          id="tspan161-3">DAC + AMP</tspan></text>
     <rect
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.05199361;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers"
@@ -965,25 +965,25 @@
        y="194.20993" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
-       x="131.98209"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
+       x="131.51912"
        y="200.71452"
        id="text1725-2-1-62"><tspan
          sodipodi:role="line"
          id="tspan1723-9-2-9"
-         x="131.98209"
+         x="131.51912"
          y="200.71452"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">JustBoom</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">JustBoom</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
-       x="129.81934"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
+       x="129.52763"
        y="206.88994"
        id="text1729-7-64-1"><tspan
          sodipodi:role="line"
-         x="129.81934"
+         x="129.52763"
          y="206.88994"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, ';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman,  Bold';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
          id="tspan161-2">DAC + AMP</tspan></text>
     <g
        id="g1564-7"
@@ -1012,5 +1012,5 @@
            height="438.87604"
            x="-38.475018"
            y="57.592594" /></flowRegion><flowPara
-         id="flowPara4677"></flowPara></flowRoot>  </g>
+         id="flowPara4677" /></flowRoot>  </g>
 </svg>
