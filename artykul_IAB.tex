@@ -210,11 +210,12 @@ i~umożliwiającego stosunkowo prostą adaptację do wybranego zastosowania.
 
 Metoda WFS oparta jest na zasadzie Huygensa: każdy punkt do którego dociera
 fala akustyczna staje się źródłem nowej fali. Zgodnie z tą zasadą każdy głośnik
-w~macierzy może być rozpatrywany zarówno jako odbiornik (punkt, do którego dociera 
-fala dźwiękowa) jak i~jako źródło drugiego rzędu, reprodukujące falę pochodzącą od 
-źródła wirtualnego (rys.~\ref{r:Huygens}). Dzięki odpowiedniemu przetwarzaniu sygnału głośniki emitują
-falę, które nakładając się, formują czoło o~pożądanym kształcie, tworząc wrażenie
-źródła zlokalizowanego w~określonym punkcie w~przestrzeni~\cite{hq_rendering}.
+w~macierzy może być rozpatrywany zarówno jako odbiornik (punkt, do którego
+dociera fala dźwiękowa) jak i~jako źródło drugiego rzędu, reprodukujące falę
+pochodzącą od źródła wirtualnego (rys.~\ref{r:Huygens}, \ref{r:MES}). Dzięki
+odpowiedniemu przetwarzaniu sygnału głośniki emitują falę, które nakładając
+się, formują czoło o~pożądanym kształcie, tworząc wrażenie źródła
+zlokalizowanego w~określonym punkcie w~przestrzeni~\cite{hq_rendering}.
 
 \begin{figure}[!tbh]
   \centering
@@ -230,7 +231,7 @@ falę, które nakładając się, formują czoło o~pożądanym kształcie, tworz
   \centering
   \adjustbox{max width=\textwidth}{\import{./vecgraphics/}{symulacja200Hz.pdf_tex}}
   \caption{Symulacja rozkładu pola zaprojektowanego systemu dla fali sinusoidalnej o~częstotliwości \SI{200}{\hertz}}
-  \label{r:Huygens}
+  \label{r:MES}
   \end{subfigure}
   \caption{Ilustracja zasady działania systemu WFS}
 \end{figure}
@@ -359,7 +360,7 @@ pozwala na wygodne modyfikacje układu przestrzennego i~zmniejsza ilość
 przewodów. Główna jednostka systemu z aplikacją serwera kontroluje połączenie
 synchronizujące oraz zarządza procesami przetwarzania audio.
 
-\section{}
+\section{Ewaluacja}
 
 \section{Podsumowanie}
 
