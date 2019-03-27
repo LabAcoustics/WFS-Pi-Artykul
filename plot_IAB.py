@@ -72,6 +72,8 @@ for s in range(5, 6):
         ppl.tick_params(direction="in", width=0.2)
         cbar = ppl.colorbar()#.set_label("ciśnienie ak. [Pa]")
         cbar.ax.tick_params(direction="in", width=0.2, length=1)
+        cbar.ax.set_title(r"Ciśnienie [\si{\kilo\pascal}]", fontsize=6)
+
         ppl.xlabel(r"x [\si{\meter}]")
         ppl.ylabel(r"y [\si{\meter}]")
         ppl.xticks(np.arange(-1, 1.5, step=0.5), ('-1,0', '-0,5', '0,0', '0,5', '1,0'))
