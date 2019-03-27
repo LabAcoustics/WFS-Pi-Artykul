@@ -226,32 +226,28 @@ stosunkowo prostą adaptację do wybranego zastosowania.
 \section{Synteza pola akustycznego}
 
 Metoda WFS oparta jest na zasadzie Huygensa: każdy punkt do którego dociera
-fala akustyczna staje się źródłem nowej fali. Ta zasada jest zaimplementowana
-poprzez konstrukcję macierzy głośników, gdzie każdy z~nich jest punktem do
-którego dotarła fala akustyczna wyemitowana przez wirtualne źródło dźwięku.
-Dzięki odpowiedniemu przetworzeniu sygnałów, za pomocą każdego z~głośników fala
-„przekazywana” jest dalej drogą powietrzną --- w~praktyce fale emitowane przez
-głośniki nakładają się, formując pożądany kształt czoła
-fali~\cite{hq_rendering}, co pokazuje rysunek
-\ref{r:Huygens}.
+fala akustyczna staje się źródłem nowej fali. Zgodnie z tą zasadą każdy głośnik
+w~macierzy może być rozpatrywany zarówno jako odbiornik (punkt, do którego dociera 
+fala dźwiękowa) jak i~jako źródło drugiego rzędu, reprodukujące falę pochodzącą od 
+źródła wirtualnego (rys.~\ref{r:Huygens}). Dzięki odpowiedniemu przetwarzaniu sygnału głośniki emitują
+falę, które nakładając się, formują czoło o~pożądanym kształcie, tworząc wrażenie
+źródła zlokalizowanego w~określonym punkcie w~przestrzeni~\cite{hq_rendering}.
 
 \begin{figure}[!tbh]
   \centering
-  \includegraphics[scale=.4]{vecgraphics/WFS_idea.pdf}
+  \includegraphics[scale=.3]{vecgraphics/WFS_idea.pdf}
   \caption{Zastosowanie zasady Huygensa w WFS: każdy głośnik jest punktem do
   którego dociera fala wyemitowana przez wirtualne źródło}
   \label{r:Huygens}
 \end{figure}
 
-Podstawowym równaniem w WFS jest całka Helmholtza-Huygensa (inaczej zwana całką
-Kirchoffa-Helmholtza), analityczna metoda opisu rozkładu pola akustycznego,
-która pozwala wyznaczyć ciśnienie akustyczne pochodzące od danego zestawu
-źródeł w każdym punkcie zdefiniowanej przestrzeni~\cite{snaka}. Jest używana do
-zdefiniowania funkcji opisującej ciśnienie akustyczne w pozycji głośnika, który
-z~jednej strony traktowany jest jako odbiornik (względem źródła wirtualnego),
-a~z~drugiej --- jako źródło dźwięku. To podejście pozwala uwzględnić geometrię
+Równaniem, na którym opiera się przetwarzanie sygnałów w~WFS jest całka Helmholtza-Huygensa
+(lub Kirchoffa-Helmholtza), analityczna metoda opisu rozkładu pola akustycznego,
+pozwalająca wyznaczyć rozkład ciśnienia akustycznego pochodzące od danego zestawu
+źródeł~\cite{snaka}. Na tej podstawie definiowana jest funkcja opisująca ciśnienie akustyczne 
+w~punkcie umieszczenia każdego głośnika. To podejście pozwala uwzględnić geometrię
 przestrzeni oraz straty energii podczas propagacji fali dźwiękowej i~wyznaczyć
-amplitudy i~fazy sygnału dla każdego z~głośników. 
+amplitudy oraz fazy sygnału dla każdego z~głośników. 
 
 \section{Projekt systemu}
 
