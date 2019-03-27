@@ -76,8 +76,10 @@ minbibnames=6,
 backend=biber
 ]{biblatex}
 
+\renewcommand\UrlFont{\rmfamily\itshape}
+
 \AtBeginBibliography{
-  \renewcommand\labelnamepunct{:\space}
+  \renewcommand\labelnamepunct{,\space}
   \renewcommand\newunitpunct{\addcomma\space}
   \renewcommand{\finentrypunct}{}
 
@@ -214,7 +216,7 @@ Metoda WFS oparta jest na zasadzie Huygensa: każdy punkt do którego dociera
 fala akustyczna staje się źródłem nowej fali. Zgodnie z tą zasadą każdy głośnik
 w~macierzy może być rozpatrywany zarówno jako odbiornik (punkt, do którego
 dociera fala dźwiękowa) jak i~jako źródło drugiego rzędu, reprodukujące falę
-pochodzącą od źródła wirtualnego (rys.~\ref{r:Huygens}, \ref{r:MES}). Dzięki
+pochodzącą od źródła wirtualnego (rys.~\ref{r:Huygens}). Dzięki
 odpowiedniemu przetwarzaniu sygnału głośniki emitują falę, które nakładając
 się, formują czoło o~pożądanym kształcie, tworząc wrażenie źródła
 zlokalizowanego w~określonym punkcie w~przestrzeni~\cite{hq_rendering}.
@@ -252,7 +254,7 @@ z~głośników.
 W ramach projektowania systemu między innymi: (1) wybrano rozmiar macierzy
 głośnikowej i~dobrano odpowiednie przetworniki oraz dobrano pozostałe elementy
 systemu; (2) zaprojektowano algorytm przetwarzania sygnałów; (3) przeprowadzono
-symulacje rozkładu pola akustycznego, by zweryfikować działanie algorytmu.
+symulacje rozkładu pola akustycznego, by zweryfikować działanie algorytmu~(rys.\ref{r:symulacja}).
 
 \subsection{Geometria}
 
@@ -354,15 +356,41 @@ synchronizujące moment rozpoczęcia odtwarzania próbek dźwięku.
 
 Połączenie synchronizujące wykorzystuje piny GPIO. Oprogramowanie służące do
 synchronizacji oraz kontroli systemu napisano w~języku Rust, korzystając z~biblioteki 
-\emph{RPPAL}~\cite{RPPAL} obsługującej piny GPIO w~mikrokomputerach
-Raspberry Pi. Dane audio oraz informacje na temat wzajemnego położenia głośników 
-i~wirtualnego źródła przesyłane są bezprzewodowo przez sieć lokalną, co
+\linebreak\emph{RPPAL}~\cite{RPPAL}. Dane audio oraz informacje na temat wzajemnego położenia 
+głośników i~wirtualnego źródła przesyłane są bezprzewodowo przez sieć lokalną, co
 oznacza, że system nie odtwarza dźwięku w~czasie rzeczywistym, lecz
 pozwala na wygodne modyfikacje układu przestrzennego i~zmniejsza ilość
 przewodów. Główna jednostka systemu z aplikacją serwera kontroluje połączenie
 synchronizujące oraz zarządza procesami przetwarzania audio.
 
-\section{Ewaluacja}
+\section{Pomiary}
+
+W~celu weryfikacji działania systemu synchronizacji oraz ewentualnego wykrycia innych 
+problemów zmierzono sygnał na wyjściu wszystkich wzmacniaczy. [\textit{opis pomiarów + wyniki}]
+
+Wykonano także wstępne pomiary rozkładu pola akustycznego generowanego przez system 
+w~komorze bezechowej: zarejestrowano przebieg ciśnienia akustycznego w~32 punktach 
+rozmieszczonych co~\SI{400}{\milli\metre}. Na rysunku~\ref{r:pomiar_kb} można zauważyć,
+że kształt czoła fali jest zbliżony do oczekiwanego, uzyskanego podczas symulacji~
+(rys.~\ref{r:symulacja}).
+
+\begin{figure}[!tbh]
+\centering
+\begin{subfigure}[b]{.49\textwidth}
+\centering
+% \includegraphics[scale=.35]{vecgraphics/WFS_idea.pdf}
+\caption{Wyniki pomiaru sygnału na wyjściu wzmacniaczy}
+\label{r:pomiar_el}
+\end{subfigure}
+~
+\begin{subfigure}[b]{.49\textwidth}
+\centering
+% \adjustbox{max width=\textwidth}{\import{./vecgraphics/}{symulacja200Hz.pdf_tex}}
+\caption{Interpolowany rozkład pola dla fali sinusoidalnej o~częstotliwości \SI{200}{\hertz}}
+\label{r:pomiar_kb}
+\end{subfigure}
+\caption{Wyniki pomiarów prototypu}
+\end{figure}
 
 \begin{figure}[!tbh]
   \centering
@@ -380,7 +408,7 @@ systemu WFS.
 
 Zastosowania syntezy pola akustycznego obejmują przemysł rozrywkowy, poprawę
 jakości akustyki pomieszczeń~\cite{enhancement}, badania psychoakustyczne,
-oraz dydaktykę --- zaprojektowany system można dostosować do każdego z~nich.
+oraz dydaktykę -- zaprojektowany system można dostosować do każdego z~nich.
 Ponadto może być on użyty do dalszych badań nad możliwościami i ograniczeniami
 tej metody reprodukcji dźwięku.
 
