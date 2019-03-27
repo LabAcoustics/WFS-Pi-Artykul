@@ -234,7 +234,7 @@ się tworzą wrażenie źródła zlokalizowanego w~określonym punkcie w~przestr
     \centering
     \adjustbox{max width=\textwidth}{\import{./vecgraphics/}{symulacja200Hz.pdf_tex}}
     \caption{Symulacja rozkładu pola zaprojektowanego systemu dla fali sinusoidalnej o~częstotliwości \SI{200}{\hertz}}
-    \label{r:MES}
+    \label{r:symulacja}
   \end{subfigure}
   \caption{Ilustracja zasady działania systemu WFS}
 \end{figure}
@@ -261,7 +261,7 @@ Rozmiar macierzy głośnikowej determinuje zakres częstotliwości, w~którym sy
 jest w~stanie odtwarzać dźwięk z dużą dokładnością. Przyjęte w modelu teoretycznym 
 źródło liniowe jest w~rzeczywistości szeregiem dyskretnych źródeł, oddalonych od siebie 
 o~odległość $\Delta x$, a~każdy głośnik ma określone wymiary. Im większa macierz, tym niższa
-częstotliwość $f_{min}$ może być poprawnie odtworzona --- źródło jest wystarczająco duże w stosunku 
+jest minimalna częstotliwość, która może być poprawnie odtworzona $f_{min}$ --- źródło jest wystarczająco duże w stosunku 
 do długości fali akustycznej ($f_{min}>\frac{c}{L}$, gdzie $c$~oznacza prędkość propagacji fali dźwiękowej,
 a~$L$~to długość macierzy głośników.
 
@@ -293,14 +293,13 @@ korzystając z~całki Helmholtza-Huygensa, widmo sygnału podawanego na każdy g
 w~postaci~\eqref{eq:glosnik_t}~\cite{enhancement}:
 
 \begin{equation}
-  Q_n(\bm{r}_n,\omega) = \sqrt{\frac{j\omega}{2\pi c}} A_n \frac {e^{-jk|\bm{r}_n-\bm{r}_m|}}{|\bm{r}_n-\bm{r}_m|^{1/2}} S(\omega) \quad,
+  Q_n(\bm{r}_n,\omega) = \sqrt{\frac{jk}{2\pi}} A_n \frac {e^{-jk|\bm{r}_n-\bm{r}_m|}}{|\bm{r}_n-\bm{r}_m|^{1/2}} S(\omega) \quad,
   \label{eq:glosnik_f}
 \end{equation}
 gdzie:\\
 \indent \begin{tabular}{l c p{.7\textwidth}}
   $\bm{r}_n$ & --- & wektor opisujący położenie głośnika, \\
   $\bm{r}_m$ & --- & wektor opisujący położenie źródła wirtualnego,\\
-  $\omega$ & --- & częstość kołowa, \\
   $A_n$ & --- & współczynnik wagowy amplitudy,\\
   $k$ & --- & liczba falowa,\\
   $S(\omega)$ & --- & widmo sygnału źródłowego.
@@ -330,7 +329,7 @@ Każdy moduł składa się z~komputera Raspberry Pi, modułu wzmacniacza Amp Zer
 oraz dwóch głośników.
 Aby zwiększyć możliwości adaptacji systemu do wymaganych warunków
 każdy głośnik zostanie umieszczony w~oddzielnej obudowie. Takie rozwiązanie
-pozwala na manipulowanie kształtem i~rozmiarem macierzy głośników,
+pozwoli na manipulowanie kształtem i~rozmiarem macierzy głośników,
 co jest pożądane ze względu na dydaktyczne i~naukowe zastosowania systemu.  
 Strukturę systemu przedstawia rysunek \ref{fig:schemat}.
 
@@ -345,9 +344,9 @@ Aby generowane pole akustyczne było spójne, w~czasie przetwarzaniu sygnałów 
 poszczególne moduły nie mogą występować dewiacje. Dlatego system posiada połączenie
 synchronizujące moment rozpoczęcia odtwarzania próbek dźwięku.
 
-Połączenie synchronizujące wykorzystuje piny GPIO. Oprogramowanie służące do
-synchronizacji oraz kontroli systemu napisano w~języku Rust, korzystając z~biblioteki 
-\linebreak\emph{RPPAL}~\cite{RPPAL}. Dane audio oraz informacje na temat wzajemnego położenia 
+Połączenie synchronizujące wykorzystuje piny GPIO, oprogramowanie napisano w~języku 
+Rust, korzystając z~biblioteki 
+\emph{RPPAL}~\cite{RPPAL}. Dane audio oraz informacje na temat wzajemnego położenia 
 głośników i~wirtualnego źródła przesyłane są bezprzewodowo przez sieć lokalną, co
 oznacza, że system nie odtwarza dźwięku w~czasie rzeczywistym, lecz
 pozwala na wygodne modyfikacje układu przestrzennego i~zmniejsza ilość
@@ -363,7 +362,7 @@ Wykonano także wstępne pomiary rozkładu pola akustycznego generowanego przez 
 w~komorze bezechowej: zarejestrowano przebieg ciśnienia akustycznego w~32 punktach 
 rozmieszczonych co~\SI{400}{\milli\metre}. Na rysunku~\ref{r:pomiar_kb} można zauważyć,
 że kształt czoła fali jest zbliżony do oczekiwanego, uzyskanego podczas symulacji~
-(rys.~\ref{r:symulacja}).
+(por. rys.~\ref{r:symulacja}).
 
 \begin{figure}[!tbh]
   \centering
