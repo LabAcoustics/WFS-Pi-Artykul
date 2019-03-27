@@ -25,16 +25,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.46307208"
-     inkscape:cx="173.55642"
-     inkscape:cy="450.07356"
+     inkscape:zoom="0.7667313"
+     inkscape:cx="163.15639"
+     inkscape:cy="323.06937"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="cm"
-     inkscape:window-width="1024"
+     inkscape:window-width="1308"
      inkscape:window-height="731"
-     inkscape:window-x="1366"
+     inkscape:window-x="1920"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:snap-intersection-paths="true"
@@ -52,7 +52,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -593,14 +593,14 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
-       x="14.729699"
+       x="19.551109"
        y="225.48026"
        id="text1725-2"><tspan
          sodipodi:role="line"
          id="tspan1723-9"
-         x="14.729699"
+         x="19.551109"
          y="225.48026"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">RPi Zero</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">RPi</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
@@ -612,29 +612,17 @@
          x="16.614166"
          y="230.83717"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none">SLAVE</tspan></text>
-    <flowRoot
-       xml:space="preserve"
-       id="flowRoot1779"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.33333302px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26484793;stroke-miterlimit:4;stroke-dasharray:none"><flowRegion
-         id="flowRegion1781"
-         style="stroke-width:0.26484793;stroke-miterlimit:4;stroke-dasharray:none"><rect
-           id="rect1783"
-           width="76.785713"
-           height="41.42857"
-           x="28.928572"
-           y="345.08157"
-           style="stroke-width:0.26484793;stroke-miterlimit:4;stroke-dasharray:none" /></flowRegion><flowPara
-         id="flowPara1785" /></flowRoot>    <text
+    <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
-       x="53.281151"
+       x="58.102562"
        y="225.48026"
        id="text1725-2-4"><tspan
          sodipodi:role="line"
          id="tspan1723-9-1"
-         x="53.281151"
+         x="58.102562"
          y="225.48026"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">RPi Zero</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">RPi</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
@@ -649,14 +637,14 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
-       x="130.38405"
+       x="135.20546"
        y="225.48026"
        id="text1725-2-8"><tspan
          sodipodi:role="line"
          id="tspan1723-9-5"
-         x="130.38405"
+         x="135.20546"
          y="225.48026"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">RPi Zero</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">RPi</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none"
@@ -898,19 +886,7 @@
          x="111.86926"
          y="265.66803"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.07007434;stroke-miterlimit:4;stroke-dasharray:none">Audio</tspan></text>
-    <flowRoot
-       xml:space="preserve"
-       id="flowRoot2045"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.33333302px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26484793;stroke-miterlimit:4;stroke-dasharray:none"><flowRegion
-         id="flowRegion2047"
-         style="stroke-width:0.26484793;stroke-miterlimit:4;stroke-dasharray:none"><rect
-           id="rect2049"
-           width="60.609154"
-           height="42.931484"
-           x="390.92905"
-           y="500.67871"
-           style="stroke-width:0.26484793;stroke-miterlimit:4;stroke-dasharray:none" /></flowRegion><flowPara
-         id="flowPara2051" /></flowRoot>    <g
+    <g
        id="g1915-02"
        transform="matrix(0,-1.4938684,1.4938684,0,-355.37901,311.84412)"
        style="stroke-width:0.66940302;stroke-miterlimit:4;stroke-dasharray:none">
@@ -951,32 +927,7 @@
          id="path1895-3-1"
          style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.66940302;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers" />
     </g>
-    <flowRoot
-       xml:space="preserve"
-       id="flowRoot153"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00100005;stroke-miterlimit:4;stroke-dasharray:none"
-       transform="matrix(0.26458333,0,0,0.26458333,0,137.00002)"><flowRegion
-         id="flowRegion155"
-         style="stroke-width:1.00100005;stroke-miterlimit:4;stroke-dasharray:none"><rect
-           id="rect157"
-           width="118.44038"
-           height="57.07362"
-           x="203.2932"
-           y="232.73573"
-           style="stroke-width:1.00100005;stroke-miterlimit:4;stroke-dasharray:none" /></flowRegion><flowPara
-         id="flowPara159" /></flowRoot>    <flowRoot
-       xml:space="preserve"
-       id="flowRoot184"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26484793;stroke-miterlimit:4;stroke-dasharray:none"><flowRegion
-         id="flowRegion186"
-         style="stroke-width:0.26484793;stroke-miterlimit:4;stroke-dasharray:none"><rect
-           id="rect188"
-           width="80"
-           height="53.92857"
-           x="492.85715"
-           y="224.36726"
-           style="stroke-width:0.26484793;stroke-miterlimit:4;stroke-dasharray:none" /></flowRegion><flowPara
-         id="flowPara190" /></flowRoot>    <rect
+    <rect
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.05138159;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers"
        id="rect836-3"
        width="23.648619"

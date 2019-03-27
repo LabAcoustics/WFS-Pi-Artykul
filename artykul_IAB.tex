@@ -252,6 +252,7 @@ falę, które nakładając się, formują czoło o~pożądanym kształcie, tworz
   \caption{Symulacja rozkładu pola zaprojektowanego systemu dla fali sinusoidalnej o~częstotliwości \SI{200}{\hertz}}
   \label{r:Huygens}
   \end{subfigure}
+  \caption{Ilustracja zasady działania systemu WFS}
 \end{figure}
 
 Równaniem, na którym opiera się przetwarzanie sygnałów w~WFS jest całka Helmholtza-Huygensa
@@ -329,56 +330,59 @@ pozycji źródła i~każdego głośnika.
 
 \section{Realizacja}
 
-Zdecydowano się na zastosowanie rozwiązania opartego na komputerach Raspberry
-Pi Zero. Mają one niewielkie wymiary i dysponują odpowiednią mocą obliczeniową
+Zastosowano rozwiązania oparte na komputerach Raspberry
+Pi. Mają one niewielkie wymiary i~dysponują odpowiednią mocą obliczeniową
 potrzebną do przetwarzania sygnałów wysyłanych na poszczególne kanały.
-Przetwarzanie sygnału z cyfrowego na analogowy oraz jego wzmocnienie jest
+
+Przetwarzanie sygnału z~cyfrowego na analogowy oraz jego wzmocnienie jest
 realizowane przez moduł Amp Zero pHAT firmy JustBoom. Jest to połączenie
-wysokiej jakości przetwornika analogowo-cyfrowego oraz wzmacniacza klasy D o
-mocy wyjściowej $2\times40\si{\watt}$. Sygnał może być próbkowany z
-częstotliwością \SI{192}{\kilo\hertz} i rozdzielczością \SI{32}{\bit}, z kolei
-zastosowanie wzmacniacza klasy D umożliwia osiąganie odpowiedniej mocy
-głośników bez zużywania nadmiernej ilości energii oraz zachowując niewielkie
-rozmiary pojedynczych modułów.  Wybrano głośniki firmy Faital Pro model 3FE25,
-których podstawowe parametry przedstawiono w tabeli \ref{tab:paramglosnik}.
+wysokiej jakości przetwornika analogowo-cyfrowego oraz wzmacniacza klasy 
+D~o~mocy wyjściowej $2\times40\si{\watt}$. Sygnał może być próbkowany 
+z~częstotliwością \SI{192}{\kilo\hertz} i~rozdzielczością \SI{32}{\bit}, 
+a~zastosowanie wzmacniacza klasy D~umożliwia osiąganie odpowiedniej mocy
+głośników bez zużywania nadmiernej ilości energii oraz przy zachowaniu niewielkich
+rozmiarów pojedynczego modułu.
 
-\begin{table}[!ht]
-  \centering
-  \caption{Parametry głośnika Faital Pro 3FE25}
-  \begin{tabular}{|c|c|} \hline
-    \textbf{Parametr} & \textbf{Wartość} \\ \hline
-    Średnica & \SI{3}{\inch} \\ \hline
-    Impedancja nominalna & \SI{8}{\ohm} \\ \hline
-    Moc nominalna & \SI{20}{\watt} \\ \hline
-    Skuteczność (\SI{1}{\watt} / \SI{1}{\metre}) & \SI{91}{\decibel} \\ \hline
-    Zakres częstotliwości & od \SI{100}{\hertz} do \SI{20}{\kilo\hertz} \\ \hline
-  \end{tabular}
-  \label{tab:paramglosnik}
-\end{table}
+Wybrano głośniki firmy Faital Pro model 3FE25
+o~średnicy \SI{3}{\inch}, impedancji \SI{8}{\ohm} i~nominalnym zakresie 
+częstotliwości \SI{100}{\hertz}~--~\SI{20}{\kilo\hertz}.
+%których podstawowe parametry przedstawiono w tabeli \ref{tab:paramglosnik}.
 
-Każdy moduł składa się z komputera Raspberry Pi, modułu wzmacniacza Amp Zero
+% \begin{table}[!ht]
+%   \centering
+%   \caption{Parametry głośnika Faital Pro 3FE25}
+%   \begin{tabular}{|c|c|} \hline
+%     \textbf{Parametr} & \textbf{Wartość} \\ \hline
+%     Średnica & \SI{3}{\inch} \\ \hline
+%     Impedancja nominalna & \SI{8}{\ohm} \\ \hline
+%     Moc nominalna & \SI{20}{\watt} \\ \hline
+%     Skuteczność (\SI{1}{\watt} / \SI{1}{\metre}) & \SI{91}{\decibel} \\ \hline
+%     Zakres częstotliwości & od \SI{100}{\hertz} do \SI{20}{\kilo\hertz} \\ \hline
+%   \end{tabular}
+%   \label{tab:paramglosnik}
+% \end{table}
+
+Każdy moduł składa się z~komputera Raspberry Pi, modułu wzmacniacza Amp Zero
 oraz dwóch głośników.
 %Ponieważ moduły wzmacniaczy oraz przetworników A/C były dwukanałowe, na każdy
 %moduł oraz komputer Raspberry Pi przypadły dwa głośniki. 
-W celu zwiększenia możliwości adaptacji systemu do wymaganych warunków
-postanowiono umieścić każdy głośnik w oddzielnej obudowie. Takie rozwiązanie
-pozwala na otrzymanie macierzy głośników o dowolnych kształtach i rozmiarach,
-co jest pożądane ze względu na dydaktyczne i naukowe zastosowania systemu.  
+Aby zwiększyć możliwości adaptacji systemu do wymaganych warunków
+każdy głośnik zostanie umieszczony w~oddzielnej obudowie. Takie rozwiązanie
+pozwala na manipulowanie kształtem i~rozmiarem macierzy głośników,
+co jest pożądane ze względu na dydaktyczne i~naukowe zastosowania systemu.  
 %aby istniała możliwość zmiany zarówno odległości jak i kąta pomiędzy
 %poszczególnymi źródłami macierzy głośnikowej.
 Strukturę systemu przedstawia rysunek \ref{fig:schemat}.
 
-Ważnym aspektem systemu jest dokładność przetwarzania sygnałów pod względem
-wzajemnych zależności czasowych sygnałów akustycznych dostarczanych do każdego
-z głośników.  Ściślej rzecz ujmując, w przetwarzaniu sygnałów przez
-poszczególne moduły nie mogą występować dewiacje czasu przetwarzania. W związku
-z tym system posiada połączenie synchronizujące przetwarzanie próbek dźwięku.
+Aby generowane pole akustyczne było spójne, w~czasie przetwarzaniu sygnałów przez
+poszczególne moduły nie mogą występować dewiacje. Dlatego system posiada połączenie
+synchronizujące moment rozpoczęcia przetwarzania próbek dźwięku.
 Rozwiązuje to problem nieprzewidywalnego czasu przetwarzania wobec faktu, że
 zastosowane komputery nie pracują w~oparciu o~systemy czasu rzeczywistego.
 
 \begin{figure}[H]
   \centering
-  \adjustbox{max width=\linewidth}{\import{./vecgraphics/}{scheme2.pdf_tex}}
+  \includegraphics[width=.7\textwidth]{./vecgraphics/scheme3.pdf}
   \caption{Schemat projektowanego systemu WFS}
   \label{fig:schemat}
 \end{figure}
