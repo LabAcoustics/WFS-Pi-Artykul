@@ -338,40 +338,39 @@ pozwala na manipulowanie kształtem i~rozmiarem macierzy głośników,
 co jest pożądane ze względu na dydaktyczne i~naukowe zastosowania systemu.  
 Strukturę systemu przedstawia rysunek \ref{fig:schemat}.
 
+\begin{figure}[!tbh]
+\centering
+\adjustbox{max width=.7\linewidth}{\import{./vecgraphics/}{scheme3.pdf_tex}}
+\caption{Schemat projektowanego systemu WFS}
+\label{fig:schemat}
+\end{figure}
+
 Aby generowane pole akustyczne było spójne, w~czasie przetwarzaniu sygnałów przez
 poszczególne moduły nie mogą występować dewiacje. Dlatego system posiada połączenie
 synchronizujące moment rozpoczęcia odtwarzania próbek dźwięku.
 
-\begin{figure}[H]
-  \centering
-  \adjustbox{max width=.7\linewidth}{\import{./vecgraphics/}{scheme3.pdf_tex}}
-  \caption{Schemat projektowanego systemu WFS}
-  \label{fig:schemat}
-\end{figure}
-
 Połączenie synchronizujące wykorzystuje piny GPIO. Oprogramowanie służące do
-synchronizacji oraz kontroli systemu napisano w~języku Rust, korzystając z
-biblioteki \emph{RPPAL}~\cite{RPPAL} obsługującej piny GPIO w~mikrokomputerach
-Raspberry Pi. Dane audio oraz informacje na temat lokalizacji głośników i
-wirtualnego źródła przesyłane są bezprzewodowo przez sieć lokalną, co
-oznacza, że system nie odtwarza dźwięku w czasie rzeczywistym, lecz
-pozwala na modyfikacje układu przestrzennego i zmniejsza ilość
+synchronizacji oraz kontroli systemu napisano w~języku Rust, korzystając z~biblioteki 
+\emph{RPPAL}~\cite{RPPAL} obsługującej piny GPIO w~mikrokomputerach
+Raspberry Pi. Dane audio oraz informacje na temat wzajemnego położenia głośników 
+i~wirtualnego źródła przesyłane są bezprzewodowo przez sieć lokalną, co
+oznacza, że system nie odtwarza dźwięku w~czasie rzeczywistym, lecz
+pozwala na wygodne modyfikacje układu przestrzennego i~zmniejsza ilość
 przewodów. Główna jednostka systemu z aplikacją serwera kontroluje połączenie
 synchronizujące oraz zarządza procesami przetwarzania audio.
 
 \section{Podsumowanie}
 
-Zaprojektowany system dzięki swojej modułowości pozwala na różnorodność
-zastosowań, w zależności od pożądanego rozmiaru macierzy głośnikowej,
-pozwalając użytkownikowi na wybór najodpowiedniejszej konfiguracji. Jest
-ponadto bardziej ekonomiczny niż system korzystający z dedykowanych procesorów
-przetwarzania sygnałów.
+Dzięki swojej modułowości, zaprojektowany system może zostać dostosowany do 
+konkretnego zastosowania poprzez odpowiednie ustawienie głośników. Ponadto,
+jego skonstruowanie wiąże się ze znacznie mniejszymi kosztami, niż typowego
+systemu WFS.
 
-Zastosowania WFS sięgają od tworzenia wrażeń przestrzennych, poprzez poprawę
-jakości akustyki pomieszczeń~\cite{enhancement}, do badań psychoakustycznych,
-oraz dydaktyki --- zaprojektowany system można dostosować do każdego z~nich.
-Ponadto może być on użyty do dalszego badania możliwości i ograniczeń syntezy
-pola akustycznego.
+Zastosowania syntezy pola akustycznego obejmują przemysł rozrywkowy, poprawę
+jakości akustyki pomieszczeń~\cite{enhancement}, badania psychoakustyczne,
+oraz dydaktykę --- zaprojektowany system można dostosować do każdego z~nich.
+Ponadto może być on użyty do dalszych badań nad możliwościami i ograniczeniami
+tej metody reprodukcji dźwięku.
 
 \printbibliography
 
