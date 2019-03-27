@@ -1,0 +1,451 @@
+% !TeX spellcheck = pl_PL
+\documentclass[10pt, a4paper]{article}
+\usepackage[lmargin=40mm, rmargin=40mm, tmargin=52mm, bmargin=52mm, foot=0mm, head=0mm]{geometry}
+\setlength{\parindent}{10mm}
+
+% Lista wszystkich języków stanowiących języki pozycji bibliograficznych użytych w pracy.
+% (Zgodnie z zasadami tworzenia bibliografii każda pozycja powinna zostać utworzona zgodnie z zasadami języka, w którym dana publikacja została napisana.)
+\usepackage[english,polish]{babel}
+
+% Użyj polskiego łamania wyrazów (zamiast domyślnego angielskiego).
+\usepackage{polski}
+
+\usepackage[utf8]{inputenc}
+
+% dodatkowe pakiety
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{adjustbox}
+\usepackage[dvipsnames]{xcolor}
+% \usepackage{textcomp}
+
+% obrazki
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage[font=small, labelfont=bf, labelsep=quad]{caption}
+\usepackage{float}
+\captionsetup{justification=centering}
+
+% --- < bibliografia > ---
+
+\usepackage{placeins}	% poprawia float
+
+\let\Oldsection\section
+\renewcommand{\section}{\FloatBarrier\Oldsection}
+
+\let\Oldsubsection\subsection
+\renewcommand{\subsection}{\FloatBarrier\Oldsubsection}
+
+\let\Oldsubsubsection\subsubsection
+\renewcommand{\subsubsection}{\FloatBarrier\Oldsubsubsection}
+
+\usepackage[
+style=numeric,
+sorting=none,
+% Zastosuj styl wpisu bibliograficznego właściwy językowi publikacji.
+language=autobib,
+autolang=other,
+% Zapisuj datę dostępu do strony WWW w formacie RRRR-MM-DD
+%urldate=iso,
+%seconds=true,
+% Nie dodawaj numerów stron, na których występuje cytowanie
+backref=false,
+% Podawaj ISBN.
+isbn=true,
+% Nie podawaj URL-i, o ile nie jest to konieczne
+url=false,
+% Ustawienia związane z polskimi normami dla bibliografii
+maxbibnames=6,
+minbibnames=6,
+% Jeżeli używamy Bibera:
+backend=biber
+]{biblatex}
+
+\AtBeginBibliography{
+  \renewcommand\labelnamepunct{:\space}
+  \renewcommand\newunitpunct{\addcomma\space}
+  \renewcommand{\finentrypunct}{}
+
+  \renewcommand{\bibopenparen}{\addcomma\addspace}
+  \renewcommand{\bibcloseparen}{\addspace}
+}
+
+\usepackage{csquotes}
+% Ponieważ `csquotes` nie posiada polskiego stylu, można skorzystać z mocno zbliżonego stylu chorwackiego.
+\DeclareQuoteAlias{croatian}{polish}
+
+% Przecinki do numerów
+\usepackage{icomma}
+% ------------------------
+%---------------------------------------------------------------------------
+% Ustawienia wyświetlania liczb (zgodne z polskimi zwyczajami typograficznymi)
+%---------------------------------------------------------------------------
+\usepackage[detect-weight=true, detect-family=true]{siunitx}
+\sisetup{
+    output-decimal-marker = {,},
+    %	round-mode=places,
+    %	round-precision=4,
+    group-separator={~},
+    }
+
+% --- < listingi > ---
+
+% Użyj czcionki kroju Times.
+\usepackage{newtxtext}
+\usepackage{anyfontsize}
+\usepackage[all,defaultlines=2]{nowidow}
+
+\usepackage{listings}
+\lstloadlanguages{TeX}
+
+\lstset{
+  literate={ą}{{\k{a}}}1
+  {ć}{{\'c}}1
+  {ę}{{\k{e}}}1
+  {ó}{{\'o}}1
+  {ń}{{\'n}}1
+  {ł}{{\l{}}}1
+  {ś}{{\'s}}1
+  {ź}{{\'z}}1
+  {ż}{{\.z}}1
+  {Ą}{{\k{A}}}1
+  {Ć}{{\'C}}1
+  {Ę}{{\k{E}}}1
+  {Ó}{{\'O}}1
+  {Ń}{{\'N}}1
+  {Ł}{{\L{}}}1
+  {Ś}{{\'S}}1
+  {Ź}{{\'Z}}1
+  {Ż}{{\.Z}}1,
+  basicstyle=\footnotesize\ttfamily,
+}
+
+% ------------------------
+
+\AtBeginDocument{
+  \renewcommand{\tablename}{\textbf{Tabela}}
+  \renewcommand{\figurename}{\textbf{Rysunek}}
+}
+
+% ------------------------
+% --- < tabele > ---
+
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage[flushleft]{threeparttable}
+
+% defines the X column to use m (\parbox[c]) instead of p (`parbox[t]`)
+\newcolumntype{C}[1]{>{\hsize=#1\hsize\centering\arraybackslash}X}
+
+% \setlength{\cftsecnumwidth}{10mm}
+% \setcounter{secnumdepth}{4}
+% \brokenpenalty=10000\relax
+
+% ------------------------
+% --- < do tego artykułu > ---
+\sisetup{binary-units=true}
+\DeclareSIUnit{\inch}{"}
+\usepackage{import}
+
+%---------------------------------------------------------
+% Nazwa pliku z bibliografią
+%---------------------------------------------------------
+\addbibresource{bibliografia.bib}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{center}
+	\large\textbf{\MakeUppercase{Wielokanałowy system syntezy pola akustycznego oparty o mikrokomputery Raspberry Pi}}
+\end{center}
+\vspace{22pt}
+
+\noindent\MakeUppercase{M. Piszak} (uczestnik Konkursu Prac Studenckich), \MakeUppercase{S.~Mikulicz, M.~Kmiecik,} \linebreak \MakeUppercase{T.~Makuch, P.~Pawlik} (opiekun naukowy)$^1$\\
+
+\noindent$^1$ AGH Akademia Górniczo-Hutnicza im. S. Staszica w Krakowie\\
+
+\noindent piszak@student.agh.edu.pl
+
+\vspace{22pt}
+
+W większości systemów reprodukcji dźwięku wrażenia słuchowe są zależne od pozycji słuchacza. Technologią pozwalającą na usunięcie tego ograniczenia jest Wave Field Synthesis (WFS, Synteza Pola Akustycznego). Dzięki odpowiedniemu przetwarzaniu sygnałów, macierz głośników pozwala na formowanie kształtu czoła fali akustycznej tak, aby symulować wirtualne źródło dźwięku w~dowolnej odległości od słuchacza, niezależnie od jego pozycji.
+
+Wykorzystujące tę metodę systemy są zazwyczaj skomplikowane i~drogie ze względu na wymaganą dużą liczbę niezależnych kanałów przetwarzania DSP i~przetworników elektroakustycznych. Projekt obejmuje stworzenie modułowego systemu WFS opartego na mikrokomputerach Raspberry Pi oraz dedykowanych modułach wzmacniaczy klasy D~wyposażonych w~przetworniki cyfrowo-analogowe. Modułowość konstrukcji pozwala na jednoczesne niezależne przetwarzanie dużej liczby sygnałów oraz skonfigurowanie systemu w~dowolny sposób, a~także umożliwia rozszerzanie systemu o~kolejne zestawy głośników, co zwiększa dokładność syntezy.
+
+Obok właściwego przetwarzania sygnałów w~zależności od lokalizacji źródła, głównym wyzwaniem była synchronizacja odtwarzania przez wiele niezależnych modułów RPi -- precyzja synchronizacji jest kluczowa dla jakości generowania pola akustycznego oraz percepcji zgodnej z~założeniami. Dlatego wprowadzono rozwiązanie pozwalające na synchronizację odtwarzania dźwięku przez wszystkie moduły.
+
+Skonstruowano działający prototyp systemu, którego działanie zostało poddane weryfikacji pomiarowej. Wykonano pomiary sygnału na wyjściu każdego wzmacniacza oraz wstępne pomiary w~komorze bezechowej, pozwalające określić jakość pola akustycznego generowanego przez skonstruowany system.
+
+\section{Wstęp}
+
+Reprodukcja dźwięku jest bardzo szerokim zagadnieniem akustyki. W obecnych
+czasach istnieje wiele technik pozwalających na odtworzenie panujących w
+wybranym miejscu warunków akustycznych w zgoła innym otoczeniu. Złożoność
+zjawisk związanych z propagacją fali akustycznej w rzeczywistym środowisku
+sprawia, że omawiane zagadnienie staje się złożonym problemem.  W większości
+stosowanych systemów reprodukcji dźwięku, takich jak systemy ambisoniczne czy
+wielokanałowe (5.1, 7.1) występuje problem ograniczenia przestrzeni dokładnego
+odwzorowania do punktu, a właściwie niewielkiego obszaru wokół niego (tzw.
+\textit{sweet spot}).
+%Jedną z najistotniejszych trudności napotykanych podczas projektowania systemu
+%reprodukcji dźwięku jest ograniczenie przestrzeni dokładnego odwzorowania do
+%punktu, a właściwie niewielkiego obszaru wokół niego (tzw. \textit{sweet
+%spot}).
+Istnienie takiego ograniczenia wyklucza zastosowanie takich systemów w
+sytuacjach, gdy mamy do czynienia z~odbiorcą wykonującym ruch w strefie
+odsłuchu. Z pomocą przychodzą jednak systemy syntezy pola akustycznego (ang.
+\textit{Wave Field Synthesis} --- WFS), które bazując na dużej liczbie
+głośników są w stanie imitować fale akustyczne generowane przez źródła
+usytuowane nawet w dużej odległości oraz będące w ruchu. Dzięki syntezie pola
+akustycznego w~przestrzeni odsłuchowej nie występuje ograniczenie strefy
+odsłuchu do punktu, a~jednocześnie zachowana jest naturalna zależność zmiany
+kierunku docierania dźwięku emitowanego przez źródło do słuchacza podczas
+przemieszczania się w~strefie odsłuchu. Dzięki takiemu rozwiązaniu nie zostają
+zaburzone psychoakustyczne systemy lokalizacji źródła dźwięku, wykorzystujące
+niewielkie zmiany położenia głowy. Obecnie istnieją różne warianty systemów
+WFS, projektowane często z myślą o konkretnym zastosowaniu. Ze względu na
+wymaganą dużą liczbę kanałów przetwarzania dźwięku, a co za tym idzie dużą
+liczbę głośników, systemy te są drogie i mało popularne. 
+
+Celem niniejszej pracy było zaprojektowanie modułowego systemu syntezy pola
+akustycznego, opartego na łatwo dostępnych komponentach i umożliwiającego
+stosunkowo prostą adaptację do wybranego zastosowania.
+
+\section{Synteza pola akustycznego}
+
+Metoda WFS oparta jest na zasadzie Huygensa: każdy punkt do którego dociera
+fala akustyczna staje się źródłem nowej fali. Ta zasada jest zaimplementowana
+poprzez konstrukcję macierzy głośników, gdzie każdy z~nich jest punktem do
+którego dotarła fala akustyczna wyemitowana przez wirtualne źródło dźwięku.
+Dzięki odpowiedniemu przetworzeniu sygnałów, za pomocą każdego z~głośników fala
+„przekazywana” jest dalej drogą powietrzną --- w~praktyce fale emitowane przez
+głośniki nakładają się, formując pożądany kształt czoła
+fali~\cite{hq_rendering}, co pokazuje rysunek
+\ref{r:Huygens}.
+
+\begin{figure}[!tbh]
+  \centering
+  \includegraphics[scale=.4]{vecgraphics/WFS_idea.pdf}
+  \caption{Zastosowanie zasady Huygensa w WFS: każdy głośnik jest punktem do
+  którego dociera fala wyemitowana przez wirtualne źródło}
+  \label{r:Huygens}
+\end{figure}
+
+Podstawowym równaniem w WFS jest całka Helmholtza-Huygensa (inaczej zwana całką
+Kirchoffa-Helmholtza), analityczna metoda opisu rozkładu pola akustycznego,
+która pozwala wyznaczyć ciśnienie akustyczne pochodzące od danego zestawu
+źródeł w każdym punkcie zdefiniowanej przestrzeni~\cite{snaka}. Jest używana do
+zdefiniowania funkcji opisującej ciśnienie akustyczne w pozycji głośnika, który
+z~jednej strony traktowany jest jako odbiornik (względem źródła wirtualnego),
+a~z~drugiej --- jako źródło dźwięku. To podejście pozwala uwzględnić geometrię
+przestrzeni oraz straty energii podczas propagacji fali dźwiękowej i~wyznaczyć
+amplitudy i~fazy sygnału dla każdego z~głośników. 
+
+\section{Projekt systemu}
+
+Przed przystąpieniem do konstrukcji systemu podjęto kroki w celu wyznaczenia
+jego pożądanej charakterystyki oraz wyboru sposobu realizacji pozwalającego na
+jak najlepszą realizację przyjętych założeń. W ramach etapu projektowania
+między innymi:
+\begin{itemize}
+  \item wybrano rozmiar macierzy głośnikowej i dobrano odpowiednie przetworniki
+    na podstawie wybranego zakresu częstotliwości oraz dobrano pozostałe elementy systemu;
+  \item zaprojektowano algorytm przetwarzania sygnałów;
+  \item przeprowadzono symulacje w oprogramowaniu wykorzystującym metodę
+    elementów skończonych (MES), by zweryfikować działanie algorytmu.
+\end{itemize}
+
+\subsection{Geometria}
+
+Rozmiar macierzy głośnikowej determinuje zakres częstotliwości w którym system
+jest w~stanie odtwarzać dźwięk z dużą dokładnością. Wynika to z faktu, że
+przyjęte w modelu teoretycznym źródło liniowe jest tak naprawdę szeregiem
+dyskretnych źródeł, oddalonych od siebie o odległość $\Delta x$, a każdy
+głośnik ma określone wymiary, z których najistotniejsza w tym aspekcie jest
+średnica $\phi_l$. Im większa macierz, tym niższa jest częstotliwość która może
+być odtworzona, gdyż źródło jest wystarczająco duże w stosunku do długości fali
+akustycznej; musi być spełniony warunek \eqref{eq:fmin}:
+\begin{equation}
+  f_{min}>\frac{c}{L} \quad,	\label{eq:fmin}
+\end{equation}
+gdzie:\\
+\indent \begin{tabular}{l c l}
+  $f_{min}$ [\si{\hertz}] & --- & najniższa częstotliwość możliwa do prawidłowej syntezy, \\
+  $c$ [\si[per-mode=symbol]{\metre\per\second}] & --- & prędkość propagacji fali dźwiękowej, \\
+  $L$ [\si{\metre}] & --- & długość macierzy głośników. \\
+\end{tabular}\\
+
+Dla górnej granicy częstotliwości należy uwzględnić zjawisko aliasingu
+przestrzennego. Powyżej pewnej częstotliwości odległości pomiędzy głośnikami
+powodują różnice fazowe, w wyniku których występuje konstruktywna i
+destruktywna interferencja. Dzieje się tak dla częstotliwości powyżej
+granicy~\eqref{eq:fmax}:
+\begin{equation}
+  f_{max}=\frac{c}{2\Delta x \sin{\alpha_{max}}} \quad, \label{eq:fmax}
+\end{equation}
+gdzie:\\
+\indent \begin{tabular}{l c p{.7\textwidth}}
+  $f_{max}$ [\si{\hertz}] & --- & najwyższa częstotliwość wolna od aliasingu przestrzennego, \\
+  $\Delta x$ [\si{\metre}] & --- & odległość między środkami dwóch sąsiednich głośników, \\
+  $\alpha_{max}$ [\si{\radian}] & --- & maksymalny kąt pomiędzy falą padającą od źródła wirtualnego a~macierzą głośników.\\
+\end{tabular}\\
+
+\noindent Efekt ten nie zniekształca jednak dźwięku w sposób znaczący dla odbioru przez słuchacza
+%,wobec czego na tym etapie może być zaakceptowany
+~\cite{hq_rendering}.
+
+Wziąwszy pod uwagę możliwe rozwiązania, wybrano głośniki o średnicy \SI{3}{\inch}
+(\SI{81}{\milli\meter}), które rozmieszczono co
+$\Delta x=\SI{150}{\milli\meter}$.
+
+\subsection{Przetwarzanie sygnałów}\label{s:algorithm}
+
+Dla określonej geometrii układu źródło wirtualne --- macierz głośników,
+korzystając z~całki Helmholtza-Huygensa, widmo sygnału podawanego na $n$-ty
+głośnik $Q_n$ można opisać za pomocą wzoru~\eqref{eq:glosnik_f}~\cite{delay}:
+
+\begin{equation}
+  Q_n(\bm{r}_n,\omega) = \sqrt{\frac{j\omega}{2\pi c}} A_n \frac {e^{-jk|\bm{r}_n-\bm{r}_m|}}{|\bm{r}_n-\bm{r}_m|^{1/2}} S(\omega) \quad,
+  \label{eq:glosnik_f}
+\end{equation}
+gdzie:\\
+\indent \begin{tabular}{l c p{.7\textwidth}}
+  $\bm{r}_n$ & --- & wektor opisujący położenie głośnika, \\
+  $\bm{r}_m$ & --- & wektor opisujący położenie źródła wirtualnego,\\
+  $\omega$ & --- & częstość kołowa, \\
+  $A_n$ & --- & współczynnik wagowy amplitudy,\\
+  $k$ & --- & liczba falowa,\\
+  $S(\omega)$ & --- & widmo sygnału źródłowego.
+\end{tabular}\\
+
+W dziedzinie czasu sygnał źródła wirtualnego $s(t)$ dla każdego głośnika musi
+zostać pomnożony przez współczynnik wagowy amplitudy $a_n$, spleciony z filtrem
+o transmitancji $\sqrt{\frac{j\omega}{2\pi c}}$, którego współczynniki są
+oznaczane jako $h(t)$, i opóźniony o $\tau_n$, co można zapisać
+w~postaci~\eqref{eq:glosnik_t}~\cite{enhancement}:
+
+\begin{equation}
+  q_n(t) = a_n\left[h(t)*s(t)*\delta(t-\tau_n)\right] \quad. \label{eq:glosnik_t}
+\end{equation}
+
+\subsection{Symulacja}
+
+Aby ocenić dokładność algorytmu przeprowadzono symulacje rozkładu pola
+akustycznego.  Stworzono dwa modele: jeden ze źródłem rzeczywistym w pozycji
+$S$ i przegrodą z otworami, imitującą macierz głośnikową, ilustrujący szacowaną
+przestrzeń syntezy, i drugi ze źródłami punktowymi emulującymi głośniki
+emitujące sygnał ze źródła wirtualnego $S$, wyznaczony przez algorytm opisany w
+części~\ref{s:algorithm}.
+
+Dla każdego modelu przeprowadzono analizę MES, w celu porównania pola
+akustycznego wytworzonego przez źródło rzeczywiste i głośniki symulujące je.
+Wyniki przedstawia rysunek~\ref{r:fem}, co pokazuje dużą zbieżność pomiędzy
+modelami.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[height=.41\textheight]{bitgraphics/real_500Hz.png}
+  \includegraphics[height=.41\textheight]{bitgraphics/virtual_500Hz.png}
+  \caption{Wyniki symulacji pola akustycznego przy pomocy MES:
+    rozkład ciśnienia dla źródła punktowego (góra) i macierzy głośnikowej
+  symulującej źródło wirtualne w tej samej pozycji (dół)}
+  \label{r:fem}
+\end{figure}
+
+
+\section{Realizacja}
+
+Zdecydowano się na zastosowanie rozwiązania opartego na komputerach Raspberry
+Pi Zero. Mają one niewielkie wymiary i dysponują odpowiednią mocą obliczeniową
+potrzebną do przetwarzania sygnałów wysyłanych na poszczególne kanały.
+Przetwarzanie sygnału z cyfrowego na analogowy oraz jego wzmocnienie jest
+realizowane przez moduł Amp Zero pHAT firmy JustBoom. Jest to połączenie
+wysokiej jakości przetwornika analogowo-cyfrowego oraz wzmacniacza klasy D o
+mocy wyjściowej $2\times40\si{\watt}$. Sygnał może być próbkowany z
+częstotliwością \SI{192}{\kilo\hertz} i rozdzielczością \SI{32}{\bit}, z kolei
+zastosowanie wzmacniacza klasy D umożliwia osiąganie odpowiedniej mocy
+głośników bez zużywania nadmiernej ilości energii oraz zachowując niewielkie
+rozmiary pojedynczych modułów.  Wybrano głośniki firmy Faital Pro model 3FE25,
+których podstawowe parametry przedstawiono w tabeli \ref{tab:paramglosnik}.
+
+\begin{table}[!ht]
+  \centering
+  \caption{Parametry głośnika Faital Pro 3FE25}
+  \begin{tabular}{|c|c|} \hline
+    \textbf{Parametr} & \textbf{Wartość} \\ \hline
+    Średnica & \SI{3}{\inch} \\ \hline
+    Impedancja nominalna & \SI{8}{\ohm} \\ \hline
+    Moc nominalna & \SI{20}{\watt} \\ \hline
+    Skuteczność (\SI{1}{\watt} / \SI{1}{\metre}) & \SI{91}{\decibel} \\ \hline
+    Zakres częstotliwości & od \SI{100}{\hertz} do \SI{20}{\kilo\hertz} \\ \hline
+  \end{tabular}
+  \label{tab:paramglosnik}
+\end{table}
+
+Każdy moduł składa się z komputera Raspberry Pi, modułu wzmacniacza Amp Zero
+oraz dwóch głośników.
+%Ponieważ moduły wzmacniaczy oraz przetworników A/C były dwukanałowe, na każdy
+%moduł oraz komputer Raspberry Pi przypadły dwa głośniki. 
+W celu zwiększenia możliwości adaptacji systemu do wymaganych warunków
+postanowiono umieścić każdy głośnik w oddzielnej obudowie. Takie rozwiązanie
+pozwala na otrzymanie macierzy głośników o dowolnych kształtach i rozmiarach,
+co jest pożądane ze względu na dydaktyczne i naukowe zastosowania systemu.  
+%aby istniała możliwość zmiany zarówno odległości jak i kąta pomiędzy
+%poszczególnymi źródłami macierzy głośnikowej.
+Strukturę systemu przedstawia rysunek \ref{fig:schemat}.
+
+Ważnym aspektem systemu jest dokładność przetwarzania sygnałów pod względem
+wzajemnych zależności czasowych sygnałów akustycznych dostarczanych do każdego
+z głośników.  Ściślej rzecz ujmując, w przetwarzaniu sygnałów przez
+poszczególne moduły nie mogą występować dewiacje czasu przetwarzania. W związku
+z tym system posiada połączenie synchronizujące przetwarzanie próbek dźwięku.
+Rozwiązuje to problem nieprzewidywalnego czasu przetwarzania wobec faktu, że
+zastosowane komputery nie pracują w~oparciu o~systemy czasu rzeczywistego.
+
+\begin{figure}[H]
+  \centering
+  \import{./vecgraphics/}{scheme2.pdf_tex}
+% 	\includegraphics{vecgraphics/scheme2.pdf}
+  \caption{Schemat projektowanego systemu WFS}
+  \label{fig:schemat}
+\end{figure}
+
+Połączenie synchronizujące wykorzystuje piny GPIO. Oprogramowanie służące do
+synchronizacji oraz kontroli systemu napisano w~oparciu o~język Rust, którego
+zaletą jest wysoka wydajność (na poziomie języka C). Skorzystano z gotowej
+biblioteki \emph{RPPAL}~\cite{RPPAL} obsługującej piny GPIO w~mikrokomputerach
+Raspberry Pi. Dane audio oraz informacje na temat lokalizacji głośników i
+wirtualnego źródła przesyłane są bezprzewodowo przez sieć lokalną (LAN), co
+oznacza, że system nie może odtwarzać dźwięku w czasie rzeczywistym, lecz
+pozwala na wygodne modyfikacje układu przestrzennego i zmniejsza ilość
+przewodów. Główna jednostka systemu z aplikacją serwera kontroluje połączenie
+synchronizujące oraz zarządza procesorami przetwarzania audio. To pozwala na rozszerzanie
+systemu w~przyszłości i~zwiększanie jego funkcjonalności.
+
+\section{Podsumowanie}
+
+Zaprojektowany system dzięki swojej modułowości pozwala na różnorodność
+zastosowań, w zależności od pożądanego rozmiaru macierzy głośnikowej,
+pozwalając użytkownikowi na wybór najodpowiedniejszej konfiguracji. Jest
+ponadto bardziej ekonomiczny niż system korzystający z dedykowanych procesorów
+przetwarzania sygnałów.
+
+Obecnie system jest w fazie testowania i dalszego rozwoju, więc jego końcowe
+działanie zostanie zweryfikowane w~kolejnych etapach badań.
+
+Zastosowania WFS sięgają od tworzenia wrażeń przestrzennych, poprzez poprawę
+jakości akustyki pomieszczeń~\cite{enhancement}, do badań psychoakustycznych,
+oraz dydaktyki --- zaprojektowany system można dostosować do każdego z~nich.
+Ponadto może być on użyty do dalszego badania możliwości i ograniczeń syntezy
+pola akustycznego.
+
+\printbibliography
+
+\end{document}
