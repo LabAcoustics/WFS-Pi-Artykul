@@ -1,5 +1,4 @@
 text.usetex: True
-text.latex.unicode: True
 text.latex.preamble: \usepackage{lmodern}, \usepackage[T1]{fontenc}, \usepackage{icomma}, \usepackage{siunitx}
 pgf.texsystem: pdflatex
 pgf.preamble: \usepackage{lmodern}, \usepackage[utf8]{inputenc}, \usepackage[T1]{fontenc}, \usepackage{siunitx}
