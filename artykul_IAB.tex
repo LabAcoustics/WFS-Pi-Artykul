@@ -185,7 +185,8 @@ backend=biber
 
 \noindent\MakeUppercase{M. Piszak} (uczestnik Konkursu Prac Studenckich), \MakeUppercase{S.~Mikulicz, M.~Kmiecik,} \linebreak \MakeUppercase{T.~Makuch, P.~Pawlik} (opiekun naukowy)\\
 
-\noindent AGH Akademia Górniczo-Hutnicza im. S. Staszica w Krakowie\\
+\noindent AGH Akademia Górniczo-Hutnicza im. S. Staszica w Krakowie, Wydział Inżynierii Mechanicznej i~Robotyki, Katedra Mechaniki i~Wibroakustyki
+\\
 
 \noindent piszak@student.agh.edu.pl
 
@@ -193,7 +194,7 @@ backend=biber
 
 W większości systemów reprodukcji dźwięku wrażenia słuchowe są zależne od pozycji słuchacza. Technologią pozwalającą na usunięcie tego ograniczenia jest Wave Field Synthesis (WFS, Synteza Pola Akustycznego). Dzięki odpowiedniemu przetwarzaniu sygnałów, macierz głośników pozwala na formowanie kształtu czoła fali akustycznej tak, aby symulować wirtualne źródło dźwięku w~dowolnej odległości od słuchacza, niezależnie od jego pozycji.
 
-Wykorzystujące tę metodę systemy są zazwyczaj skomplikowane i~drogie ze względu na wymaganą dużą liczbę niezależnych kanałów przetwarzania DSP i~przetworników elektroakustycznych. Projekt obejmuje stworzenie modułowego systemu WFS opartego na mikrokomputerach Raspberry Pi oraz dedykowanych modułach wzmacniaczy klasy D~wyposażonych w~przetworniki cyfrowo-analogowe. Modułowość konstrukcji pozwala na jednoczesne niezależne przetwarzanie dużej liczby sygnałów oraz skonfigurowanie systemu w~dowolny sposób, a~także umożliwia rozszerzanie systemu o~kolejne zestawy głośników, co zwiększa dokładność syntezy.
+Wykorzystujące tę metodę systemy są zazwyczaj skomplikowane i~drogie ze względu na wymaganą dużą liczbę niezależnych kanałów przetwarzania DSP i~przetworników elektroakustycznych. Projekt obejmuje stworzenie modułowego systemu WFS opartego na mikrokomputerach Raspberry Pi (RPi) oraz dedykowanych modułach wzmacniaczy klasy D~wyposażonych w~przetworniki cyfrowo-analogowe. Modułowość konstrukcji pozwala na jednoczesne niezależne przetwarzanie dużej liczby sygnałów oraz skonfigurowanie systemu w~dowolny sposób, a~także umożliwia rozszerzanie systemu o~kolejne zestawy głośników, co zwiększa dokładność syntezy.
 
 Obok właściwego przetwarzania sygnałów w~zależności od lokalizacji źródła, głównym wyzwaniem była synchronizacja odtwarzania przez wiele niezależnych modułów RPi -- precyzja synchronizacji jest kluczowa dla jakości generowania pola akustycznego oraz percepcji zgodnej z~założeniami. Dlatego wprowadzono rozwiązanie pozwalające na synchronizację odtwarzania dźwięku przez wszystkie moduły.
 
@@ -243,7 +244,7 @@ Równaniem, na którym opiera się przetwarzanie sygnałów w~WFS jest całka
 Helmholtza-Huygensa,
 pozwalająca wyznaczyć analitycznie rozkład ciśnienia akustycznego pochodzącego od danego
 zestawu źródeł~\cite{snaka}. Na tej podstawie definiowana jest funkcja
-opisująca ciśnienie akustyczne w~punkcie umieszczenia każdego głośnika (por. część~\ref{s:algorithm}). To
+opisująca ciśnienie akustyczne w~punkcie umieszczenia każdego głośnika (zob. rozdział~\ref{s:algorithm}). To
 podejście pozwala uwzględnić geometrię przestrzeni i~straty energii podczas
 propagacji fali dźwiękowej oraz wyznaczyć amplitudy i~fazy sygnału dla każdego
 z~głośników. 
@@ -263,7 +264,7 @@ jest w~stanie odtwarzać dźwięk z dużą dokładnością. Przyjęte w modelu t
 o~odległość $\Delta x$, a~każdy głośnik ma określone wymiary. Im większa macierz, tym niższa
 jest minimalna częstotliwość, która może być poprawnie odtworzona $f_{min}$ --- źródło jest wystarczająco duże w stosunku 
 do długości fali akustycznej ($f_{min}>\frac{c}{L}$, gdzie $c$~oznacza prędkość propagacji fali dźwiękowej,
-a~$L$~to długość macierzy głośników.
+a~$L$~to długość macierzy głośników).
 
 Dla górnej granicy częstotliwości należy uwzględnić zjawisko aliasingu
 przestrzennego. Odległości pomiędzy głośnikami powodują różnice fazowe, w~wyniku których 
@@ -309,7 +310,7 @@ Zastosowano przetwarzanie w~dziedzinie częstotliwości, ponieważ na tym etapie
 
 \section{Realizacja}
 
-Zastosowano rozwiązania oparte na komputerach Raspberry
+Zastosowano rozwiązania oparte na mikrokomputerach Raspberry
 Pi. Mają one niewielkie wymiary i~dysponują odpowiednią mocą obliczeniową
 potrzebną do przetwarzania sygnałów wysyłanych na poszczególne kanały.
 
@@ -317,7 +318,7 @@ Przetwarzanie sygnału z~cyfrowego na analogowy oraz jego wzmocnienie jest
 realizowane przez moduł Amp Zero pHAT firmy JustBoom. Jest to połączenie
 przetwornika analogowo-cyfrowego oraz wzmacniacza klasy D~o~mocy wyjściowej
 $2\times40\si{\watt}$. Sygnał może być próbkowany z~częstotliwością
-\SI{192}{\kilo\hertz} i~rozdzielczością \SI{32}{\bit}, a~zastosowanie
+\SI{192}{\kilo\hertz} i~rozdzielczością \num{32} bitów, a~zastosowanie
 wzmacniacza klasy D~umożliwia osiąganie odpowiedniej mocy głośników przy
 zachowaniu niewielkich rozmiarów pojedynczego modułu.
 
@@ -326,11 +327,7 @@ o~średnicy \SI{3}{\inch}, impedancji \SI{8}{\ohm} i~nominalnym zakresie
 częstotliwości \SI{100}{\hertz}~--~\SI{20}{\kilo\hertz}.
 
 Każdy moduł składa się z~komputera Raspberry Pi, modułu wzmacniacza Amp Zero
-oraz dwóch głośników.
-Aby zwiększyć możliwości adaptacji systemu do wymaganych warunków
-każdy głośnik zostanie umieszczony w~oddzielnej obudowie. Takie rozwiązanie
-pozwoli na manipulowanie kształtem i~rozmiarem macierzy głośników,
-co jest pożądane ze względu na dydaktyczne i~naukowe zastosowania systemu.  
+oraz dwóch głośników. 
 Strukturę systemu przedstawia rysunek \ref{fig:schemat}.
 
 \begin{figure}[!tbh]
@@ -340,11 +337,12 @@ Strukturę systemu przedstawia rysunek \ref{fig:schemat}.
   \label{fig:schemat}
 \end{figure}
 
-Aby generowane pole akustyczne było spójne, w~czasie przetwarzaniu sygnałów przez
-poszczególne moduły nie mogą występować dewiacje. Dlatego system posiada połączenie
+Aby generowane pole akustyczne było spójne, nie mogą wystąpić dewiacje czasu
+przetwarzania sygnałów przez poszczególne moduły. Dlatego system posiada połączenie
 synchronizujące moment rozpoczęcia odtwarzania próbek dźwięku.
 
-Połączenie synchronizujące wykorzystuje piny GPIO, oprogramowanie napisano \linebreak w~języku 
+Połączenie synchronizujące wykorzystuje piny GPIO (piny ogólnego przeznaczenia, ang.
+\textit{General Purpose Input-Output}), oprogramowanie napisano w~języku 
 Rust, korzystając z~biblioteki 
 \emph{RPPAL}~\cite{RPPAL}. Dane audio oraz informacje na temat wzajemnego położenia 
 głośników i~wirtualnego źródła przesyłane są bezprzewodowo przez sieć lokalną, co
@@ -353,16 +351,17 @@ pozwala na wygodne modyfikacje układu przestrzennego i~zmniejsza ilość
 przewodów. Główna jednostka systemu z~aplikacją serwera kontroluje połączenie
 synchronizujące oraz zarządza procesami przetwarzania audio.
 
-\section{Pomiary}
+\section{Pomiary weryfikujące}
 
 W~celu weryfikacji działania systemu synchronizacji oraz ewentualnego wykrycia innych 
-problemów zmierzono sygnał na wyjściu wszystkich wzmacniaczy. [\textit{opis pomiarów + wyniki}]
+problemów zmierzono sygnały na wyjściu wszystkich wzmacniaczy. [\textit{opis pomiarów + wyniki}]
 
 Wykonano także wstępne pomiary rozkładu pola akustycznego generowanego przez system 
 w~komorze bezechowej: zarejestrowano przebieg ciśnienia akustycznego w~32 punktach 
-rozmieszczonych co~\SI{400}{\milli\metre}. Na rysunku~\ref{r:pomiar_kb} można zauważyć,
-że kształt czoła fali jest zbliżony do oczekiwanego, wyznaczonego analitycznie
-(por. rys.~\ref{r:symulacja}).
+rozmieszczonych co~\SI{400}{\milli\metre}, dla różnych pozycji źródła wirtualnego. 
+Na rysunku~\ref{r:pomiar_kb}, przedstawiającym wyniki pomiaru dla tej samej pozycji 
+źródła, dla której wykonano obliczenia analityczne, można zauważyć,
+że kształt czoła fali jest zbliżony do oczekiwanego (zob. rys.~\ref{r:symulacja}).
 
 \begin{figure}[!tbh]
   \centering
