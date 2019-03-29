@@ -319,7 +319,7 @@ przetwornika analogowo-cyfrowego oraz wzmacniacza klasy D~o~mocy wyjściowej
 $2\times40\si{\watt}$. Sygnał może być próbkowany z~częstotliwością
 \SI{192}{\kilo\hertz} i~rozdzielczością \num{32} bitów, a~zastosowanie
 wzmacniacza klasy D~umożliwia osiąganie odpowiedniej mocy głośników przy
-zachowaniu niewielkich rozmiarów pojedynczego modułu.
+zachowaniu niewielkich rozmiarów pojedynczego modułu~\cite{oska}.
 
 Jako przetworników elektroakustycznych użyto głośników firmy Faital Pro, model 3FE25,
 o~średnicy \SI{3}{\inch}, impedancji \SI{8}{\ohm} i~nominalnym zakresie 
@@ -350,6 +350,10 @@ pozwala na wygodne modyfikacje układu przestrzennego i~zmniejsza ilość
 przewodów. Główna jednostka systemu z~aplikacją serwera kontroluje połączenie
 synchronizujące oraz zarządza procesami przetwarzania audio.
 
+Problemem pozostaje zaobserwowany na oscyloskopie \textit{jitter} zegarów w~każdym RPi,
+co przy długim czasie odtwarzania może powodować przesunięcia czasowe kolejnych próbek.
+Autorzy rozważają możliwości synchronizacji zegarów wewnętrznych mikrokomputerów.
+
 \section{Pomiary weryfikujące}
 
 Wykonano wstępne pomiary rozkładu pola akustycznego generowanego przez system 
@@ -370,21 +374,24 @@ Na rysunku~\ref{r:pomiar_kb}, przedstawiającym wyniki pomiaru dla tej samej poz
 
 \section{Podsumowanie}
 
-Skonstruowano działający system WFS spełniający podstawowe założenia tej metody.
-W~ramach dalszych prac system zostanie rozbudowany o~kolejne funkcjonalności,
+Wstępna weryfikacja pozwala stwierdzić, że
+skonstruowano działający system WFS spełniający podstawowe założenia tej metody.
+W~ramach dalszych prac poprawiona zostanie synchronizacja czasowa,
+system zostanie rozbudowany o~kolejne funkcjonalności,
 takie jak m.in. obudowy głośników, interfejs użytkownika umożliwiający sterowanie 
 parametrami źródeł wirtualnych, synteza dźwięku dla ruchomych źródeł.
 
 Dzięki swojej modułowości, zaprojektowany system może zostać dostosowany do 
 konkretnego zastosowania poprzez odpowiednie ustawienie głośników. Ponadto,
 jego skonstruowanie wiąże się ze znacznie mniejszymi kosztami, niż typowego
-systemu WFS.
+systemu WFS. Może on zostać wykorzystany do dalszych badań nad możliwościami 
+i~ograniczeniami tej metody reprodukcji dźwięku.
 
-Zastosowania syntezy pola akustycznego obejmują przemysł rozrywkowy, poprawę
-jakości akustyki pomieszczeń~\cite{enhancement}, badania psychoakustyczne,
-oraz dydaktykę -- zaprojektowany system można dostosować do każdego z~nich.
-Ponadto może być on użyty do dalszych badań nad możliwościami i ograniczeniami
-tej metody reprodukcji dźwięku.
+% Zastosowania syntezy pola akustycznego obejmują przemysł rozrywkowy, poprawę
+% jakości akustyki pomieszczeń~\cite{enhancement}, badania psychoakustyczne,
+% oraz dydaktykę -- zaprojektowany system można dostosować do każdego z~nich.
+% Ponadto może być on użyty do dalszych badań nad możliwościami i ograniczeniami
+% tej metody reprodukcji dźwięku.
 
 \printbibliography
 
