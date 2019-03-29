@@ -59,7 +59,7 @@
 \usepackage[
 style=numeric,
 sorting=none,
-autolang=other,
+autolang=none,
 language=autobib,
 backref=false,
 isbn=true,
@@ -189,7 +189,7 @@ W większości systemów reprodukcji dźwięku wrażenia słuchowe są zależne 
 
 Wykorzystujące tę metodę systemy są zazwyczaj skomplikowane i~drogie ze względu na wymaganą dużą liczbę niezależnych kanałów przetwarzania DSP i~przetworników elektroakustycznych. Projekt obejmuje stworzenie modułowego systemu WFS opartego na mikrokomputerach Raspberry Pi (RPi) oraz dedykowanych modułach wzmacniaczy klasy D~wyposażonych w~przetworniki cyfrowo-analogowe. Modułowość konstrukcji pozwala na jednoczesne niezależne przetwarzanie dużej liczby sygnałów oraz skonfigurowanie systemu w~dowolny sposób, a~także umożliwia rozszerzanie systemu o~kolejne zestawy głośników, co zwiększa dokładność syntezy.
 
-Obok właściwego przetwarzania sygnałów w~zależności od lokalizacji źródła, głównym wyzwaniem była synchronizacja odtwarzania przez wiele niezależnych modułów RPi -- precyzja synchronizacji jest kluczowa dla jakości generowania pola akustycznego oraz percepcji zgodnej z~założeniami. Dlatego wprowadzono rozwiązanie pozwalające na synchronizację odtwarzania dźwięku przez wszystkie moduły.
+Obok właściwego przetwarzania sygnałów w~zależności od lokalizacji źródła, głównym wyzwaniem jest synchronizacja odtwarzania przez wiele niezależnych modułów RPi -- precyzja synchronizacji jest kluczowa dla jakości generowania pola akustycznego oraz percepcji zgodnej z~założeniami. Dlatego wprowadzono rozwiązanie pozwalające na synchronizację odtwarzania dźwięku przez wszystkie moduły.
 
 Skonstruowano działający prototyp systemu, którego działanie zostało poddane weryfikacji pomiarowej. Wykonano pomiary sygnału na wyjściu każdego wzmacniacza oraz wstępne pomiary w~komorze bezechowej, pozwalające określić jakość pola akustycznego generowanego przez skonstruowany system.
 
@@ -212,7 +212,7 @@ w~macierzy może być rozpatrywany zarówno jako odbiornik (punkt, do którego
 dociera fala dźwiękowa) jak i~jako źródło drugiego rzędu, reprodukujące falę
 pochodzącą od źródła wirtualnego (rys.~\ref{r:Huygens}). Dzięki
 odpowiedniemu przetwarzaniu sygnału głośniki emitują fale, które nakładając
-się tworzą wrażenie źródła zlokalizowanego w~określonym punkcie w~przestrzeni~\cite{hq_rendering} (rys.\ref{r:symulacja}).
+się tworzą wrażenie źródła zlokalizowanego w~określonym punkcie w~przestrzeni (rys.\ref{r:symulacja})~\cite{hq_rendering}.
 
 \begin{figure}[!tbh]
   \centering
@@ -315,7 +315,7 @@ Jako przetworników elektroakustycznych użyto głośników firmy Faital Pro, mo
 o~średnicy \SI{3}{\inch} i~nominalnym zakresie 
 częstotliwości \SI{100}{\hertz}~--~\SI{20}{\kilo\hertz}.
 
-Każdy moduł składa się z~komputera Raspberry Pi, modułu wzmacniacza Amp Zero
+Każdy moduł składa się z~mikrokomputera Raspberry Pi, modułu wzmacniacza Amp Zero
 oraz dwóch głośników. 
 Strukturę systemu przedstawia rysunek \ref{fig:schemat}.
 
@@ -340,9 +340,9 @@ pozwala na wygodne modyfikacje układu przestrzennego i~zmniejsza ilość
 przewodów. Główna jednostka systemu z~aplikacją serwera kontroluje połączenie
 synchronizujące oraz zarządza procesami przetwarzania audio.
 
-Problemem pozostaje zaobserwowana na oscyloskopie nierównomierność częstotli\-wości zegarów w~każdym RPi,
+Problemem pozostaje zaobserwowana na oscyloskopie podczas testowania prototypu nierównomierność częstotliwości zegarów w~każdym RPi,
 co przy długim czasie odtwarzania może powodować coraz bardziej znaczące przesunięcia czasowe kolejnych próbek.
-Autorzy rozważają możliwości synchronizacji zegarów wewnętrznych mikrokomputerów.
+Autorzy rozważają różne możliwości synchronizacji wewnętrznych zegarów mikrokomputerów.
 
 \section{Pomiary weryfikujące}
 
@@ -350,10 +350,10 @@ Wykonano wstępne pomiary rozkładu pola akustycznego generowanego przez system
 w~komorze bezechowej: zarejestrowano przebieg ciśnienia akustycznego w~32 punktach 
 rozmieszczonych co~\SI{400}{\milli\metre}, dla różnych pozycji źródła wirtualnego.
 Wykorzystano komputer z~kartami pomiarowymi National Instruments PXI-4472B i~mikrofony
-G.R.A.S. 46AE.
+G.R.A.S. 46AE; przed rozpoczęciem pomiarów tor pomiarowy poddano kalibracji.
 Na rysunku~\ref{r:pomiar_kb}, przedstawiającym wyniki pomiaru dla tej samej pozycji 
 źródła, dla której wykonano obliczenia analityczne, można zauważyć,
-że kształt czoła fali jest zbliżony do oczekiwanego (zob. rys.~\ref{r:symulacja}).
+że kształt czoła fali jest zbliżony do oczekiwanego (por. rys.~\ref{r:symulacja}).
 
 \begin{figure}[!tbh]
     \centering
@@ -369,7 +369,7 @@ skonstruowano działający system WFS spełniający podstawowe założenia tej m
 W~ramach dalszych prac poprawiona zostanie synchronizacja czasowa,
 system zostanie rozbudowany o~kolejne funkcjonalności,
 takie jak m.in. obudowy głośników, interfejs użytkownika umożliwiający sterowanie 
-parametrami źródeł wirtualnych, synteza dźwięku dla ruchomych źródeł.
+parametrami źródeł wirtualnych, synteza pola akustycznego dla ruchomych źródeł.
 
 Dzięki swojej modułowości, zaprojektowany system może zostać dostosowany do 
 konkretnego zastosowania poprzez odpowiednie ustawienie głośników. Ponadto,
