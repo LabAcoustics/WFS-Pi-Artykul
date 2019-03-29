@@ -321,7 +321,7 @@ wzmacniacza klasy D~umożliwia osiąganie odpowiedniej mocy głośników przy
 zachowaniu niewielkich rozmiarów pojedynczego modułu~\cite{oska}.
 
 Jako przetworników elektroakustycznych użyto głośników firmy Faital Pro, model 3FE25,
-o~średnicy \SI{3}{\inch}, impedancji \SI{8}{\ohm} i~nominalnym zakresie 
+o~średnicy \SI{3}{\inch} i~nominalnym zakresie 
 częstotliwości \SI{100}{\hertz}~--~\SI{20}{\kilo\hertz}.
 
 Każdy moduł składa się z~komputera Raspberry Pi, modułu wzmacniacza Amp Zero
@@ -349,8 +349,8 @@ pozwala na wygodne modyfikacje układu przestrzennego i~zmniejsza ilość
 przewodów. Główna jednostka systemu z~aplikacją serwera kontroluje połączenie
 synchronizujące oraz zarządza procesami przetwarzania audio.
 
-Problemem pozostaje zaobserwowany na oscyloskopie \textit{jitter} zegarów w~każdym RPi,
-co przy długim czasie odtwarzania może powodować przesunięcia czasowe kolejnych próbek.
+Problemem pozostaje zaobserwowana na oscyloskopie nierównomierność częstotli\-wości zegarów w~każdym RPi,
+co przy długim czasie odtwarzania może powodować coraz bardziej znaczące przesunięcia czasowe kolejnych próbek.
 Autorzy rozważają możliwości synchronizacji zegarów wewnętrznych mikrokomputerów.
 
 \section{Pomiary weryfikujące}
