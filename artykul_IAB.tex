@@ -46,12 +46,12 @@
 \let\Oldsubsubsection\subsubsection
 \renewcommand{\subsubsection}{\FloatBarrier\Oldsubsubsection}
 
-\usepackage[explicit]{titlesec}
-\titleformat{\section}[block]
-{\large\centering}{\thesection. \MakeUppercase{#1}}{0ex}{}
-\titlespacing{\section}{0pt}{11pt plus 0pt minus 1pt}{11pt plus 0pt minus 1pt}
-\titleformat{\subsection}[block]
-{\normalsize\centering}{\thesubsection. \MakeUppercase{#1}}{0ex}{}
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\large\centering}{\thesection. }{0em}{}
+
+%\titlespacing{\section}{0pt}{11pt plus 0pt minus 1pt}{11pt plus 0pt minus 1pt}
+%\titleformat{\subsection}[block]
+%{\normalsize\centering}{\thesubsection. \MakeUppercase{#1}}{0ex}{}
 % \titlespacing{\subsection}{8pt}{8pt}{2.5mm}
 
 
@@ -390,6 +390,6 @@ oraz dydaktykę -- zaprojektowany system można dostosować do każdego z~nich.
 Ponadto może być on użyty do dalszych badań nad możliwościami i ograniczeniami
 tej metody reprodukcji dźwięku.
 
-\printbibliography
+\printbibliography[heading=Bibliografia]
 
 \end{document}
