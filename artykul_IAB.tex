@@ -269,8 +269,7 @@ do długości fali akustycznej ($f_{min}>\frac{c}{L}$, gdzie $c$~oznacza prędko
 a~$L$~to długość macierzy głośników).
 
 Dla górnej granicy częstotliwości należy uwzględnić zjawisko aliasingu
-przestrzennego. Odległości pomiędzy głośnikami powodują różnice fazowe, w~wyniku których 
-występuje konstruktywna i~destruktywna interferencja dla częstotliwości powyżej~$f_{max}$~\eqref{eq:fmax}:
+przestrzennego, występujące dla częstotliwości powyżej~$f_{max}$~\eqref{eq:fmax}:
 
 \begin{equation}
   f_{max}=\frac{c}{2\Delta x \sin{\alpha_{max}}} \quad, \label{eq:fmax}
@@ -278,10 +277,10 @@ występuje konstruktywna i~destruktywna interferencja dla częstotliwości powy�
 gdzie $\alpha_{max}$ to maksymalny kąt pomiędzy falą padającą od źródła 
 wirtualnego a~płaszczyzną przebiegającą przez membrany wszystkich głośników w~macierzy.
 
-Efekt ten nie zniekształca jednak dźwięku w sposób znaczący dla odbioru przez 
+Efekt aliasingu przestrzennego nie zniekształca jednak dźwięku w sposób znaczący dla odbioru przez 
 słuchacza~\cite{hq_rendering}.
 
-Uwzględniając te ograniczenia, zdecydowano się wykorzystać głośniki o średnicy \SI{3}{\inch}
+Uwzględniając powyższe ograniczenia, zdecydowano się wykorzystać głośniki o średnicy \SI{3}{\inch}
 (\SI{81}{\milli\meter}), które rozmieszczono co $\Delta x=\SI{150}{\milli\meter}$.
 
 \subsection{Przetwarzanie sygnałów}\label{s:algorithm}
@@ -310,7 +309,7 @@ odpowiednie współczynniki.
 \section{Realizacja}
 
 Zastosowano rozwiązania oparte na mikrokomputerach Raspberry
-Pi. Mają one niewielkie wymiary i~dysponują odpowiednią mocą obliczeniową
+Pi (RPi). Mają one niewielkie wymiary i~dysponują odpowiednią mocą obliczeniową
 potrzebną do przetwarzania sygnałów wysyłanych na poszczególne kanały.
 
 Przetwarzanie sygnału z~cyfrowego na analogowy oraz jego wzmocnienie jest
