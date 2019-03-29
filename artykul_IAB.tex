@@ -269,18 +269,13 @@ a~$L$~to długość macierzy głośników).
 
 Dla górnej granicy częstotliwości należy uwzględnić zjawisko aliasingu
 przestrzennego. Odległości pomiędzy głośnikami powodują różnice fazowe, w~wyniku których 
-występuje konstruktywna i~destruktywna interferencja dla częstotliwości powyżej~\eqref{eq:fmax}:
+występuje konstruktywna i~destruktywna interferencja dla częstotliwości powyżej~$f_{max}$~\eqref{eq:fmax}:
 
 \begin{equation}
   f_{max}=\frac{c}{2\Delta x \sin{\alpha_{max}}} \quad, \label{eq:fmax}
 \end{equation}
-gdzie:\\
-\indent \begin{tabular}{l c p{.69\textwidth}}
-  $f_{max}$ [\si{\hertz}] & --- & najwyższa częstotliwość wolna od aliasingu przestrzennego, \\
-  $\Delta x$ [\si{\metre}] & --- & odległość między środkami dwóch sąsiednich głośników, \\
-  $\alpha_{max}$ [\si{\radian}] & --- & maksymalny kąt pomiędzy falą padającą od źródła 
-  wirtualnego a~płaszczyzną przebiegającą przez membrany wszystkich głośników w~macierzy.\\
-\end{tabular}\\
+gdzie $\alpha_{max}$ to maksymalny kąt pomiędzy falą padającą od źródła 
+wirtualnego a~płaszczyzną przebiegającą przez membrany wszystkich głośników w~macierzy.
 
 Efekt ten nie zniekształca jednak dźwięku w sposób znaczący dla odbioru przez 
 słuchacza~\cite{hq_rendering}.
@@ -367,7 +362,7 @@ Na rysunku~\ref{r:pomiar_kb}, przedstawiającym wyniki pomiaru dla tej samej poz
 
 \begin{figure}[!tbh]
     \centering
-  \import{./plots/}{sin200_s5_IAB.pgf}
+    \adjustbox{max width=.7\textwidth}{\import{./plots/}{sin200_s5_IAB.pgf}}
     \caption{Wyniki pomiarów prototypu --- interpolowany rozkład pola dla fali sinusoidalnej o~częstotliwości \SI{200}{\hertz}}
   \label{r:pomiar_kb}
 \end{figure}
