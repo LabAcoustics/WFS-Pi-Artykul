@@ -356,32 +356,20 @@ synchronizujące oraz zarządza procesami przetwarzania audio.
 
 \section{Pomiary weryfikujące}
 
-W~celu weryfikacji działania systemu synchronizacji oraz ewentualnego wykrycia innych 
-problemów zmierzono sygnały na wyjściu wszystkich wzmacniaczy. [\textit{opis pomiarów + wyniki}]
-
-Wykonano także wstępne pomiary rozkładu pola akustycznego generowanego przez system 
+Wykonano wstępne pomiary rozkładu pola akustycznego generowanego przez system 
 w~komorze bezechowej: zarejestrowano przebieg ciśnienia akustycznego w~32 punktach 
-rozmieszczonych co~\SI{400}{\milli\metre}, dla różnych pozycji źródła wirtualnego. 
+rozmieszczonych co~\SI{400}{\milli\metre}, dla różnych pozycji źródła wirtualnego.
+Wykorzystano komputer z~kartami pomiarowymi National Instruments PXI-4472B i~mikrofony
+G.R.A.S. 46AE.
 Na rysunku~\ref{r:pomiar_kb}, przedstawiającym wyniki pomiaru dla tej samej pozycji 
 źródła, dla której wykonano obliczenia analityczne, można zauważyć,
 że kształt czoła fali jest zbliżony do oczekiwanego (zob. rys.~\ref{r:symulacja}).
 
 \begin{figure}[!tbh]
-  \centering
-  \begin{subfigure}[b]{.49\textwidth}
-    \centering
-    % \includegraphics[scale=.35]{vecgraphics/WFS_idea.pdf}
-    \caption{Wyniki pomiaru sygnału na wyjściu wzmacniaczy}
-    \label{r:pomiar_el}
-  \end{subfigure}
-  ~
-  \begin{subfigure}[b]{.49\textwidth}
     \centering
     \import{./plots/}{sin200_s5_IAB.pgf}
-    \caption{Interpolowany rozkład pola dla fali sinusoidalnej o~częstotliwości \SI{200}{\hertz}}
+    \caption{Wyniki pomiarów prototypu --- interpolowany rozkład pola dla fali sinusoidalnej o~częstotliwości \SI{200}{\hertz}}
     \label{r:pomiar_kb}
-  \end{subfigure}
-  \caption{Wyniki pomiarów prototypu}
 \end{figure}
 
 \section{Podsumowanie}
