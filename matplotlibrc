@@ -8,7 +8,7 @@ axes.grid: True
 axes.linewidth: 0.2
 savefig.dpi: 1200
 font.family: serif
-font.size: 6.0
+font.size: 9.0
 axes.unicode_minus: False
 figure.autolayout: True
 axes.formatter.use_locale: True

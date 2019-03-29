@@ -70,13 +70,13 @@ matrix = np.hstack((matrix1.reshape(4, 4), matrix2.reshape(4, 4)))
 x = np.arange(0, 8)
 y = np.arange(0, 4)
 
-ppl.figure()
+ppl.figure(figsize=(5,2))
 ppl.imshow(matrix, interpolation="spline16", cmap='jet', vmin=0.0,
            vmax=0.15, extent=(-mic_dist*3.5, mic_dist*3.5, mic_dist*3, 0))
 ppl.tick_params(direction="in", width=0.2)
 cbar = ppl.colorbar()
 cbar.ax.tick_params(direction="in", width=0.2, length=1)
-cbar.ax.set_title(r"Ciśnienie ak. [\si{\pascal}]", fontsize=6)
+cbar.ax.set_title(r"Ciśnienie ak. [\si{\pascal}]", fontsize=9)
 
 ppl.xlabel(r"x [\si{\meter}]")
 ppl.ylabel(r"y [\si{\meter}]")
