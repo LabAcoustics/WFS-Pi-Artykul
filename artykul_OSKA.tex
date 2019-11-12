@@ -140,8 +140,10 @@ backend=biber
 
 %---------------------------------------------------------------------------
 
-\titlePL{Wielokanałowy system syntezy pola akustycznego}
-\titleEN{Multichannel wave field synthesis system}
+%\titlePL{Wielokanałowy system syntezy pola akustycznego}
+\titlePL{System syntezy pola akustycznego}
+%\titleEN{Multichannel wave field synthesis system}
+\titleEN{Wave field synthesis system}
 \affiliation{Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie}
 
 %------------------------------------AUTORZY-----------------------
@@ -211,7 +213,7 @@ Reprodukcja dźwięku jest bardzo szerokim zagadnieniem akustyki. W obecnych
 czasach istnieje wiele technik pozwalających na odtworzenie panujących w
 wybranym miejscu warunków akustycznych w zgoła innym otoczeniu. Złożoność
 zjawisk związanych z propagacją fali akustycznej w rzeczywistym środowisku
-sprawia, że omawiane zagadnienie staje się złożonym problemem.  W większości
+sprawia, że omawiane zagadnienie staje się skomplikowanym problemem.  W większości
 stosowanych systemów reprodukcji dźwięku, takich jak systemy ambisoniczne czy
 wielokanałowe (5.1, 7.1) występuje problem ograniczenia przestrzeni dokładnego
 odwzorowania do punktu, a właściwie niewielkiego obszaru wokół niego (tzw.
@@ -220,8 +222,7 @@ odwzorowania do punktu, a właściwie niewielkiego obszaru wokół niego (tzw.
 %reprodukcji dźwięku jest ograniczenie przestrzeni dokładnego odwzorowania do
 %punktu, a właściwie niewielkiego obszaru wokół niego (tzw. \textit{sweet
 %spot}).
-Istnienie takiego ograniczenia wyklucza zastosowanie takich systemów w
-sytuacjach, gdy mamy do czynienia z~odbiorcą wykonującym ruch w strefie
+Istnienie takiego ograniczenia wyklucza zastosowanie wyżej opisanych systemów w~sytuacjach, gdy mamy do czynienia z~odbiorcą przemieszczającym się w strefie
 odsłuchu. Z pomocą przychodzą jednak systemy syntezy pola akustycznego (ang.
 \textit{Wave Field Synthesis} --- WFS), które bazując na dużej liczbie
 głośników są w stanie imitować fale akustyczne generowane przez źródła
@@ -261,7 +262,7 @@ fali~\cite{hq_rendering}, co pokazuje rysunek
 \end{figure}
 
 Podstawowym równaniem w WFS jest całka Helmholtza-Huygensa (inaczej zwana całką
-Kirchoffa-Helmholtza), analityczna metoda opisu rozkładu pola akustycznego,
+Kirchoffa-Helmholtza), analityczna metoda opisu rozkładu potencjału akustycznego,
 która pozwala wyznaczyć ciśnienie akustyczne pochodzące od danego zestawu
 źródeł w każdym punkcie zdefiniowanej przestrzeni~\cite{snaka}. Jest używana do
 zdefiniowania funkcji opisującej ciśnienie akustyczne w pozycji głośnika, który
@@ -284,7 +285,7 @@ między innymi:
     elementów skończonych (MES), by zweryfikować działanie algorytmu.
 \end{itemize}
 
-\subsection{Geometria}
+\subsection{Wymiary macierzy}
 
 Rozmiar macierzy głośnikowej determinuje zakres częstotliwości w którym system
 jest w~stanie odtwarzać dźwięk z dużą dokładnością. Wynika to z faktu, że
@@ -359,7 +360,7 @@ w~postaci~\eqref{eq:glosnik_t}~\cite{enhancement}:
 
 \subsection{Symulacja}
 
-Aby ocenić dokładność algorytmu przeprowadzono symulacje rozkładu pola
+Aby ocenić dokładność algorytmu przeprowadzono symulacje rozkładu ciśnienia
 akustycznego.  Stworzono dwa modele: jeden ze źródłem rzeczywistym w pozycji
 $S$ i przegrodą z otworami, imitującą macierz głośnikową, ilustrujący szacowaną
 przestrzeń syntezy, i drugi ze źródłami punktowymi emulującymi głośniki
@@ -376,8 +377,8 @@ modelami.
   \includegraphics[height=.41\textheight]{bitgraphics/real_500Hz.png}
   \includegraphics[height=.41\textheight]{bitgraphics/virtual_500Hz.png}
   \caption{Wyniki symulacji pola akustycznego przy pomocy MES:
-    rozkład ciśnienia dla źródła punktowego (góra) i macierzy głośnikowej
-  symulującej źródło wirtualne w tej samej pozycji (dół)}
+    rozkład ciśnienia akustycznego~[Pa] dla źródła punktowego (góra) i macierzy głośnikowej
+  symulującej źródło wirtualne w~tej samej pozycji (dół)}
   \label{r:fem}
 \end{figure}
 
@@ -435,18 +436,18 @@ zastosowane komputery nie pracują w~oparciu o~systemy czasu rzeczywistego.
   \centering
   \import{./vecgraphics/}{scheme2.pdf_tex}
 % 	\includegraphics{vecgraphics/scheme2.pdf}
-  \caption{Schemat projektowanego systemu WFS}
+  \caption{Schemat projektowanego systemu WFS, gdzie MASTER to jednostka sterująca, SLAVE moduł odtwarzania, CLK połączenie przesyłające sygnał zegara, RPi --- Raspberry Pi}
   \label{fig:schemat}
 \end{figure}
 
-Połączenie synchronizujące wykorzystuje piny GPIO. Oprogramowanie służące do
-synchronizacji oraz kontroli systemu napisano w~oparciu o~język Rust, którego
+Połączenie synchronizujące wykorzystuje piny GPIO (ang. General Purpose Input Output). Oprogramowanie służące do
+synchronizacji oraz kontroli systemu napisano wykorzystując język Rust, którego
 zaletą jest wysoka wydajność (na poziomie języka C). Skorzystano z gotowej
 biblioteki \emph{RPPAL}~\cite{RPPAL} obsługującej piny GPIO w~mikrokomputerach
 Raspberry Pi. Dane audio oraz informacje na temat lokalizacji głośników i
 wirtualnego źródła przesyłane są bezprzewodowo przez sieć lokalną (LAN), co
 oznacza, że system nie może odtwarzać dźwięku w czasie rzeczywistym, lecz
-pozwala na wygodne modyfikacje układu przestrzennego i zmniejsza ilość
+pozwala na wygodne modyfikacje układu przestrzennego i~zmniejsza liczbę
 przewodów. Główna jednostka systemu z aplikacją serwera kontroluje połączenie
 synchronizujące oraz zarządza procesorami przetwarzania audio. To pozwala na rozszerzanie
 systemu w~przyszłości i~zwiększanie jego funkcjonalności.
