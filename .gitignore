@@ -243,3 +243,6 @@ TSWLatexianTemp*
 
 # TeX class file
 *.cls
+
+# pdf files - reviev
+_recenzje_OSKA/*.pdf
