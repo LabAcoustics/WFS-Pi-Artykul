@@ -13,13 +13,19 @@
 
 \usepackage{siunitx}
 
+% \usepackage{titlesec}
+% \titleformat{\section}[display]{\normalsize}{\thesection.}{1cm}{}
+
+\usepackage{sectsty}
+\allsectionsfont{\normalsize}
+
 \parindent 10mm
 \parskip 3mm
 
 \begin{document}
 
     \begin{center}
-        \textbf{Odpowiedź na recenzję }\\
+        \textbf{\large Odpowiedź na recenzję }\\
         \vspace{10pt}
         Tytuł artykułu: \textbf{Wielokanałowy system syntezy pola akustycznego}
         \\
@@ -33,9 +39,9 @@ Poniżej odniesienie do poszczególnych punktów recenzji.
 \section{Ogólny pogląd na treść, układ, oraz wartość
 naukową artykułu}
 
-Rozwinięto wstęp o~przegląd literatury?
+\textcolor{red}{Rozwinięto wstęp o~przegląd literatury?}
 
-\textit{Czy mamy dopisać wyniki pomiarów???}
+\textcolor{red}{\textit{Czy mamy dopisać wyniki pomiarów???}}
 
 \section{Ocena poprawności terminologii i użytych sformułowań}
 
@@ -45,7 +51,7 @@ i~poprawiając poszczególne sformułowania.
 % \subsection{Tytuł – WFS z założenia wykorzystuje „wielokanałowość”}
 %
 % Zmieniono tytuł pracy z "Wielokanałowy system syntezy pola akustycznego" na
-"System syntezy pola akustycznego"
+% "System syntezy pola akustycznego"
 %
 % \subsection{Streszczenie}
 % \textcolor{red} {Wykminić o co chodzi}
@@ -86,8 +92,7 @@ Poprawiono podpis pod rysunkiem~1 oraz dodano rozwinięcie skrótu GPIO w~tekśc
 (piny ogólnego przeznaczenia, ang. \textit{General Purpose Input-Output}).
 
 Na rysunku~2 nie podano jednostek, ponieważ dla lepszej czytelności wykresu
-wysokie wartości ciśnienia tuż przy źródłach zostały zaokrąglone, a~następnie
-dokonano normalizacji. Zabieg taki usprawiedliwia cel przedstawienia wykresów,
+wysokie wartości ciśnienia tuż przy źródłach zostały zaokrąglone i~znormalizowane. Zabieg taki usprawiedliwia cel przedstawienia wykresów,
 którym było ukazanie rozkładu ciśnienia w~polu dalekim, nie zaś przedstawienie
 dokładnych wartości ciśnienia. Dodano odpowiedni komentarz wyjaśniający.
 

@@ -3,6 +3,7 @@
 \usepackage[left=2.5cm, right=2.5cm]{geometry}
 
 \usepackage[english,polish]{babel}
+\usepackage{color}
 
 % Użyj polskiego łamania wyrazów (zamiast domyślnego angielskiego).
 \usepackage{polski}
@@ -12,13 +13,23 @@
 
 \usepackage{siunitx}
 
+% \usepackage{titlesec}
+% \titleformat{\section}[display]{}{\thesection.}{}{}
+
+\usepackage{sectsty}
+\allsectionsfont{\normalsize}
+
 \parindent 10mm
 \parskip 3mm
+
+\DeclareRobustCommand{\BibTeX}{%
+  {\normalfont B\kern-.05em{\scshape i\kern-.025em b}\kern-.08em \TeX}%
+}
 
 \begin{document}
 
     \begin{center}
-        \textbf{Odpowiedź na recenzję }\\
+        \textbf{\large Odpowiedź na recenzję }\\
         \vspace{10pt}
         Tytuł artykułu: \textbf{Wielokanałowy system syntezy pola akustycznego} \\
         Autorzy: \textbf{Marcel Piszak, Szymon Mikulicz, Teresa Makuch, Michał Kmiecik}
@@ -30,17 +41,33 @@
 
     \section{Ogólny pogląd na treść, układ, oraz wartość naukową artykułu}
 
-    Dodatkowa analiza literatury?
+    \textcolor{red}{Dodatkowa analiza literatury?}
 
     \section{Ocena poprawności terminologii i~użytych sformułowań}
 
     Zastosowano większość sugerowanych zmian przedstawionych w~uwagach ogólnych. Poniżej uzasadnienie dla fragmentów, które pozostawiono bez zmian.
 
+    \textit{Istnienie takiego ograniczenia wyklucza zastosowanie wyżej opisanych systemów w sytuacjach, gdy mamy do czynienia z odbiorcą przemieszczającym się w~strefie odsłuchu.}
 
+    Zdaniem Autorów to zdanie wystarczająco jasno opisuje sytuację, o~jakiej jest mowa i~nie wymaga uzupełnienia o~przykład, który utrudniłby zrozumienie zdania.
+
+    \textit{We wzorze 3 nie występuje całka, dlatego ten opis nie jest pełny.}
+
+    Określenie całka Helmholtza-Huygensa odnosi się do teorii opisu pola akustycznego, z~której korzysta wzór~3, a~nie dotyczy go bezpośrednio (wzór zaczerpnięto z~pozycji [3] bibliografii).
 
     \section{Ocena celowości załączonego materiału ilustracyjnego}
 
-    \textit{}
+    \textit{Rys. 2 nie jest do końca jasny\dots Ponadto nasuwa się pytanie\dots}
+
+    W~dolnej części rysunku~2 przedstawiono wyniki uzyskane dla 16~głośników, czyli właśnie dla metody WFS, symulującej falę akustyczną od źródła przedstawionego w~górnej części rysunku.
+
+    Dla zwiększenia czytelności podpisano każdy rysunek osobno i~poprawiono opisy w~tekście.
+
+    \section{Pozostałe komentarze, uwagi}
+
+    \textit{Bibliografia: Zapisy nie są jednolite i~niepełne, rok powinien być na końcu, zamiast pełnych imion --- inicjały.}
+
+    Bibliografia została wykonana zgodnie z~przygotowanym przez organizatorów konferencji szablonem, który korzysta z~systemu bibliograficznego \BibTeX, według wiedzy autorów opartego o~powszechnie przyjęte standardy.
 
 
 \end{document}
