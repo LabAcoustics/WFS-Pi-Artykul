@@ -26,6 +26,7 @@
 \usepackage{caption}
 \usepackage{float}
 
+
 % --- < bibliografia > ---
 
 \usepackage{placeins}	% poprawia float
@@ -191,11 +192,11 @@ backend=biber
   listener's position, unlike in other systems where proper perception requires 
   the listener to be in a specific position. Loudspeakers that are in the matrix,
   through the use of
-  appropriate input signal processing, can create the shape of the acoustic
+  appropriate input signal processing, can form the shape of the acoustic
   wave in such a way, that a virtual sound source is created. Modularity of the
   design allows for simultaneous independent processing of big amount of signals
   and sending them to appropriate channels. This allows to extend the system
-  with subsequent arrays of loudspeaker, for a better wave field synthesis
+  with subsequent arrays of loudspeakers, for a better wave field synthesis
   capabilities.
 }
 
@@ -211,8 +212,7 @@ backend=biber
 
 \section{Wstęp}
 
-Reprodukcja dźwięku jest bardzo szerokim zagadnieniem akustyki. W obecnych
-czasach istnieje wiele technik pozwalających na odtworzenie panujących w
+Reprodukcja dźwięku jest bardzo szerokim zagadnieniem akustyki. Obecnie istnieje wiele technik pozwalających na odtworzenie panujących w
 wybranym miejscu warunków akustycznych w zgoła innym otoczeniu. Złożoność
 zjawisk związanych z propagacją fali akustycznej w rzeczywistym środowisku
 sprawia, że omawiane zagadnienie staje się skomplikowanym problemem.  W większości
@@ -225,9 +225,9 @@ odwzorowania do punktu, a właściwie niewielkiego obszaru wokół niego (tzw.
 %punktu, a właściwie niewielkiego obszaru wokół niego (tzw. \textit{sweet
 %spot}).
 Istnienie takiego ograniczenia wyklucza zastosowanie wyżej opisanych systemów w~sytuacjach, gdy mamy do czynienia z~odbiorcą przemieszczającym się w strefie
-odsłuchu. Z pomocą przychodzą jednak systemy syntezy pola akustycznego (ang.
+odsłuchu. Rozwiązaniem tego problemu są systemy syntezy pola akustycznego (ang.
 \textit{Wave Field Synthesis} --- WFS), które bazując na dużej liczbie
-głośników są w stanie imitować fale akustyczne generowane przez źródła
+głośników są w~stanie imitować fale akustyczne generowane przez źródła
 usytuowane nawet w dużej odległości oraz będące w ruchu. Dzięki syntezie pola
 akustycznego w~przestrzeni odsłuchowej nie występuje ograniczenie strefy
 odsłuchu do punktu, a~jednocześnie zachowana jest naturalna zależność zmiany
@@ -258,7 +258,7 @@ fali~\cite{hq_rendering}, co pokazuje rysunek
 \begin{figure}[!tbh]
   \centering
   \includegraphics[scale=.4]{vecgraphics/WFS_idea.pdf}
-  \caption{Kształtowanie czoła fali z zastosowaniem zasady Huygensa w WFS: każdy głośnik jest punktem do
+  \caption{Kształtowanie czoła fali z zastosowaniem zasady Huygensa w WFS: każdy głośnik jest punktem, do
   którego dociera fala wyemitowana przez wirtualne źródło}
   \label{r:Huygens}
 \end{figure}
@@ -289,14 +289,14 @@ między innymi:
 
 \subsection{Wymiary macierzy}
 
-Rozmiar macierzy głośnikowej determinuje zakres częstotliwości w którym system
+Rozmiar macierzy głośnikowej determinuje zakres częstotliwości, w którym system
 jest w~stanie odtwarzać dźwięk z dużą dokładnością. Wynika to z faktu, że
-przyjęte w modelu teoretycznym źródło liniowe jest tak naprawdę szeregiem
+przyjęte w modelu teoretycznym źródło liniowe jest szeregiem
 dyskretnych źródeł, oddalonych od siebie o odległość $\Delta x$, a każdy
 głośnik ma określone wymiary, z których najistotniejsza w tym aspekcie jest
-średnica $\phi_l$. Im większa macierz, tym niższa jest częstotliwość która może
+średnica $\phi_l$. Im większa macierz, tym niższa jest częstotliwość, która może
 być odtworzona, gdyż źródło jest wystarczająco duże w stosunku do długości fali
-akustycznej; musi być spełniony warunek \eqref{eq:fmin}:
+akustycznej --- musi być spełniony warunek \eqref{eq:fmin}:
 \begin{equation}
   f_{min}>\frac{c}{L} \quad,	\label{eq:fmin}
 \end{equation}
@@ -350,7 +350,7 @@ gdzie:\\
   $S(\omega)$ & --- & widmo sygnału źródłowego.
 \end{tabular}\\
 
-W dziedzinie czasu sygnał źródła wirtualnego $s(t)$ dla każdego głośnika musi
+Dla $n$-tego głośnika w dziedzinie czasu sygnał źródła wirtualnego $s(t)$  musi
 zostać pomnożony przez współczynnik wagowy amplitudy $a_n$, spleciony z filtrem
 o transmitancji $\sqrt{\frac{j\omega}{2\pi c}}$, którego współczynniki są
 oznaczane jako $h(t)$, i opóźniony o $\tau_n$, co można zapisać
@@ -362,26 +362,33 @@ w~postaci~\eqref{eq:glosnik_t}~\cite{enhancement}:
 
 \subsection{Symulacja}
 
-Aby ocenić dokładność algorytmu przeprowadzono symulacje rozkładu ciśnienia
-akustycznego.  Stworzono dwa modele: jeden ze źródłem rzeczywistym w pozycji
-$S$ i przegrodą z otworami, imitującą macierz głośnikową, ilustrujący szacowaną
-przestrzeń syntezy, i drugi ze źródłami punktowymi emulującymi głośniki
-emitujące sygnał ze źródła wirtualnego $S$, wyznaczony przez algorytm opisany w
-części~\ref{s:algorithm}.
+Aby ocenić dokładność algorytmu, przeprowadzono symulacje rozkładu ciśnienia
+akustycznego.  Stworzono dwa modele: pierwszy ze źródłem rzeczywistym w~pozycji
+$S$ i~przegrodą z~otworami, imitującą macierz głośnikową, ilustrujący szacowaną
+przestrzeń syntezy; drugi ze źródłami punktowymi emulującymi głośniki
+emitujące sygnały odpowiadające sygnałowi ze źródła wirtualnego $S$, wyznaczone przez algorytm opisany w~części~\ref{s:algorithm}.
 
-Dla każdego modelu przeprowadzono analizę MES, w celu porównania pola
-akustycznego wytworzonego przez źródło rzeczywiste i głośniki symulujące je.
-Wyniki przedstawia rysunek~\ref{r:fem}, co pokazuje dużą zbieżność pomiędzy
-modelami.
+W~celu porównania pola
+akustycznego wytworzonego przez źródło rzeczywiste i głośniki symulujące je wykonano dwie analizy. Symulację dla źródła rzeczywistego wraz z~przegrodami wykonano metodą elementów skończonych (MES, rysunek~\ref{r:MES}). Dla macierzy głośników wyznaczono rozkład ciśnienia akustycznego metodą analityczną dla siatki punktów (rysunek~\ref{r:analitycznie}).
+%Wyniki przedstawia rysunek~\ref{r:fem}, co pokazuje dużą zbieżność pomiędzy modelami.
 
 \begin{figure}[!ht]
+	\begin{subfigure}[b]{\textwidth}
   \centering
   \includegraphics[height=.41\textheight]{bitgraphics/real_500Hz.png}
+  \caption{Wyniki symulacji pola akustycznego przy pomocy MES rozkład ciśnienia akustycznego dla źródła punktowego}
+  \label{r:MES}
+\end{subfigure}
+
+\begin{subfigure}[b]{\textwidth}
+	\centering
   \includegraphics[height=.41\textheight]{bitgraphics/virtual_500Hz.png}
-  \caption{Wyniki symulacji pola akustycznego przy pomocy MES:
-    rozkład ciśnienia akustycznego~[Pa] dla źródła punktowego (góra) i macierzy głośnikowej
-  symulującej źródło wirtualne w~tej samej pozycji (dół)}
+  \caption{Rozkład ciśnienia akustycznego w polu generowanym przy pomocy macierzy głośnikowej dla źródła wirtualnego w~pozycji~S}
+  \label{r:analitycznie}
+\end{subfigure}
+\caption{}
   \label{r:fem}
+  
 \end{figure}
 
 
@@ -393,7 +400,7 @@ potrzebną do przetwarzania sygnałów wysyłanych na poszczególne kanały.
 Przetwarzanie sygnału z cyfrowego na analogowy oraz jego wzmocnienie jest
 realizowane przez moduł Amp Zero pHAT firmy JustBoom. Jest to połączenie
 wysokiej jakości przetwornika analogowo-cyfrowego oraz wzmacniacza klasy D o
-mocy wyjściowej $2\times40\si{\watt}$. Sygnał może być próbkowany z
+mocy wyjściowej $2\times\SI{40}{\watt}$. Sygnał może być próbkowany z
 częstotliwością \SI{192}{\kilo\hertz} i rozdzielczością \SI{32}{\bit}, z kolei
 zastosowanie wzmacniacza klasy D umożliwia osiąganie odpowiedniej mocy
 głośników bez zużywania nadmiernej ilości energii oraz zachowując niewielkie
@@ -431,13 +438,14 @@ wzajemnych zależności czasowych sygnałów akustycznych dostarczanych do każd
 z głośników.  Ściślej rzecz ujmując, w przetwarzaniu sygnałów przez
 poszczególne moduły nie mogą występować dewiacje czasu przetwarzania. W związku
 z tym system posiada połączenie synchronizujące przetwarzanie próbek dźwięku.
-Rozwiązuje to problem nieprzewidywalnego czasu przetwarzania wobec faktu, że
-zastosowane komputery nie pracują w~oparciu o~systemy czasu rzeczywistego.
+Rozwiązuje to problem nieprzewidywalnego czasu przetwarzania, spowodowanego zastosowaniem komputerów niepracujących w~oparciu o~systemy czasu rzeczywistego.
 
 \begin{figure}[H]
   \centering
+  \resizebox{0.8\textwidth}{!}{
   \import{./vecgraphics/}{scheme2.pdf_tex}
 % 	\includegraphics{vecgraphics/scheme2.pdf}
+	}
   \caption{Schemat projektowanego systemu WFS, gdzie MASTER to jednostka sterująca, SLAVE moduł odtwarzania, CLK połączenie przesyłające sygnał zegara, RPi --- Raspberry Pi}
   \label{fig:schemat}
 \end{figure}
@@ -446,9 +454,8 @@ Połączenie synchronizujące wykorzystuje piny GPIO (ang. General Purpose Input
 synchronizacji oraz kontroli systemu napisano wykorzystując język Rust, którego
 zaletą jest wysoka wydajność (na poziomie języka C). Skorzystano z gotowej
 biblioteki \emph{RPPAL}~\cite{RPPAL} obsługującej piny GPIO w~mikrokomputerach
-Raspberry Pi. Dane audio oraz informacje na temat lokalizacji głośników i
-wirtualnego źródła przesyłane są bezprzewodowo przez sieć lokalną (LAN), co
-oznacza, że system nie może odtwarzać dźwięku w czasie rzeczywistym, lecz
+Raspberry Pi. Dane audio oraz informacje na temat lokalizacji głośników i~wirtualnego źródła przesyłane są bezprzewodowo przez sieć lokalną (LAN), co
+oznacza, że system nie może odtwarzać dźwięku w~czasie rzeczywistym, lecz
 pozwala na wygodne modyfikacje układu przestrzennego i~zmniejsza liczbę
 przewodów. Główna jednostka systemu z aplikacją serwera kontroluje połączenie
 synchronizujące oraz zarządza procesorami przetwarzania audio. To pozwala na rozszerzanie
@@ -456,19 +463,18 @@ systemu w~przyszłości i~zwiększanie jego funkcjonalności.
 
 \section{Podsumowanie}
 
-Zaprojektowany system dzięki swojej modułowości pozwala na różnorodność
-zastosowań, w zależności od pożądanego rozmiaru macierzy głośnikowej,
+Zaprojektowany system dzięki swojej modułowości pozwala na różne zastosowania, w~zależności od pożądanego rozmiaru macierzy głośnikowej,
 pozwalając użytkownikowi na wybór najodpowiedniejszej konfiguracji. Jest
-ponadto bardziej ekonomiczny niż system korzystający z dedykowanych procesorów
+ponadto bardziej ekonomiczny niż system korzystający z~dedykowanych procesorów
 przetwarzania sygnałów.
 
 Obecnie system jest w fazie testowania i dalszego rozwoju, więc jego końcowe
 działanie zostanie zweryfikowane w~kolejnych etapach badań.
 
-Zastosowania WFS sięgają od tworzenia wrażeń przestrzennych, poprzez poprawę
-jakości akustyki pomieszczeń~\cite{enhancement}, do badań psychoakustycznych,
-oraz dydaktyki --- zaprojektowany system można dostosować do każdego z~nich.
-Ponadto może być on użyty do dalszego badania możliwości i ograniczeń syntezy
+Zastosowania WFS obejmują tworzenie wrażeń przestrzennych, poprawę
+jakości akustyki pomieszczeń~\cite{enhancement}, badania psychoakustyczne,
+oraz dydaktykę --- zaprojektowany system można dostosować do każdego z~nich.
+Ponadto może być on użyty do dalszego badania możliwości i~ograniczeń syntezy
 pola akustycznego.
 
 \printbibliography
