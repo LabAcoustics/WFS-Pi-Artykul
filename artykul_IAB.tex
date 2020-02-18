@@ -195,9 +195,9 @@ Skonstruowano działający prototyp systemu, którego działanie zostało poddan
 
 \section{Wprowadzenie}
 
-Wspólną cechą większości systemów reprodukcji dźwięku przestrzennego jest 
+Wspólną cechą większości systemów reprodukcji dźwięku przestrzennego jest
 ograniczenie odsłuchu do niewielkiego obszaru (tzw. \textit{sweet spot}).
-Metodą pozwalającą na oddanie wrażeń przestrzennych także gdy słuchacz jest 
+Metodą pozwalającą na oddanie wrażeń przestrzennych także gdy słuchacz jest
 w~ruchu lub dla kilku słuchaczy jednocześnie, bez konieczności używania przez
 nich słuchawek, jest synteza pola akustycznego, ang. \textit{Wave Field Synthesis}
 (WFS).
@@ -236,11 +236,11 @@ się tworzą wrażenie źródła zlokalizowanego w~określonym punkcie w~przestr
 Równaniem, na którym opiera się przetwarzanie sygnałów w~WFS jest całka
 Helmholtza-Huygensa,
 pozwalająca wyznaczyć analitycznie rozkład ciśnienia akustycznego pochodzącego od danego
-zestawu źródeł~\cite{snaka}. Na tej podstawie definiowana jest funkcja
+zestawu źródeł~\cite{snakowska}. Na tej podstawie definiowana jest funkcja
 opisująca ciśnienie akustyczne w~punkcie umieszczenia każdego głośnika (zob. rozdział~\ref{s:algorithm}). To
 podejście pozwala uwzględnić geometrię przestrzeni i~straty energii podczas
 propagacji fali dźwiękowej oraz wyznaczyć amplitudy i~fazy sygnału dla każdego
-z~głośników. 
+z~głośników.
 
 \section{Projekt systemu}
 
@@ -252,10 +252,10 @@ symulacje rozkładu pola akustycznego, by zweryfikować działanie algorytmu.
 \subsection{Geometria}
 
 Rozmiar macierzy głośnikowej determinuje zakres częstotliwości, w~którym system
-jest w~stanie odtwarzać dźwięk z dużą dokładnością. Przyjęte w modelu teoretycznym 
-źródło liniowe jest w~rzeczywistości szeregiem dyskretnych źródeł, oddalonych od siebie 
+jest w~stanie odtwarzać dźwięk z dużą dokładnością. Przyjęte w modelu teoretycznym
+źródło liniowe jest w~rzeczywistości szeregiem dyskretnych źródeł, oddalonych od siebie
 o~odległość $\Delta x$, a~każdy głośnik ma określone wymiary. Im większa macierz, tym niższa
-jest minimalna częstotliwość, która może być poprawnie odtworzona $f_{min}$ --- źródło jest wystarczająco duże w stosunku 
+jest minimalna częstotliwość, która może być poprawnie odtworzona $f_{min}$ --- źródło jest wystarczająco duże w stosunku
 do długości fali akustycznej ($f_{min}>\frac{c}{L}$, gdzie $c$~oznacza prędkość propagacji fali dźwiękowej,
 a~$L$~to długość macierzy głośników).
 
@@ -265,10 +265,10 @@ przestrzennego, występujące dla częstotliwości powyżej~$f_{max}$~\eqref{eq:
 \begin{equation}
   f_{max}=\frac{c}{2\Delta x \sin{\alpha_{max}}} \quad, \label{eq:fmax}
 \end{equation}
-gdzie $\alpha_{max}$ to maksymalny kąt pomiędzy falą padającą od źródła 
+gdzie $\alpha_{max}$ to maksymalny kąt pomiędzy falą padającą od źródła
 wirtualnego a~płaszczyzną przebiegającą przez membrany wszystkich głośników w~macierzy.
 
-Efekt aliasingu przestrzennego nie zniekształca jednak dźwięku w sposób znaczący dla odbioru przez 
+Efekt aliasingu przestrzennego nie zniekształca jednak dźwięku w sposób znaczący dla odbioru przez
 słuchacza~\cite{hq_rendering}.
 
 Uwzględniając powyższe ograniczenia, zdecydowano się wykorzystać głośniki o średnicy \SI{3}{\inch}
@@ -312,11 +312,11 @@ wzmacniacza klasy D~umożliwia osiąganie odpowiedniej mocy głośników przy
 zachowaniu niewielkich rozmiarów pojedynczego modułu~\cite{oska}.
 
 Jako przetworników elektroakustycznych użyto głośników firmy Faital Pro, model 3FE25,
-o~średnicy \SI{3}{\inch} i~nominalnym zakresie 
+o~średnicy \SI{3}{\inch} i~nominalnym zakresie
 częstotliwości \SI{100}{\hertz}~--~\SI{20}{\kilo\hertz}.
 
 Każdy moduł składa się z~mikrokomputera Raspberry Pi, modułu wzmacniacza Amp Zero
-oraz dwóch głośników. 
+oraz dwóch głośników.
 Strukturę systemu przedstawia rysunek \ref{fig:schemat}.
 
 \begin{figure}[!tbh]
@@ -331,9 +331,9 @@ przetwarzania sygnałów przez poszczególne moduły. Dlatego system posiada po�
 synchronizujące moment rozpoczęcia odtwarzania próbek dźwięku.
 
 Połączenie synchronizujące wykorzystuje piny GPIO (piny ogólnego przeznaczenia, ang.
-\textit{General Purpose Input-Output}), oprogramowanie napisano w~języku 
-Rust, korzystając z~biblioteki 
-\emph{RPPAL}~\cite{RPPAL}. Dane audio oraz informacje na temat wzajemnego położenia 
+\textit{General Purpose Input-Output}), oprogramowanie napisano w~języku
+Rust, korzystając z~biblioteki
+\emph{RPPAL}~\cite{RPPAL}. Dane audio oraz informacje na temat wzajemnego położenia
 głośników i~wirtualnego źródła przesyłane są bezprzewodowo przez sieć lokalną, co
 oznacza, że system nie odtwarza dźwięku w~czasie rzeczywistym, ale
 pozwala na wygodne modyfikacje układu przestrzennego i~zmniejsza ilość
@@ -346,12 +346,12 @@ Autorzy rozważają różne możliwości synchronizacji wewnętrznych zegarów m
 
 \section{Pomiary weryfikujące}
 
-Wykonano wstępne pomiary rozkładu pola akustycznego generowanego przez system 
-w~komorze bezechowej: zarejestrowano przebieg ciśnienia akustycznego w~32 punktach 
+Wykonano wstępne pomiary rozkładu pola akustycznego generowanego przez system
+w~komorze bezechowej: zarejestrowano przebieg ciśnienia akustycznego w~32 punktach
 rozmieszczonych co~\SI{400}{\milli\metre}, dla różnych pozycji źródła wirtualnego.
 Wykorzystano komputer z~kartami pomiarowymi National Instruments PXI-4472B i~mikrofony
 G.R.A.S. 46AE; przed rozpoczęciem pomiarów tor pomiarowy poddano kalibracji.
-Na rysunku~\ref{r:pomiar_kb}, przedstawiającym wyniki pomiaru dla tej samej pozycji 
+Na rysunku~\ref{r:pomiar_kb}, przedstawiającym wyniki pomiaru dla tej samej pozycji
 źródła, dla której wykonano obliczenia analityczne, można zauważyć,
 że kształt czoła fali jest zbliżony do oczekiwanego (por. rys.~\ref{r:symulacja}).
 
@@ -368,13 +368,13 @@ Wstępna weryfikacja pozwala stwierdzić, że
 skonstruowano działający system WFS spełniający podstawowe założenia tej metody.
 W~ramach dalszych prac poprawiona zostanie synchronizacja czasowa,
 system zostanie rozbudowany o~kolejne funkcjonalności,
-takie jak m.in. obudowy głośników, interfejs użytkownika umożliwiający sterowanie 
+takie jak m.in. obudowy głośników, interfejs użytkownika umożliwiający sterowanie
 parametrami źródeł wirtualnych, synteza pola akustycznego dla ruchomych źródeł.
 
-Dzięki swojej modułowości, zaprojektowany system może zostać dostosowany do 
+Dzięki swojej modułowości, zaprojektowany system może zostać dostosowany do
 konkretnego zastosowania poprzez odpowiednie ustawienie głośników. Ponadto,
 jego skonstruowanie wiąże się ze znacznie mniejszymi kosztami, niż typowego
-systemu WFS. Może on zostać wykorzystany do dalszych badań nad możliwościami 
+systemu WFS. Może on zostać wykorzystany do dalszych badań nad możliwościami
 i~ograniczeniami tej metody reprodukcji dźwięku.
 
 % Zastosowania syntezy pola akustycznego obejmują przemysł rozrywkowy, poprawę
