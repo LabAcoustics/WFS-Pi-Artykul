@@ -175,7 +175,7 @@ backend=biber
 \summaryPL{%
   Projekt obejmuje stworzenie systemu Wave Field Synthesis (WFS) opartego na
   macierzy głośników oraz komputerach Raspberry Pi. Rozwój tej technologii
-  pozwala na osiągnięcie wrażeń przestrzennych niezależnych od punktu odsłuchu, w przeciwieństwie do pozostałch systemów, gdzie poprawny odbiór wymaga zajęcia przez słuchacza ściśle określonego miejsca. 
+  pozwala na osiągnięcie wrażeń przestrzennych niezależnych od punktu odsłuchu, w przeciwieństwie do pozostałch systemów, gdzie poprawny odbiór wymaga zajęcia przez słuchacza ściśle określonego miejsca.
   Głośniki zawarte w macierzy, poprzez zastosowanie odpowiedniego przetwarzania
   sygnałów wejściowych, są w stanie formować kształt czoła fali akustycznej w
   taki sposób, aby kreować pozorne źródło dźwięku. Modułowość konstrukcji pozwala
@@ -189,7 +189,7 @@ backend=biber
   The project consists of creating Wave Field Synthesis (WFS) system, that is
   based on a loudspeaker matrix and Raspberry Pi computers. Development of this
   technology allows to achieve spatial impressions that do not depend on the
-  listener's position, unlike in other systems where proper perception requires 
+  listener's position, unlike in other systems where proper perception requires
   the listener to be in a specific position. Loudspeakers that are in the matrix,
   through the use of
   appropriate input signal processing, can form the shape of the acoustic
@@ -237,7 +237,7 @@ zaburzone psychoakustyczne systemy lokalizacji źródła dźwięku, wykorzystuj�
 niewielkie zmiany położenia głowy. Obecnie istnieją różne warianty systemów
 WFS, projektowane często z myślą o konkretnym zastosowaniu. Ze względu na
 wymaganą dużą liczbę kanałów przetwarzania dźwięku, a co za tym idzie dużą
-liczbę głośników, systemy te są drogie i mało popularne. 
+liczbę głośników, systemy te są drogie i mało popularne.
 
 Celem niniejszej pracy było zaprojektowanie modułowego systemu syntezy pola
 akustycznego, opartego na łatwo dostępnych komponentach i umożliwiającego
@@ -266,12 +266,12 @@ fali~\cite{hq_rendering}, co pokazuje rysunek
 Podstawowym równaniem w WFS jest całka Helmholtza-Huygensa (inaczej zwana całką
 Kirchoffa-Helmholtza), analityczna metoda opisu rozkładu potencjału akustycznego,
 która pozwala wyznaczyć ciśnienie akustyczne pochodzące od danego zestawu
-źródeł w każdym punkcie zdefiniowanej przestrzeni~\cite{snaka}. Jest używana do
+źródeł w każdym punkcie zdefiniowanej przestrzeni~\cite{snakowska}. Jest używana do
 zdefiniowania funkcji opisującej ciśnienie akustyczne w pozycji głośnika, który
 z~jednej strony traktowany jest jako odbiornik (względem źródła wirtualnego),
 a~z~drugiej --- jako źródło dźwięku. To podejście pozwala uwzględnić geometrię
 przestrzeni oraz straty energii podczas propagacji fali dźwiękowej i~wyznaczyć
-amplitudy i~fazy sygnału dla każdego z~głośników. 
+amplitudy i~fazy sygnału dla każdego z~głośników.
 
 \section{Projekt systemu}
 
@@ -388,7 +388,7 @@ akustycznego wytworzonego przez źródło rzeczywiste i głośniki symulujące j
 \end{subfigure}
 \caption{}
   \label{r:fem}
-  
+
 \end{figure}
 
 
@@ -424,11 +424,11 @@ których podstawowe parametry przedstawiono w tabeli \ref{tab:paramglosnik}.
 Każdy moduł składa się z komputera Raspberry Pi, modułu wzmacniacza Amp Zero
 oraz dwóch głośników.
 %Ponieważ moduły wzmacniaczy oraz przetworników A/C były dwukanałowe, na każdy
-%moduł oraz komputer Raspberry Pi przypadły dwa głośniki. 
+%moduł oraz komputer Raspberry Pi przypadły dwa głośniki.
 W celu zwiększenia możliwości adaptacji systemu do wymaganych warunków
 postanowiono umieścić każdy głośnik w oddzielnej obudowie. Takie rozwiązanie
 pozwala na otrzymanie macierzy głośników o dowolnych kształtach i rozmiarach,
-co jest pożądane ze względu na dydaktyczne i naukowe zastosowania systemu.  
+co jest pożądane ze względu na dydaktyczne i naukowe zastosowania systemu.
 %aby istniała możliwość zmiany zarówno odległości jak i kąta pomiędzy
 %poszczególnymi źródłami macierzy głośnikowej.
 Strukturę systemu przedstawia rysunek \ref{fig:schemat}.
