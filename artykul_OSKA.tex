@@ -274,11 +274,12 @@ amplitudy i~fazy sygnału dla każdego z~głośników.
 
 \section{Systemy syntezy pola akustycznego}
 
-Ze względu na wymaganą dużą liczbę jednocześnie przetwarzanych kanałów,
+Od wielkości systemu (liczby głośników) zależą możliwości reprodukcji pola akustycznego -- przy wększym systemie możliwe jest symulowanie wielu źródeł rozmieszczonych w~przestrzeni~\cite{Goebel2019}. Dużą barierą w~tworzeniu systemów pozwalających na efektywną syntezę pola akustycznego jest złożoność obliczeniowa -- sygnał musi być przetwarzany w~czasie rzeczywistym dla wielu kanałów jednocześnie. Z~tego względu
 dobre rezultaty przynoszą rozwiązania wykorzystujące wiele jednostek obliczeniowych.
 Taką architekturę systemu można również osiągnąć wykorzystując
 do obliczeń procesory graficzne (ang. \textit{Graphics Processing Unit} --- GPU) lub tworząc odpowiednie struktury jednostek obliczeniowych
-w~układach programowalnych (ang. \textit{Field-Programmable Gate Array} --- FPGA). Rozwiązania takie zostały przedstawione i~porównane w~\cite{multiCore}. 
+w~układach programowalnych (ang. \textit{Field-Programmable Gate Array} --- FPGA). Rozwiązania takie zostały przedstawione i~porównane w~artykule~\cite{multiCore}.
+Drugim aspektem są koszty systemu WFS, wysokie przy dużej liczbie głośników oraz wykorzystaniu jednostek komputerowych o~dużej mocy obliczeniowej. Jednym z~założeń projektu było wykonanie takiego systemu przy użyciu urządzeń ,,niskobudżetowych", dostępnych dla przeciętnego użytkownika, co pozwoliłoby na upowszechnienie tej technologii.
 
 
 \section{Projekt systemu}
