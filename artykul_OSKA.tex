@@ -212,14 +212,13 @@ backend=biber
 
 \section{Wstęp}
 
-Reprodukcja dźwięku jest bardzo szerokim zagadnieniem akustyki. Obecnie istnieje wiele technik pozwalających na odtworzenie panujących w
-wybranym miejscu warunków akustycznych w zgoła innym otoczeniu. Złożoność
+Reprodukcja dźwięku jest bardzo szerokim zagadnieniem akustyki. Obecnie istnieje wiele technik pozwalających na odtworzenie panujących w~wybranym miejscu warunków akustycznych w zgoła innym otoczeniu. Złożoność
 zjawisk związanych z propagacją fali akustycznej w rzeczywistym środowisku
-sprawia, że omawiane zagadnienie staje się skomplikowanym problemem.  W większości
+sprawia, że omawiane zagadnienie staje się skomplikowanym problemem.  W~większości
 stosowanych systemów reprodukcji dźwięku, takich jak systemy ambisoniczne czy
 wielokanałowe (5.1, 7.1) występuje problem ograniczenia przestrzeni dokładnego
 odwzorowania do punktu, a właściwie niewielkiego obszaru wokół niego (tzw.
-\textit{sweet spot}).
+\textit{sweet spot})~\cite{Bassres2008How, Frank2017Exploring}.
 %Jedną z najistotniejszych trudności napotykanych podczas projektowania systemu
 %reprodukcji dźwięku jest ograniczenie przestrzeni dokładnego odwzorowania do
 %punktu, a właściwie niewielkiego obszaru wokół niego (tzw. \textit{sweet
@@ -232,7 +231,7 @@ usytuowane nawet w dużej odległości oraz będące w ruchu. Dzięki syntezie p
 akustycznego w~przestrzeni odsłuchowej nie występuje ograniczenie strefy
 odsłuchu do punktu, a~jednocześnie zachowana jest naturalna zależność zmiany
 kierunku docierania dźwięku emitowanego przez źródło do słuchacza podczas
-przemieszczania się w~strefie odsłuchu. Dzięki takiemu rozwiązaniu nie zostają
+przemieszczania się w~strefie odsłuchu~\cite{Boone1995Spatial}. Dzięki takiemu rozwiązaniu nie zostają
 zaburzone psychoakustyczne systemy lokalizacji źródła dźwięku, wykorzystujące
 niewielkie zmiany położenia głowy. Obecnie istnieją różne warianty systemów
 WFS, projektowane często z myślą o konkretnym zastosowaniu. Ze względu na
@@ -248,7 +247,7 @@ stosunkowo prostą adaptację do wybranego zastosowania.
 Metoda WFS oparta jest na zasadzie Huygensa: każdy punkt do którego dociera
 fala akustyczna staje się źródłem nowej fali. Ta zasada jest zaimplementowana
 poprzez konstrukcję macierzy głośników, gdzie każdy z~nich jest punktem do
-którego dotarła fala akustyczna wyemitowana przez wirtualne źródło dźwięku.
+którego dotarła fala akustyczna wyemitowana przez wirtualne źródło dźwięku~\cite{Spors2008TheTheory}.
 Dzięki odpowiedniemu przetworzeniu sygnałów, za pomocą każdego z~głośników fala
 „przekazywana” jest dalej drogą powietrzną --- w~praktyce fale emitowane przez
 głośniki nakładają się, formując pożądany kształt czoła
